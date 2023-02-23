@@ -14,13 +14,14 @@ Los ejemplos serán similares a los estudiados en teoría, u otros alternativos 
    - [Ruby](https://www.ruby-lang.org/)
    - Cualquier otro lenguaje que tenga un mecanismo útil de implementación para el tema en cuestión y el ejemplo propuesto
 2. Proponer un ejemplo a implementar, bien similares a los estudiados en teoría, bien propuestos por el estudiante. 
-   - Colocad el ejemplo que implementéis en una carpeta con el nombre del lenguaje que hayáis elegido:
+   - Colocad el ejemplo que implementéis en una carpeta con el nombre del lenguaje que hayáis elegido. Por ejemplo:
       - `csharp`
       - `lua`
       - `kotlin`
       - `python`
       - `typescript`
       - `ruby`
+      - `scala`
       - `swift`
 3. Implementar cada ejemplo empleando los mecanismos del lenguaje elegido.
    - Incluir una breve explicación escrita en [markdown](https://en.wikipedia.org/wiki/Markdown), que incluya instrucciones sobre cómo construir, compilar y ejecutar el ejemplo.
