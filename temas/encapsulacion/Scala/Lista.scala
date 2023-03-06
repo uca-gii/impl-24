@@ -1,7 +1,7 @@
 import scala.collection.immutable._
 
-trait Lista[T] {
-    protected var l: Vector[T]
+trait ListaInterfaz[T] {
+
     def addFirst(value: T): Unit
     def removeFirst(): Unit
     def addLast(value: T): Unit
@@ -11,8 +11,14 @@ trait Lista[T] {
     def isEmpty(): Boolean
     def length(): Int
     // def clone()
-    //def isEqualTo(other: Lista[T]): Boolean
-    def isEqualTo(other: Lista[T]): Boolean = {other.l == l}
+
+    //Al crear una clase que hereda de la interfaz no puedo poner como parámetro otro tipo,
+    //Pues estaríamos comparando tipos distintos
+    //def isEqualTo(other: ListaInterfaz[T]): Boolean //def equal(other: any)
+
+    //Lo hacemos al estilo de Scala dónde el método se llama equals y recibe cualquier tipo
+    def equals(arg0: Any): Boolean
+
     def iterator(): Iterator[T]
   }
 
@@ -22,22 +28,32 @@ trait Iterator [E] {
     def remove(): Unit
 }
 
-  class MiLista[T] extends Lista[T]{
+  class MiLista[T] extends ListaInterfaz[T]{
     //variables
     protected var l: Vector[T] = Vector.empty
 
     //Métodos
-    def addFirst(value: T): Unit = {l = value +: l}
-    def removeFirst(): Unit = {l = l.tail}
-    def addLast(value: T): Unit = {l = l :+ value}
-    def removeLast(): Unit = {l = l.init}
-    def first(): T = {l.head}
-    def last(): T = {l.last}
-    def isEmpty(): Boolean = {l.isEmpty}
-    def length(): Int = {l.size}
+    override def addFirst(value: T): Unit = {l = value +: l}
+    override def removeFirst(): Unit = {l = l.tail}
+    override def addLast(value: T): Unit = {l = l :+ value}
+    override def removeLast(): Unit = {l = l.init}
+    override def first(): T = {l.head}
+    override def last(): T = {l.last}
+    override def isEmpty(): Boolean = {l.isEmpty}
+    override def length(): Int = {l.size}
     // def clone(): MiLista[T] 
-    // def isEqualTo(other: MiLista[T]): Boolean = {other.l == l}
-    def iterator(): Iterator[T] = new MyIterator[T](l)
+    //override def isEqualTo(other: MiLista[T]): Boolean = {other.l == l}
+
+    override def equals(arg0: Any): Boolean = {
+      //Utilizamos la comparación del tipo vector, si no utilizaramos esta
+      //tendíamos que hacer un match para ver primero cuál es el tipo que estamos recibiendo
+      arg0 == l;
+    }
+
+    override def iterator(): Iterator[T] = new MyIterator[T](l)
+
+    //Método de conversión a cadena
+    override def toString() = {l.toString()}
   }
 
     class MyIterator[E](elements: Vector[E]) extends Iterator[E] {
@@ -68,7 +84,18 @@ trait Iterator [E] {
 
 object Lista {
         def main(args: Array[String]) ={
-            var l1 = new MiLista();
+            println("Creamos la lista de Int...")
+            var l1: MiLista[Int] = new MiLista[Int]();
+            println("Añadimos el numero 1 y mostramos...")
+            l1.addFirst(1);
+            println(l1);
+
+            println("\n Creamos una segunda lista de Int...")
+            var l2: MiLista[Int] = new MiLista[Int]();
+            println("Añadimos el numero 1, comparamos y mostramos el resultado...")
+            l2.addFirst(1);
+            var comparition = l1.equals(l2);
+            println(comparition);
         }
 }
 
