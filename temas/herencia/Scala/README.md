@@ -1,9 +1,9 @@
 ## Compilación
 Una vez tenemos instalado el compilador de scala:
->scalac Aventura.scala
+>scalac AventuraTest.scala
 
 ## Ejecución
->scala Aventura
+>scala AventuraTest
 
 ## Explicación
 He implementado el ejemplo Aventura 2.0, lo primero, unos conceptos previos.
