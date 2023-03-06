@@ -1,6 +1,6 @@
 import scala.collection.immutable._
 
-abstract class Lista[T] {
+trait Lista[T] {
     protected var l: Vector[T]
     def addFirst(value: T): Unit
     def removeFirst(): Unit
@@ -16,11 +16,11 @@ abstract class Lista[T] {
     def iterator(): Iterator[T]
   }
 
-  abstract class Iterator [E] {
+trait Iterator [E] {
     def hasNext(): Boolean
     def next(): E
     def remove(): Unit
-  }
+}
 
   class MiLista[T] extends Lista[T]{
     //variables
