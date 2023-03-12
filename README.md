@@ -30,7 +30,7 @@ Los ejemplos serán similares a los estudiados en teoría, u otros alternativos 
      - `asincrono`,
      - `observables`.
 4. Publicar los ejemplos en un repositorio
-   - Hacer un fork de este repositorio e invitar al profesor al nuevo repo
+   - Hacer un fork de este repositorio y notificar al profesor por correo sobre el nuevo repo, para que pueda actuar como _watcher_.
    - Todos los ficheros deben estar realizados sobre carpetas cuyos nombres coincidan con los nombres de los [temas](#temas) elegidos.
    - Cada ejemplo en cada carpeta debe incluir un fichero `README.md` con las instrucciones en markdown, desde las que se enlace a:
      - el código implementado
