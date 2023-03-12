@@ -1,4 +1,3 @@
-import scala.collection.immutable._
 import scala.collection.mutable.ArrayBuffer
 
 trait Lista[T] {
@@ -15,7 +14,7 @@ trait Lista[T] {
 
     //Al crear una clase que hereda de la interfaz no puedo poner como parámetro otro tipo,
     //Pues estaríamos comparando tipos distintos
-    //def isEqualTo(other: Lista[T]): Boolean //def equal(other: any)
+    //def isEqualTo(other: Lista[T]): Boolean
 
     //Lo hacemos al estilo de Scala dónde el método se llama equals y recibe cualquier tipo
     def equals(arg0: Any): Boolean
