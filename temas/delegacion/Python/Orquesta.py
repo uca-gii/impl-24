@@ -14,3 +14,7 @@ class Orquesta():
     def tocar(self):
         for i in self.instrumentos:
             i.tocar()
+
+    def afinar(ins):
+        ins.afinar()
+        ins.tocar()
