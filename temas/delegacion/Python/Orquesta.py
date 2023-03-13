@@ -1,5 +1,14 @@
 from Instrumentos import *
 
+class IteradorOrquesta():
+    def __init__(self, Orquesta):
+        ...
+
+    def __iter__(self):
+        return self
+    
+    def __next__(self):
+        ...
 
 class Orquesta():
     def __init__(self):
