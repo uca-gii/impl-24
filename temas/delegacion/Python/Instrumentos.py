@@ -16,10 +16,10 @@ class Viento(Instrumento):
     def tocar(self):
         self.soplar()
     
-    def afinar():
+    def afinar(self):
         print("Afinar soplido.")
 
-    def soplar():
+    def soplar(self):
         print("Soplar.")
 
 
@@ -31,7 +31,7 @@ class Cuerda(Instrumento):
     def afinar(self):
         print("Afinar rasgado.")
 
-    def rasgar():
+    def rasgar(self):
         print("Rasgar.")
 
 
@@ -40,8 +40,8 @@ class Percusion(Instrumento):
     def tocar(self):
         self.golpear()
     
-    def afinar():
+    def afinar(self):
         print("Afinar golpeado.")
 
-    def golpear():
+    def golpear(self):
         print("Golpear.")

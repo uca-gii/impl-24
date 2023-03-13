@@ -1,7 +1,7 @@
 from Orquesta import *
 from Instrumentos import *
 
-def main():
+if __name__ == "__main__":
 
     orquesta = Orquesta()
     orquesta.addInstrumento(Viento())
