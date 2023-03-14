@@ -34,7 +34,7 @@ Para poder utilizar las clases abstractas en python necesitamos importar el mód
 En python no existen variables privadas como en otros lenguajes, gracias a una práctica que ha sido muy utilizada, ahora las variables cuyo nombre empiece por una doble barra baja serán tratadas como privadas. Dicho sea, esta privacidad no es como la de Java, por poner un ejemplo, pues con persistencia se puede llegar a sortear.
 
 ### Iteradores
-Para poder hacer a una clase iterable en python necesitamos delegar el trabajo de la iteración a una nueva clase que creemos. Ésta clase debe cubplir unas condiciones:
+Para poder hacer a una clase iterable en python necesitamos delegar el trabajo de la iteración a una nueva clase que creemos. Ésta clase debe cumplir unas condiciones:
 >- Débe tener un método *\_\_iter__*, en este caso tendrá un simple return self.
 >- Tendrá un método *\_\_next__* en el que definirémos cuál será el siguiente elemento en la iteración y deberá lanzar *StopIteration* una vez que finalice el recorrido.
 
