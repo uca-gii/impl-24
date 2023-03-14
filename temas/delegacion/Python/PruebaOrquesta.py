@@ -1,5 +1,4 @@
 from Orquesta import *
-from Instrumentos import *
 
 if __name__ == "__main__":
 
@@ -11,4 +10,5 @@ if __name__ == "__main__":
     for i in orquesta:
         orquesta.afinar(i)
 
+    print("")
     orquesta.tocar()
