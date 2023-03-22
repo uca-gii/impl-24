@@ -3,7 +3,7 @@ Descargar todo el contenido de las carpetas y ejecutar en el directorio raíz de
 >- Windows: .\gradlew.bat bootRun
 >- MacOS/Linux: ./gradlew bootRun
 
-Para hacer un proyecto propio hay que descargar la configuración inicial desde [la página oficial de spring](https://start.spring.io/) y, a partir de ahí, modificarlo. Para este proyecto lo he descargado usando gradle, la versión de espring 3.0.4 para Java 17, ninguna dependencia adicional y la configurción de carpetas que podeis ver en el repositorio.
+Para hacer un proyecto propio hay que descargar la configuración inicial desde [la página oficial de spring](https://start.spring.io/) y, a partir de ahí, modificarlo. Para este proyecto lo he descargado usando gradle, la versión de spring 3.0.4 para Java 17, ninguna dependencia adicional y la configurción de carpetas que podeis ver en el repositorio.
 
 ## Explicación
 
