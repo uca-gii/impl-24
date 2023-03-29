@@ -3,7 +3,7 @@ Descargar todo el contenido de las carpetas y ejecutar en el directorio raíz de
 >- Windows: .\gradlew.bat bootRun
 >- MacOS/Linux: ./gradlew bootRun
 
-Para hacer un proyecto propio hay que descargar la configuración inicial desde [la página oficial de spring](https://start.spring.io/) y, a partir de ahí, modificarlo. Para este proyecto lo he descargado usando gradle, la versión de espring 3.0.4 para Java 17, ninguna dependencia adicional y la configurción de carpetas que podeis ver en el repositorio.
+Para hacer un proyecto propio hay que descargar la configuración inicial desde [la página oficial de spring](https://start.spring.io/) y, a partir de ahí, modificarlo. Para este proyecto lo he descargado usando gradle, la versión de spring 3.0.4 para Java 17, ninguna dependencia adicional y la configurción de carpetas que podeis ver en el repositorio.
 
 ## Explicación
 
@@ -64,7 +64,7 @@ También pueden tener parámetros del constructor:
 
 
 ### Pruebas
-Los tests se dan en un fichero a parte, *BankAccountApplication.java*. En su main primero cargamos el fichero xml antes explicado y, a pertir de ahí, inyectamos 3 objetos BankAccount, que son los tres definidos en *springContext*. Los dos primeros son inyectados mediante constructor, tienen id y fechas distintas así como el primero tiene definido el comparador mediante ID. El tercero se inyecta mediante propiedades, haciendo uso del constructor cuyo único parámetro es el ID y definiendo el resto de atributos mediante propiedades, su comparador es mediante fechas. Las siguientes comparaciones son para comprobar que los objetos están bien creados.
+Los tests se dan en un fichero a parte, *BankAccountApplication.java*. En su main primero cargamos el fichero xml antes explicado y, a partir de ahí, inyectamos 3 objetos BankAccount, que son los tres definidos en *springContext*. Los dos primeros son inyectados mediante constructor, tienen id y fechas distintas así como el primero tiene definido el comparador mediante ID. El tercero se inyecta mediante propiedades, haciendo uso del constructor cuyo único parámetro es el ID y definiendo el resto de atributos mediante propiedades, su comparador es mediante fechas. Las siguientes comparaciones son para comprobar que los objetos están bien creados.
 
 ### Conclusión
 Gracias a estas inyecciones, la clase *BankAccountApplication* sólo tiene una dependencia con *BankAccount* y no de las clases *LocalDate* y los comparadores.
