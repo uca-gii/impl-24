@@ -2,6 +2,7 @@
 
 No hay que hacer nada especial para ejecutar el programa, simplemente tener instalada la jdk de java y en el directorio del programa ejecutar:
 > javac BankAccountTest.java
+>
 > java BankAccountTest
 
 ## Explicación
