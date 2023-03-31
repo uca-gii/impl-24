@@ -20,7 +20,7 @@ public class MoveTracking {
 
   @After("execution(* com.iiss.Line.*(..)) || execution(* com.iiss.Point.*(..))")
   public void after(JoinPoint jp) {
-    System.out.println("After");
+    System.out.println("-Entra en after");
     Object[] args = jp.getArgs();
     for (Object arg : args) {
       if (arg instanceof FigureElement) {

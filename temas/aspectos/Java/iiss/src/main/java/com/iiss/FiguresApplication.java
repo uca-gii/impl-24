@@ -21,6 +21,8 @@ public class FiguresApplication {
 		Point point = (Point)context.getBean("PBean");
 
 		line.setP1(point);
+
+		point.setX(5);
 	}
 
 }
