@@ -25,14 +25,4 @@
 
     <bean id="moveTrackingAspect" class="com.iiss.MoveTracking"></bean>
 
-    <aop:config>
-        <aop:aspect id="myaspect" ref="moveTrackingAspect">
-            <!-- <aop:pointcut id="movePointcut" expression="execution(* com.iiss.Line.setP1(..)) || execution(* com.iiss.Line.setP2(..)) || execution(* com.iiss.Point.setX(..)) || execution(* com.iiss.Point.setY(..))" /> -->
-            <aop:pointcut id="movePointcut" expression="execution(* com.iiss.Line.*(..))" />
-
-            <!-- <aop:after method="after" pointcut-ref="movePointcut" /> -->
-              
-        </aop:aspect>
-    </aop:config>
-
 </beans>

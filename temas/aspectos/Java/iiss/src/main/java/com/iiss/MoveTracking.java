@@ -13,12 +13,7 @@ public class MoveTracking {
     return result;
   }
 
-  // @After("execution(* com.iiss.Line.*(..)) && args(fe)")
-  // public void after(FigureElement fe) {
-  //   System.out.println("After");
-  //   movees.add(fe);}
-
-  @After("execution(* com.iiss.Line.*(..)) || execution(* com.iiss.Point.*(..))")
+  @After("execution(* com.iiss.Line.set*(..)) || execution(* com.iiss.Point.set*(..))")
   public void after(JoinPoint jp) {
     System.out.println("-Entra en after");
     Object[] args = jp.getArgs();
@@ -28,10 +23,6 @@ public class MoveTracking {
       }
     }
   }
-
-  // public void after(){
-  //   System.out.println("After");
-  // }
 
 
 }

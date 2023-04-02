@@ -10,19 +10,26 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class FiguresApplication {
 
 	public static void main(String[] args) {
-		//SpringApplication.run(FiguresApplication.class, args);
+
+		System.out.println("\nInyectamos una linea y un punto...\n");
 
 		// Creating object of ApplicationContext
 		// and Operation Class
 		ApplicationContext context
 			= new ClassPathXmlApplicationContext(
 				"applicationContext.xml");
+
 		Line line = (Line)context.getBean("LBean");
 		Point point = (Point)context.getBean("PBean");
+
+		System.out.println("Hacemos movimientos de las figuras...");
 
 		line.setP1(point);
 
 		point.setX(5);
+		point.setY(5);
+
+		line.setP2(point);
 	}
 
 }

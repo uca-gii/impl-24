@@ -8,10 +8,11 @@ public class Point implements FigureElement{
   int getY() { return y; }
 
   public void setX(int x) {
-    System.out.println("Entra en setX...");
+    System.out.println("Entra en setY");
     this.x = x;
   }
   public void setY(int y) {
+    System.out.println("Entra en setY");
     this.y = y;
   }
 }
