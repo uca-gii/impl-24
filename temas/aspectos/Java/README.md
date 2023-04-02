@@ -11,6 +11,13 @@ Las *beans* de spring ya las he explicado en la práctica de inyección, así qu
 
 ### Spring AOP
 
+#### Set Up
+Antes de empezar tenemos que añadir unas dependencias al proyecto, esto lo haremos en el archivo *build.gradle* situado en el directorio raíz del mismo. Las dependencias son las siguientes y nos permitirán trabajar con aspectos:
+
+> implementation 'org.aspectj:aspectjweaver:1.9.7'
+>
+> implementation 'org.springframework:spring-aop:5.3.10'
+
 #### Archivo de configuración
 En el archivo de configuración *applicationContext.xml* especificaremos la siguiente linea:
 
