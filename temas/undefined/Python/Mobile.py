@@ -1,12 +1,13 @@
+from typing import Optional
+from DisplayFeatures import DisplayFeatures
 
-class Mobile():
+class Mobile():  
 
-    def __init__(self, id, brand, name, displayFeatures):
+    def __init__(self, id: int, brand: str, name: str, displayFeatures: Optional[DisplayFeatures]):
         self.__id = id
         self.__brand = brand
         self.__name = name
 
-        #CAMBIAR QUE ES DE TIPO OPTIONAL
         self.__displayFeatures = displayFeatures
 
     def getId(self):
