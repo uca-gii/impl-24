@@ -2,6 +2,15 @@
 >python Threads_Example.py
 >
 >python Threads_Example_Join.py
+>
+>python Pool_Example.py
+>
+>python Daemon_Example.py
+>
+>python Lock_Example.py
+>
+>python Asyncio_Example.py
+
 
 ## Expliación
 En ésta práctica voy a explicar varias herramientas que propone python para la programación asíncrona a través de distintos archivos y ejemplos. Antes de empezar voy a explicar una herramienta común a todos los ejemplos.
@@ -24,8 +33,13 @@ En ambos ficheros podemos ver como la clase *raceOperations* nos proporciona una
 Al igual que otros lenguajes como java ésta herramienta nos permite tratar con la llamada de múltiples hebras sin la necesidad de hacerlo con bucles de manera más *"rústica"*. Usando el bloque **with** podemos crear un contexto de ejecución y gracias a esto se produce un *join* al final del bloque para cada hebra lanzada, de ésta manera nunca olvidaremos hacer los *join*. El ejemplo lo podemos ver en el fichero *Pool_Example.py*.
 
 ### Daemon
-En Python un *Daemon* será aquella hebra que tengamos ejecutando en otro flujo de trabajo (o *"de fondo"*) pero, a diferencia de las hebras que vimos antes, a éstas no las va a esperar la ejecución principal del programa. En nuestro ejemplo *Daemon_Example.py* se traduce a que  si el main acaba antes que la hebra, terminará el programa, sin importar en que punto se haya quedado el daemon de la ejecución.
+En Python un *Daemon* será aquella hebra que tengamos ejecutando en otro flujo de trabajo (o *"de fondo"*) pero, a diferencia de las hebras que vimos antes, a éstas no las va a esperar la ejecución principal del programa. En nuestro ejemplo *Daemon_Example.py* se traduce a que  si el main acaba antes que la hebra, terminará el programa, sin importar en que punto se haya quedado el daemon de la ejecución. Esto lo podemos solucionar fácilmente usando *join* sobre la hebra antes de finalizar.
+
+### Lock
+Es una de las herramientas que proporciona Python para el tratamiento de zonas conflictivas. Lock se basa en la exclusión mutua y tiene un uso sencillo dentro del lenguaje. Como vemos en *Lock_Example.py* la ejecución de las hebras es más intercambiada pues cuando llega la multiplicación, en el momento en el que la primera hebra está dormida, no puede coger el cerrojo aún, entonces vuelve la ejecución al main, después termina la primera hebra y por último la multiplicación, obteniendo el valor 2000 sin el uso de join y tener que haberlas "dirigido" manualmente.
 
 ### Asyncio
-Si queremos conseguir una división del flujo de trabajo, es decir, utilizar programación asíncrona y/o concurrente pero sin la creación de varias hebras podemos utilizar el módulo *asyncio*.
+Si queremos conseguir una división del flujo de trabajo, es decir, utilizar programación asíncrona y/o concurrente pero sin la creación de varias hebras podemos utilizar el módulo *asyncio*. En *Asyncio_Example.py* encontraremos el mismo ejemplo que con las hebras pero utilizando dicho módulo. Ésta vez no todas las funciones pueden ejecutarse de forma asíncrona sino que deben especificarlo en la cabecera con la palabra reservada *async*. Mediante la línea *loop.run_until_complete(ro.start())* esperamos a que toda la ejecución asíncrona se complete pues, a su vez, la función start de la clase llama y espera a que terminen ambas ejecuciones.
+
+Gracias a que hemos sustituido *time.sleep* por *await asyncio.wait([f1, f2])* las ejecuciones de las funciones se interpolan. Al no ser sleep del módulo asyncio la ejecución del segundo flujo no empezaría hasta que el primero termine, por eso usamos await.
 
