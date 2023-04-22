@@ -20,3 +20,12 @@ En ambos ficheros podemos ver como la clase *raceOperations* nos proporciona una
 
 *Threads_Example* no es determinista. Nos vamos a encontrar con distintos casos de ejecución, el más común es que la hebra 2 se ejecutará en el momento en el que la primera se duerme, dándo como resultado 1500. Si usamos la operación **join** sobre la hebra *x*, la primera, conseguiremos que la ejecución principal del programa espere a la finalización de la hebra antes de continuar, eso es, en este caso, antes de lanzar la segunda, consiguiendo siempre el resultado 2000.
 
+### ThreadPoolExecutor
+Al igual que otros lenguajes como java ésta herramienta nos permite tratar con la llamada de múltiples hebras sin la necesidad de hacerlo con bucles de manera más *"rústica"*. Usando el bloque **with** podemos crear un contexto de ejecución y gracias a esto se produce un *join* al final del bloque para cada hebra lanzada, de ésta manera nunca olvidaremos hacer los *join*. El ejemplo lo podemos ver en el fichero *Pool_Example.py*.
+
+### Daemon
+En Python un *Daemon* será aquella hebra que tengamos ejecutando en otro flujo de trabajo (o *"de fondo"*) pero, a diferencia de las hebras que vimos antes, a éstas no las va a esperar la ejecución principal del programa. En nuestro ejemplo *Daemon_Example.py* se traduce a que  si el main acaba antes que la hebra, terminará el programa, sin importar en que punto se haya quedado el daemon de la ejecución.
+
+### Asyncio
+Si queremos conseguir una división del flujo de trabajo, es decir, utilizar programación asíncrona y/o concurrente pero sin la creación de varias hebras podemos utilizar el módulo *asyncio*.
+
