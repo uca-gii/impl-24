@@ -16,10 +16,10 @@ class Heroe () extends PersonajeDeAccion with SabeLuchar with SabeNadar with Sab
     def volar(): Unit = println("El heroe vuela.")
 }
 object Aventura{ //Mirar si no es class
-	def t(x: SabeLuchar): Unit = x.luchar()
-	def u(x: SabeNadar): Unit = x.nadar()
-	def v(x: SabeVolar): Unit = x.volar()
-	def w(x:PersonajeDeAccion): Unit = x.luchar()
+	def luchador(x: SabeLuchar): Unit = x.luchar()
+	def nadador(x: SabeNadar): Unit = x.nadar()
+	def volador(x: SabeVolar): Unit = x.volar()
+	def personajeAccion(x:PersonajeDeAccion): Unit = x.luchar()
 
 }
 
@@ -27,9 +27,9 @@ object AventuraTest{
 	def main(args: Array[String]) ={
 		val i = new Heroe() //variable de tipo heroe
 		//val A = new Aventura();
-		Aventura.t(i) //Tratar como un sabeLuchar
-		Aventura.u(i) //Tratar como un sabeNadar
-		Aventura.v(i) //Tratar como un sabeVolar
-		Aventura.w(i) //Tratar como un PersonajeDeAccion
+		Aventura.luchador(i) //Tratar como un sabeLuchar
+		Aventura.nadador(i) //Tratar como un sabeNadar
+		Aventura.volador(i) //Tratar como un sabeVolar
+		Aventura.personajeAccion(i) //Tratar como un PersonajeDeAccion
 	}
 }
