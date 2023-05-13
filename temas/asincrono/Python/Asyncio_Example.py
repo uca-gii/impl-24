@@ -5,27 +5,27 @@ import asyncio
 class raceOperations():
 
     async def start(self):
-        f1 = loop.create_task(self.set_to_1000("set_to_1000"))
-        f2 = loop.create_task(self.double("double"))
-        await asyncio.wait([f1, f2])
+        tarea1 = loop.create_task(self.set_to_1000("set_to_1000"))
+        tarea2 = loop.create_task(self.double("double"))
+        await asyncio.wait([tarea1, tarea2])
 
     async def set_to_1000(self, name):
-        self.value = 0
-        logging.info("Funcion %s: Empezando, value = %i", name, self.value)
+        self.conflictValue = 0
+        logging.info("Funcion %s: Empezando, conflictValue = %i", name, self.conflictValue)
         
         i = 0
         while i < 1000:
-            self.value +=1
+            self.conflictValue +=1
             i +=1
             if i == 500:
                 #Recalcar que no estamos usando time.sleep
                 await asyncio.sleep(2)
 
-        logging.info("Funcion %s: Acabando, value = %i", name, self.value)
+        logging.info("Funcion %s: Acabando, conflictValue = %i", name, self.conflictValue)
 
     async def double(self, name):
-        self.value *= 2
-        logging.info("Funcion %s     : Multiplicando, value = %i", name, self.value)
+        self.conflictValue *= 2
+        logging.info("Funcion %s     : Multiplicando, conflictValue = %i", name, self.conflictValue)
 
 if __name__ == "__main__":
     format = "%(asctime)s: %(message)s"

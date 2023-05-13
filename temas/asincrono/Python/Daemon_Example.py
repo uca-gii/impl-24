@@ -5,17 +5,17 @@ import time
 class raceOperations():
 
     def set_to_1000(self, name):
-        self.value = 0
-        logging.info("Thread %s: Empezando, value = %i", name, self.value)
+        self.conflictValue = 0
+        logging.info("Thread %s: Empezando, conflictValue = %i", name, self.conflictValue)
         
         i = 0
         while i < 1000:
-            self.value +=1
+            self.conflictValue +=1
             i +=1
             if i == 500:
                 time.sleep(2)
 
-        logging.info("Thread %s: Acabando, value = %i", name, self.value)
+        logging.info("Thread %s: Acabando, conflictValue = %i", name, self.conflictValue)
 
 
 if __name__ == "__main__":
@@ -25,9 +25,9 @@ if __name__ == "__main__":
 
     ro = raceOperations();
     logging.info("Main    : Antes de crear el hilo")
-    x = threading.Thread(target=ro.set_to_1000, args=(1,), daemon=True)
+    hebra = threading.Thread(target=ro.set_to_1000, args=(1,), daemon=True)
     logging.info("Main    : Después de ejecutar el hilo")
-    x.start()
+    hebra.start()
     logging.info("Main    : No esperamos a que el hilo acabe")
     
     logging.info("Main    : Completado")
