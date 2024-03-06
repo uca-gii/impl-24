@@ -189,7 +189,7 @@ Para aprobar la práctica es obligatorio implementar, al menos, un ejemplo de ca
 
 ##### A.1. Abstracción
 
-Implementar un ejemplo equivalente a los de los temas [abstracción](https://github.com/sistemas-sw/construccion/blob/master/slides/implementacion/oop.md#abstracci%C3%B3n) usando los mecanismos del lenguaje para definición de tipos de datos, ocultación de la implementación, aplicación del principio de acceso uniforme y especificación de la inmutabilidad del estado de un objeto. Por ejemplo:
+Implementar un ejemplo equivalente a los de los temas [abstracción](https://github.com/sistemas-sw/construccion/blob/master/slides/implementacion/oop.md#abstracci%C3%B3n) usando los mecanismos del lenguaje para definición de tipos de datos, encapsulación y ocultación de la implementación, aplicación del principio de acceso uniforme e inmutabilidad del estado de un objeto. Por ejemplo:
 
 - En Ruby, se podrían usar `:symbols`, `module`, `@variables` de instancia, `attr_accessor`, `attr_reader`, `attr_writer`, etc.
 - En Scala, se podrían usar modificadores de visibilidad (`private`, `protected`), `var`, `val`, `type`, `abstract`, `sealed`, etc.
@@ -204,7 +204,7 @@ Implementar un ejemplo equivalente a los de los temas [herencia](https://github.
 
 ##### A.3. Delegación
 
-Implementar un ejemplo equivalente al ejemplo final de [Orquesta](http://dodero.github.io/iiss/iiss-oop-2/#implementacion-alternativa-orquesta-v06) usando los mecanismos del lenguaje para la delegación/composición. Intentará evitarse el uso de _lambdas_, que están destinadas a otro bloque. Por ejemplo:
+Implementar un ejemplo equivalente a los del tema [delegación](https://github.com/sistemas-sw/construccion/blob/master/slides/implementacion/delegacion.md) usando los mecanismos del lenguaje para la delegación/composición. Intentará evitarse el uso de _lambdas_, que están destinadas a otro bloque. Por ejemplo:
 
 - En C# podrían usarse `delegates`.
 - En Scala, podrían usarse _first-class functions_.
@@ -214,14 +214,14 @@ Implementar un ejemplo equivalente al ejemplo final de [Orquesta](http://dodero.
 
 ##### B.1. Inyección
 
- Implementar un ejemplo equivalente al de [BankAccount](http://dodero.github.io/iiss/iiss-oop-3/#ejercicio-identificador-de-bankaccount-con-inyeccion-de-dependencias) y que se puedan definir diversos atributos para comparar cuentas, usando los mecanismos del lenguage para inyectar como dependencia el criterio de comparación. Por ejemplo:
+ Implementar un ejemplo equivalente a los del tema [inyección de dependencias](http://dodero.github.io/iiss/iiss-oop-3/#ejercicio-identificador-de-bankaccount-con-inyeccion-de-dependencias) usando los mecanismos del lenguage o algún framework específico para inyectar dependencias. Por ejemplo:
 
 - En Java, puede usarse el framework [Guice](https://github.com/google/guice/wiki/) o [Weld CDI](http://weld.cdi-spec.org/)
 - En Scala, puede usarse el framework [Play](https://www.playframework.com/) que implementa la inyección de dependencias [en tiempo de compilación](https://www.playframework.com/documentation/2.8.x/ScalaCompileTimeDependencyInjection).
 
 ##### B.2. Anotaciones
 
-Implementar un ejemplo equivalente al de [BankAccount](http://dodero.github.io/iiss/iiss-oop-3/#ejercicio-identificador-de-bankaccount-con-inyeccion-de-dependencias) con diversos atributos comparables, usando anotaciones a medida para inyectar como dependencia el comparador a usar. Por ejemplo:
+Implementar un ejemplo equivalente a los del tema [anotaciones](https://github.com/sistemas-sw/construccion/blob/master/slides/implementacion/inyeccion.md#anotaciones) usando anotaciones diseñadas a medida para inyectar las dependencias. Por ejemplo:
 
 - En Java, podrían definirse anotaciones a medida para inyección de dependencias en _runtime_, según el [JSR 330](http://javax-inject.github.io/javax-inject/). Ejemplo: [Creating a Custom Annotation in Java](http://baeldung.com/java-custom-annotation) de Baeldung
 - En TypeScript, podrían usarse [_decorators_](https://www.typescriptlang.org/docs/handbook/decorators.html).
@@ -229,23 +229,23 @@ Implementar un ejemplo equivalente al de [BankAccount](http://dodero.github.io/i
 
 ##### B.3. Aspectos
 
-Implementar usando aspectos el ejemplo del caso [Editor de Figuras](http://dodero.github.io/iiss/iiss-aop/#caso-5-editor-de-figuras) (o un ejemplo equivalente). Por ejemplo:
+Implementar usando aspectos el ejemplo del tema [aspectos](https://github.com/sistemas-sw/construccion/blob/master/slides/implementacion/aspectos.md) (o un ejemplo equivalente). Por ejemplo:
 
-- En Java, usar intercepción de métodos con [Guice](https://github.com/google/guice/wiki/AOP)
+- En Java, usar [AspectJ](https://eclipse.dev/aspectj/) o intercepción de métodos con [Guice](https://github.com/google/guice/wiki/AOP)
 - En Python, usar [Spring Python](https://docs.spring.io/spring-python/1.2.x/sphinx/html/aop.html#aspect-oriented-programming)
 
 #### Bloque C. Streams
 
 ##### C.1. Errores
 
-Implementar un ejemplo equivalente al de _MobileTester_ del apartado [Optionals](http://dodero.github.io/iiss/iiss-err/#optionals) usando los mecanismos del lenguaje para resolver el problema de los valores no definidos (_undefined_) y el mal uso de `null` en el procesamiento de streams. Por ejemplo:
+Implementar un ejemplo de procesamiento de streams equivalente a los del tema [tratamiento de errores](https://github.com/sistemas-sw/construccion/blob/master/slides/implementacion/errores.md#tratamiento-de-errores) (como los ejemplos de [Optionals](http://dodero.github.io/iiss/iiss-err/#optionals)) usando los mecanismos del lenguaje para resolver el problema de los valores no definidos y el abuso de `null`. Por ejemplo:
 
 - En Scala, podrían usarse los mecanismos de la biblioteca del lenguaje como `Option`, `Some`, `None`, `Either`, `Left`, `Right`, etc.
 - En TypeScript o Javascript, podrán usarse `undefined`.
 
 ##### C.2. Lambdas
 
-Implementar ejemplos del uso de funciones anónimas (expresiones _lambda_) para el procesamiento de streams empleando los mecanismos disponibles en el lenguaje elegido. Por ejemplo:
+Implementar ejemplos del uso de funciones anónimas (interfaces funcionales y expresiones _lambda_) como los del tema [programación funcional](https://github.com/sistemas-sw/construccion/blob/master/slides/implementacion/funcional.md) para el procesamiento de streams empleando los mecanismos disponibles en el lenguaje elegido. Por ejemplo:
 
 - En Scala, usar [funciones anónimas](https://docs.scala-lang.org/scala3/book/fun-anonymous-functions.html) de Scala 3
 - En Ruby, usar `lambda`, `proc` y blocks.
