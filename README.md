@@ -45,9 +45,9 @@ El fichero [authors](authors.md) contiene una tabla en [markdown](https://en.wik
 
 A modo de ejemplo, el PR incluirá líneas adicionales al fichero [authors](authors.md) como la siguiente:
 
-| Curso | AUTORES  | Encapsulación | Herencia | Delegación  | Inyección  | Anotaciones | Aspectos | Errores | Lambdas |
+| Curso | AUTORES  | Abstracción | Herencia | Delegación  | Inyección  | Anotaciones | Aspectos | Errores | Lambdas |
 |---|:---|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-| 2023-24 <br/> <br/>| [Español Español, Juan](https://github.com/juanespanol) <br/> [Española Española, María](https://github.com/mariaespanola) |  [TypeScript](temas/encapsulacion/typescript/)  | [TypeScript](temas/herencia/typescript/)  | [Python](temas/delegacion/typescript/) | [Scala](temas/inyeccion/scala/) | [...](temas/anotaciones/lenguaje) | [](temas/aspectos/lenguaje) | [](temas/errores/lenguaje) | [](temas/lambdas/lenguaje) |
+| 2023-24 <br/> <br/>| [Español Español, Juan](https://github.com/juanespanol) <br/> [Española Española, María](https://github.com/mariaespanola) |  [TypeScript](temas/abstraccion/typescript/)  | [TypeScript](temas/herencia/typescript/)  | [Python](temas/delegacion/typescript/) | [Scala](temas/inyeccion/scala/) | [...](temas/anotaciones/lenguaje) | [](temas/aspectos/lenguaje) | [](temas/errores/lenguaje) | [](temas/lambdas/lenguaje) |
 
 **Importante**: el PR inicial de propuesta o cualquier otro de modificación de la elección de lenguajes solo debe modificar el fichero [authors](authors.md) y ningún otro fichero del repositorio.
 
@@ -74,7 +74,7 @@ Los ejemplos serán similares a los estudiados en teoría, o bien originales a p
 
 Los ejemplos a entregar se ubicarán, en todos los casos, bajo la carpeta [temas](temas/) del repositorio forkeado. Los nombres _canónicos_ permitidos para las subcarpetas son:
 
-- `temas/encapsulacion`
+- `temas/abstraccion`
 - `temas/herencia`
 - `temas/delegacion`
 - `temas/inyeccion`
@@ -98,9 +98,9 @@ Dentro de cada una de estas carpetas, cada equipo ubicará sus ejemplos en una s
 - `swift`
 - `typescript`
 
-Por ejemplo, si un equipo desea usar C# para implementar un ejemplo de  _encapsulación_ y _Kotlin_ para implementar un ejemplo de _herencia_, sus entregas deberán estar ubicadas en la siguiente estructura de carpetas:
+Por ejemplo, si un equipo desea usar C# para implementar un ejemplo de  _abstracción_ y _Kotlin_ para implementar un ejemplo de _herencia_, sus entregas deberán estar ubicadas en la siguiente estructura de carpetas:
 
-`temas/encapsulacion/csharp/`
+`temas/abstraccion/csharp/`
 `temas/herencia/kotlin/`
 
 Se deberá implementar cada ejemplo empleando los mecanismos específicos del lenguaje elegido que están relacionados con el _tema_ en cuestión. Por ejemplo, si se elige _Scala_ para el tema de _Errores_, deberán emplearse los mecanismos específicos de _Scala_ para el tratamiento de errores.
@@ -181,15 +181,15 @@ Se valorará:
 
 Los ejemplos a construir serán similares a los estudiados en teoría, u otros alternativos propuestos por cada estudiante.
 
-La elección del ejemplo de un tema no excluye utilizar elementos de otros temas, aunque se intentará centrar cada ejemplo, sobre todo, en elementos de construcción propios del tema elegido. Por ejemplo, en el ejemplo para el tema de _herencia_ se pueden usar elementos de _encapsulación_, pero, en todo caso, el ejemplo se deberá centrar en ilustrar el buen uso de la _herencia_ en el lenguaje elegido.
+La elección del ejemplo de un tema no excluye utilizar elementos de otros temas, aunque se intentará centrar cada ejemplo, sobre todo, en elementos de construcción propios del tema elegido. Por ejemplo, en el ejemplo para el tema de _herencia_ se pueden usar elementos de _abstracción_, pero, en todo caso, el ejemplo se deberá centrar en ilustrar el buen uso de la _herencia_ en el lenguaje elegido.
 
 Para aprobar la práctica es obligatorio implementar, al menos, un ejemplo de cada bloque. No obstante, no es obligatorio implementar un ejemplo de cada tema para obtener un aprobado. Pero si se quiere alcanzar la máxima calificación, deberá implementarse un ejemplo de cada tema. Los bloques y temas son los siguientes:
 
 #### Bloque A. Objetos
 
-##### A.1. Encapsulación
+##### A.1. Abstracción
 
-Implementar un ejemplo equivalente al ejemplo final de [Recorrido de listas](http://dodero.github.io/iiss/iiss-oop-1/#implementacion-alternativa-lista-v04) usando los mecanismos del lenguaje para definición de tipos de datos, ocultación de la implementación, aplicación del principio de acceso uniforme y especificación de la inmutabilidad del estado de un objeto. Por ejemplo:
+Implementar un ejemplo equivalente a los de los temas [abstracción](https://github.com/sistemas-sw/construccion/blob/master/slides/implementacion/oop.md#abstracci%C3%B3n) usando los mecanismos del lenguaje para definición de tipos de datos, ocultación de la implementación, aplicación del principio de acceso uniforme y especificación de la inmutabilidad del estado de un objeto. Por ejemplo:
 
 - En Ruby, se podrían usar `:symbols`, `module`, `@variables` de instancia, `attr_accessor`, `attr_reader`, `attr_writer`, etc.
 - En Scala, se podrían usar modificadores de visibilidad (`private`, `protected`), `var`, `val`, `type`, `abstract`, `sealed`, etc.
@@ -197,7 +197,7 @@ Implementar un ejemplo equivalente al ejemplo final de [Recorrido de listas](htt
 
 ##### A.2. Herencia
 
-Implementar un ejemplo equivalente al de [Aventura](http://dodero.github.io/iiss/iiss-oop-1/#ejemplo-aventura-v01) usando los mecanismos de herencia y polimorfismo de inclusión que proporcione el lenguaje. Por ejemplo:
+Implementar un ejemplo equivalente a los de los temas [herencia](https://github.com/sistemas-sw/construccion/blob/master/slides/implementacion/oop.md#herencia) y [polimorfismo](https://github.com/sistemas-sw/construccion/blob/master/slides/implementacion/oop.md#polimorfismo) usando los mecanismos de herencia y polimorfismo de inclusión que proporcione el lenguaje. Por ejemplo:
 
 - En Scala, podría usarse el mecanismo básico de herencia (`extends`), mixins (`traits`), `with`, etc.
 - En C#, se podrían usar el mecanismo básico de herencia, `interface`, `base`, `override`, `virtual`, `new`, etc.
