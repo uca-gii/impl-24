@@ -2,12 +2,6 @@ name: Ruby Sinatra CI
 
 on:
   workflow_dispatch:
-  push:
-    branches:
-      - delegacion
-  pull_request:
-    branches:
-      - delegacion
 
 jobs:
   build:
@@ -20,13 +14,14 @@ jobs:
     - name: Set up Ruby
       uses: ruby/setup-ruby@v1
       with:
-        ruby-version: 2.7
+        ruby-version: 3.0.0
+
+    - name: Install Bundler 2.4.22
+      run: gem install bundler -v 2.4.22
 
     - name: Install dependencies
       run: |
-        gem install bundler
-        bundle install
-        gem install sinatra
+        bundle config set path 'vendor/bundle'
 
     - name: Run tests
       run: |
@@ -35,4 +30,3 @@ jobs:
     - name: Build
       run: |
         bundle exec rake build
-
