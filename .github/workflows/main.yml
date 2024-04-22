@@ -16,11 +16,13 @@ jobs:
       with:
         ruby-version: 3.0.0
 
+    - name: Install Bundler 2.4.22
+      run: gem install bundler -v 2.4.22
+
     - name: Install dependencies
       run: |
-        gem install bundler
-        bundle install
-        gem install sinatra
+        bundle config set path 'vendor/bundle'
+        bundle install --jobs 4 --retry 3
 
     - name: Run tests
       run: |
