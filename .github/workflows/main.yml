@@ -19,6 +19,9 @@ jobs:
     - name: Install Bundler 2.4.22
       run: gem install bundler -v 2.4.22
 
+    - name: Create Gemfile
+      run: echo "ruby '3.0.0'\ngem 'sinatra'" > Gemfile
+
     - name: Install dependencies
       run: |
         bundle config set path 'vendor/bundle'
