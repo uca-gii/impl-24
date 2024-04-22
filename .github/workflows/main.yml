@@ -1,0 +1,37 @@
+name: Ruby Sinatra CI
+
+on:
+  push:
+    branches:
+      - delegacion
+  pull_request:
+    branches:
+      - delegacion
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up Ruby
+      uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: 2.7
+
+    - name: Install dependencies
+      run: |
+        gem install bundler
+        bundle install
+        gem install sinatra
+
+    - name: Run tests
+      run: |
+        bundle exec rspec 
+
+    - name: Build
+      run: |
+        bundle exec rake build
+
