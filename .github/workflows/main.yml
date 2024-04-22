@@ -1,6 +1,7 @@
 name: Ruby Sinatra CI
 
 on:
+  workflow_dispatch:
   push:
     branches:
       - delegacion
