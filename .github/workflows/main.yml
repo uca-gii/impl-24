@@ -20,7 +20,7 @@ jobs:
       run: gem install bundler -v 2.4.22
 
     - name: Create Gemfile
-      run: echo "ruby '3.0.0'\ngem 'sinatra'" > Gemfile
+      run: echo "ruby '3.0.0'\ngem 'sinatra'\ngem 'rspec'" > Gemfile
 
     - name: Install dependencies
       run: |
