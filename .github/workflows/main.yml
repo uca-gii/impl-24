@@ -2,12 +2,6 @@ name: Ruby Sinatra CI
 
 on:
   workflow_dispatch:
-  push:
-    branches:
-      - delegacion
-  pull_request:
-    branches:
-      - delegacion
 
 jobs:
   build:
@@ -20,7 +14,7 @@ jobs:
     - name: Set up Ruby
       uses: ruby/setup-ruby@v1
       with:
-        ruby-version: 2.7
+        ruby-version: 3.0.0
 
     - name: Install dependencies
       run: |
