@@ -140,9 +140,11 @@ Por ejemplo, si hay tres equipos que usan _kotlin_ para implementar su ejemplo d
 
 #### Convención de nombrado de ficheros de workflow
 
-GitHub Actions obliga a que los ficheros de definición de workflows de un determinado repo se guarden todos en una carpeta de nombre `.github/workflows/`. Esto puede causar problemas de colisión de ficheros de _workflow_ en el repo origin, al sincronizar los cambios que se hagan en cada repositorio forkeado. Para evitarlo, se seguirá una convención de nombrado de los ficheros `.yaml` o `.yml` que contengan la definición de los workflows entregados por cada equipo para cada tema y lenguaje elegido.
+GitHub Actions obliga a que los ficheros de definición de workflows de un determinado repo se guarden todos en una carpeta de nombre `.github/workflows/` en la __raíz del repo__. Esto puede causar problemas de colisión de ficheros de _workflow_ en el repo origin, al sincronizar los cambios que se hagan en cada repositorio forkeado. Para evitarlo, se seguirá una convención de nombrado de los ficheros `.yaml` o `.yml` que contengan la definición de los workflows entregados por cada equipo para cada tema y lenguaje elegido.
 
 La convención de nombrado de los ficheros `.yaml` a situar en `.github/workflows/` será: `<tema>.<lenguaje>-<numero>.yaml`. Por ejemplo, si un equipo entrega un _workflow_ para el tema de _herencia_ hecho en _Kotlin_, el fichero de workflow se debe llamar `herencia.kotlin.yaml`. Si hubiera dos equipos que han elegido hacer sus ejercicios en _Kotlin_ para el tema de _herencia_, los ficheros de workflow se deberán llamar `herencia.kotlin.yaml` (para el primer equipo) y `herencia.kotlin-01.yaml` (para el segundo equipo).
+
+#### Criterios de valoración
 
 Se valorará:
 
