@@ -1,4 +1,4 @@
-name: Ruby Sinatra CI
+name: Ruby Sinatra
 
 on: push
 
