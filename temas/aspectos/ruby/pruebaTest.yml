@@ -1,11 +1,13 @@
 name: Ruby Sinatra CI
 
-on: [push]
+on: push
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
+    permissions:
+      contents: write
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
@@ -15,22 +17,13 @@ jobs:
       with:
         ruby-version: 3.0.0
 
-    - name: Install Bundler 2.4.22
-      run: gem install bundler -v 2.4.22
-
-    - name: Create Gemfile
-      run: echo "ruby '3.0.0'\ngem 'sinatra'\ngem 'rspec'" > Gemfile
-
-    - name: Install dependencies
-      run: |
-        bundle config set path 'vendor/bundle'
-        bundle install --path vendor/bundle
-        bundle exec rspec --version || bundle exec rspec --version
-
-    - name: Run tests
-      run: |
-        bundle exec rspec 
-
-    - name: Build
-      run: |
-        bundle exec rake build
+    - name: Run script Ruby
+      run: ruby test.rb
+    
+    - name: Commit and Push changes
+      uses: stefanzweifel/git-auto-commit-action@v5
+      with:
+        commit_message: Update test
+        commit_user_name: SBaston [GitHub Actions]
+        commit_user_email: sergiojose.bastonlosey@alum.uca.es
+        
