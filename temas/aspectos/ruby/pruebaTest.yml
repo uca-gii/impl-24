@@ -1,4 +1,4 @@
-name: Ruby Sinatra CI
+name: Ruby Sinatra
 
 on: push
 
@@ -26,4 +26,3 @@ jobs:
         commit_message: Update test
         commit_user_name: SBaston [GitHub Actions]
         commit_user_email: sergiojose.bastonlosey@alum.uca.es
-        
