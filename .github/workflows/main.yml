@@ -15,6 +15,7 @@ jobs:
       uses: ruby/setup-ruby@v1
       with:
         ruby-version: 3.0.0
+        bundler-cache: true
 
     - name: Install Bundler 2.4.22
       run: gem install bundler -v 2.4.22
@@ -24,11 +25,12 @@ jobs:
         echo "ruby '3.0.0'" > Gemfile
         echo "gem 'sinatra'" >> Gemfile
         echo "gem 'rspec'" >> Gemfile
+      
 
     - name: Install dependencies
       run: |
         bundle config set path 'vendor/bundle'
-        bundle install --path vendor/bundle
+        bundle config set --local path 'vendor/bundle'
         bundle exec rspec --version || bundle exec rspec --version
 
     - name: Run tests
