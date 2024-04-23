@@ -44,7 +44,7 @@ jobs:
         bundle exec ruby ./temas/delegacion/ruby/ShoppingCart.rb &
       
     - name: Wait for Server
-      run: sleep 5
+      run: sleep 5 && ps aux | grep Shoppingcart.rb
 
     - name: Access server
       run: curl http://localhost:3000
