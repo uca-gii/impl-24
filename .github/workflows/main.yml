@@ -29,9 +29,7 @@ jobs:
 
     - name: Install dependencies
       run: |
-        bundle config set path 'vendor/bundle'
-        bundle config set --local path 'vendor/bundle'
-        bundle exec rspec --version || bundle exec rspec --version
+        bundle install
 
     - name: Run tests
       run: |
