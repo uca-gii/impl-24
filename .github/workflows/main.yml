@@ -43,19 +43,5 @@ jobs:
       run: |
         bundle exec ruby ./temas/delegacion/ruby/ShoppingCart.rb &
 
-    - name: Download and setup ngrok
-      run: |
-        wget -q https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip
-        unzip -qq ngrok-stable-linux-amd64.zip
-        ./ngrok authtoken $NGROK_AUTH_TOKEN
-        ./ngrok http 4567 &
-
-    - name: Get ngrok URL
-      id: ngrok
-      run: echo "::set-output name=url::$(curl -s http://localhost:4040/api/tunnels | jq -r '.tunnels[0].public_url')"
-
-    - name: Display ngrok URL
-      run: |
-        echo "Ngrok URL: ${{ steps.ngrok.outputs.url }}"
 
       
