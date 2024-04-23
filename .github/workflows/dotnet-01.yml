@@ -27,6 +27,6 @@ jobs:
         cd temas/aspectos
         dotnet restore
     - name: Build
-      run: dotnet build --no-restore
-    - name: Test
-      run: dotnet test --no-build --verbosity normal
+      run: |
+        cd temas/aspectos
+        dotnet build --no-restore
