@@ -30,3 +30,7 @@ jobs:
       run: |
         cd temas/aspectos
         dotnet build --no-restore
+    - name: Run
+      run: |
+        cd temas/aspectos
+        dotnet run
