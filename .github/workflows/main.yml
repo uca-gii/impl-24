@@ -39,9 +39,15 @@ jobs:
       run: |
         bundle exec rspec 
       
-    - name: Start Sinatra server
+    - name: Start Server
       run: |
-        ruby ./temas/delegacion/ruby/ShoppingCart.rb 
+        bundle exec ruby ./temas/delegacion/ruby/ShoppingCart.rb &
+      
+    - name: Wait for Server
+      run: sleep 5
+
+    - name: Access server
+      run: curl http://localhost:3000
   
 
 
