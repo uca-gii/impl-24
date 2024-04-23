@@ -1,7 +1,9 @@
 name: Ruby Sinatra CI
 
 on:
-  workflow_dispatch:
+  push:
+    branches:
+      - feat-delegacion
 
 jobs:
   build:
