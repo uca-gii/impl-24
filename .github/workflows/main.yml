@@ -27,6 +27,7 @@ jobs:
         echo "gem 'sinatra'" >> Gemfile
         echo "gem 'rspec'" >> Gemfile
         echo "gem 'rake'" >> Gemfile
+        echo "gem 'rackup'" >> Gemfile
       
 
     - name: Install dependencies
