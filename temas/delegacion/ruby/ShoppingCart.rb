@@ -27,6 +27,8 @@ class ShoppingCart
   def total_price
     @order.total_price
   end
+  # Delega el método total_price al objeto @order
+  def_delegator :@order, :total_price
 end
 
 get '/checkout' do
