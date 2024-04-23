@@ -43,10 +43,12 @@ jobs:
       run: |
         bundle exec ruby ./temas/delegacion/ruby/ShoppingCart.rb &
 
-    - name: Start ngrok
-      uses: wadewegner/ngrok-action@master
-      with:
-        authtoken: ${{ secrets.NGROK_AUTH_TOKEN }}
+    - name: Download and setup ngrok
+      run: |
+        wget -q https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip
+        unzip -qq ngrok-stable-linux-amd64.zip
+        ./ngrok authtoken $NGROK_AUTH_TOKEN
+        ./ngrok http 4567 &
 
     - name: Get ngrok URL
       id: ngrok
