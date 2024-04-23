@@ -41,7 +41,9 @@ jobs:
       
     - name: Start Sinatra server
       run: |
-        bundle exec ruby ./temas/delegacion/ruby/ShoppingCart.rb &
+        ruby ./temas/delegacion/ruby/ShoppingCart.rb 
+  
+
 
 
       
