@@ -23,7 +23,7 @@ jobs:
     - name: Create Gemfile
       run: |
         echo "source 'https://rubygems.org'" > Gemfile
-        echo "ruby '3.0.0'" > Gemfile
+        echo "ruby '3.0.0'" >> Gemfile
         echo "gem 'sinatra'" >> Gemfile
         echo "gem 'rspec'" >> Gemfile
       
