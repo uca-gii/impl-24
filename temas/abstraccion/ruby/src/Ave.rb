@@ -1,4 +1,4 @@
-require './Animal'
+require_relative 'Animal'
 
 class Ave
     include Animal
@@ -12,4 +12,4 @@ class Ave
     def describir
        super + "Envergadura de alas: #{envergadura_alas}cm\n-----------------------------\n"
     end
- end
+end

@@ -1,4 +1,4 @@
-require './Animal'
+require_relative 'Animal'
 
 class Terrestre
     include Animal
@@ -12,4 +12,4 @@ class Terrestre
     def describir
        super + "Habitat: #{habitat}\n-----------------------------\n"
     end
- end
+end

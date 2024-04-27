@@ -1,11 +1,15 @@
 module Animal
-    attr_accessor :nombre, :edad
-    attr_reader :especie
+    attr_accessor :nombre
+    attr_reader :especie, :edad
  
     def initialize(nombre, edad, especie)
        @nombre = nombre
        @edad = edad
        @especie = especie
+    end
+
+    def cumpleaños
+      @edad = @edad +1
     end
  
     def describir
