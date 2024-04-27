@@ -1,4 +1,4 @@
-require './Animal'
+require_relative 'Animal'
 
 class Acuatico
     include Animal
@@ -12,4 +12,4 @@ class Acuatico
     def describir
        super + "Profundidad máxima: #{profundidad_max}m\n-----------------------------\n"
     end
- end
+end
