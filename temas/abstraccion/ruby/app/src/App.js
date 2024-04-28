@@ -10,6 +10,7 @@ function App() {
 
   useEffect(() => {
     if (selectedFile) {
+      // GET para mostrar códigos de ruby
       axios.get(`/api/code?file=${selectedFile}`).then(response => {
         setCode(response.data.source);
       }).catch(error => {
@@ -17,6 +18,7 @@ function App() {
         alert('Error fetching code: ' + error.message);
       });
       
+      // GET para mostrar códigos de test de ruby
       axios.get(`/api/test?file=${selectedFile}_test`).then(response => {
         setTestCode(response.data.results);
       }).catch(error => {
@@ -26,11 +28,14 @@ function App() {
     }
   }, [selectedFile]);
 
+  // Controla cada vez que se cambia de archivo
   const handleChange = (event) => {
     setSelectedFile(event.target.value);
   };
 
+  
   const runTests = () => {
+    // GET para mostrado de resultados de ejecución de test
     axios.get(`/api/run-test?file=${selectedFile}_test.rb`).then(response => {
       setTestResults(response.data.results);
     }).catch(error => {
@@ -39,6 +44,7 @@ function App() {
     });
   };
 
+  // Cuerpo del index.html
   return (
     <Container maxWidth="md">
       <Box mt={4}>
