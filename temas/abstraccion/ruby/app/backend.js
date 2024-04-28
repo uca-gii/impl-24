@@ -10,8 +10,9 @@ const port = 3000;
 app.use(express.static('public'));
 app.use(cors());
 
+// Get para enviar códigos de ruby
 app.get('/api/code', (req, res) => {
-    const { file } = req.query;  // Ejemplo: file=Animal
+    const { file } = req.query;
     const filePath = path.join(__dirname, 'ruby_src', `${file}.rb`);
     fs.readFile(filePath, 'utf8', (err, data) => {
         if (err) {
@@ -22,8 +23,9 @@ app.get('/api/code', (req, res) => {
     });
 });
 
+// GET para enviar códigos de tests.
 app.get('/api/test', (req, res) => {
-    const { file } = req.query;  // Ejemplo: file=Animal_test
+    const { file } = req.query;
     const filePath = path.join(__dirname, 'ruby_test', `${file}.rb`);
     fs.readFile(filePath, 'utf8', (err, data) => {
         if (err) {
@@ -34,8 +36,9 @@ app.get('/api/test', (req, res) => {
     });
 });
 
+// GET para ejecución de tests y envío de resultados.
 app.get('/api/run-test', (req, res) => {
-    const { file } = req.query;  // El nombre del archivo de test, por ejemplo: 'animal_test.rb'
+    const { file } = req.query;
     exec(`ruby ruby_test/${file} -v
     `, (error, stdout, stderr) => {
       if (error) {
@@ -50,9 +53,10 @@ app.get('/api/run-test', (req, res) => {
     });
 });
 
+// Puerto auxiliar para ejecución de tests
 const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
+  console.log(`Test ejecutandose en el puerto ${PORT}`);
 });
 
 app.get('*', (req, res) => {
