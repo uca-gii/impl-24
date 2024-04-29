@@ -1,5 +1,11 @@
 require 'sinatra'
 
+configure do
+  set :static, true
+  set :public_folder, 'public'
+  set :views, 'views'
+end
+
 def dividir(a, b)
   raise ArgumentError, "Los argumentos deben ser numéricos" unless num1.is_a?(Numeric) && num2.is_a?(Numeric)
   div = a / b
@@ -49,8 +55,6 @@ end
 get '/dividir/:a/:b' do
   dividir(params[:a].to_i, params[:b].to_i).to_s
 end
-
-require 'sinatra'
 
 get '/' do
   File.read(File.join('public', 'index.html'))
