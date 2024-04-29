@@ -25,3 +25,4 @@ class Calculator
         return Optional.empty unless a.is_a?(Numeric) && b.is_a?(Numeric)
         Optional.of(a * b)
     end
+end
