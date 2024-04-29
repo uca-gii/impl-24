@@ -26,12 +26,9 @@ class Forma
     end
   end
   
-  get '/' do
-    cuadrado = Cuadrado.new(5)
-    circulo = Circulo.new(3)
-    <<~HTML
-    <h1>Áreas de formas geométricas</h1>
-    <p>Área del cuadrado: #{cuadrado.area}</p>
-    <p>Área del círculo: #{circulo.area}</p>
-    HTML
-  end
+  cuadrado = Cuadrado.new(5)
+  puts "Área del cuadrado: #{cuadrado.area}"  # Output: Área del cuadrado: 25
+  
+  circulo = Circulo.new(3)
+  puts "Área del círculo: #{circulo.area}"    # Output: Área del círculo: 28.274333882308138
+  

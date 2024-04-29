@@ -16,11 +16,7 @@ jobs:
       uses: ruby/setup-ruby@v1
       with:
         ruby-version: 3.0.0
-    - name: Install Sinatra gem
-      run: gem install sinatra
-
-    - name: Install rackup gem
-      run: gem install rackup
+    
 
     - name: Run script Ruby
       run: ruby ./temas/abstraccion/ruby/abstraccion.rb
