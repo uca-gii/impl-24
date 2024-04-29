@@ -24,4 +24,4 @@ class Calculator
         return nil unless a.is_a?(Numeric) && b.is_a?(Numeric)
         a * b
     end
-en
+end
