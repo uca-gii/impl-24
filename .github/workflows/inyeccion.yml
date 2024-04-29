@@ -13,7 +13,13 @@ jobs:
       uses: actions/checkout@v4
 
     - name: Set up Lua
-      uses: neovim/setup-lua@v1
+      uses: MunifTanjim/luver-action@v1
+      run: |
+        luver install lua 5.4.3
+        luver use 5.4.3
+        luver install luarocks 3.8.0
+      run: |
+        luarocks install luacheck
       with:
         lua-version: 5.4
 
