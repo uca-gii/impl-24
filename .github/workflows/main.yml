@@ -22,7 +22,7 @@ jobs:
       run: gem install nokogiri
 
     - name: Run Ruby script
-      run: ruby ./temas/errores/ruby/Students.rb
+      run: ruby ./temas/errores/ruby/Calculator.rb
 
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
