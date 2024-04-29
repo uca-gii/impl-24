@@ -3,7 +3,7 @@ FROM node:16 as build
 
 WORKDIR /app
 
-COPY app/package.json ./
+COPY app/src/package.json ./
 
 # Instala las dependencias del proyecto
 RUN npm install
@@ -12,7 +12,8 @@ RUN npm install cors
 RUN npm install @mui/material @emotion/react @emotion/styled
 
 COPY app/public public/
-COPY app/src/ src/
+COPY app/src/App.js src/
+COPY app/src/index.js src/
 
 RUN npm run build
 
@@ -25,14 +26,14 @@ RUN curl -fsSL https://deb.nodesource.com/setup_16.x | bash - && \
 
 WORKDIR /app
 
-COPY app/package.json ./
+COPY app/src/package.json ./
 RUN npm install --only=production
 
 # Instala Minitest
 RUN gem install minitest
 
 # Copia el backend.js
-COPY app/backend.js ./
+COPY app/src/backend.js ./
 
 # Copia los archivos de Ruby y los tests de Ruby
 COPY ruby_src/ ruby_src/
