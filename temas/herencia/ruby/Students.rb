@@ -34,3 +34,4 @@ File.open('index.html', 'w') do |file|
   file.puts "</body>"
   file.puts "</html>"
 end
+
