@@ -22,4 +22,4 @@ jobs:
       run: gem install nokogiri && gem install optional
 
     - name: Run Ruby script
-      run: ruby ./temas/errores/ruby/Calculator.rb
+      run: ruby ./temas/errores/ruby/calculator.rb
