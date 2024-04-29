@@ -3,7 +3,7 @@ name: Deploy Website
 on:
   push:
     branches:
-      - feat-herencia
+      - feat-errores
   workflow_dispatch:
 jobs:
   deploy:
@@ -22,10 +22,10 @@ jobs:
       run: gem install nokogiri
 
     - name: Run Ruby script
-      run: ruby ./temas/herencia/ruby/Students.rb
+      run: ruby ./temas/errores/ruby/Calculator.rb
 
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       with:
         deploy_key: ${{ secrets.IISS }}
-        publish_dir: ./temas/herencia/ruby/index.html
+        publish_dir: ./temas/errores/ruby/index.html
