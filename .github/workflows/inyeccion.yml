@@ -1,0 +1,28 @@
+name: Inyection Lua Workflow
+
+on: push
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Set up Lua
+      uses: neovim/setup-lua@v1
+      with:
+        lua-version: 5.4
+
+    - name: Run Lua script
+      run: lua ./temas/inyeccion/lua/inyeccion.lua
+    
+    - name: Commit and Push changes
+      uses: stefanzweifel/git-auto-commit-action@v5
+      with:
+        commit_message: Update test
+        commit_user_name: SBaston [GitHub Actions]
+        commit_user_email: sergiojose.bastonlosey@alum.uca.es
