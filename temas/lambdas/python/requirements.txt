@@ -1,1 +1,1 @@
-Este proyecto no tiene dependencias de momento.
+python==3.9
