@@ -1,5 +1,3 @@
-require 'sinatra'
-
 class Forma
     def area
       raise NotImplementedError, "El método 'area' debe ser implementado por las subclases."
