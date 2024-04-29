@@ -2,8 +2,6 @@ require 'sinatra'
 
 configure do
   set :static, true
-  set :public_folder, 'public'
-  set :views, 'views'
 end
 
 def dividir(a, b)
