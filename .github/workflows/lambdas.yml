@@ -18,7 +18,7 @@ jobs:
         ruby-version: 3.0.0
 
     - name: Run script Ruby
-      run: ruby ./temas/aspectos/ruby/lambdas.rb
+      run: ruby ./temas/lambdas/ruby/lambdas.rb
     
     - name: Commit and Push changes
       uses: stefanzweifel/git-auto-commit-action@v5
