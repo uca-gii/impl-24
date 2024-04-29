@@ -7,7 +7,7 @@ class Calculator
     def divide(dividend, divisor)
         return nil unless dividend.is_a?(Numeric) && divisor.is_a?(Numeric)
         return nil if divisor == 0
-        dividend / divisor
+        dividend.to_f / divisor
     end
 
     def sum(a, b)
