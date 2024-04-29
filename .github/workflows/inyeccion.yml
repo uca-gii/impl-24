@@ -14,14 +14,13 @@ jobs:
 
     - name: Set up Lua
       uses: MunifTanjim/luver-action@v1
-      
+
     - run: |
         luver install lua 5.4.3
         luver use 5.4.3
         luver install luarocks 3.8.0
         luarocks install luacheck
-      with:
-        lua-version: 5.4
+      
 
     - name: Run Lua script
       run: lua ./temas/inyeccion/lua/inyeccion.lua
