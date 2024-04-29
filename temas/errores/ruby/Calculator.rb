@@ -1,3 +1,5 @@
+require 'sinatra'
+
 def dividir(a, b)
   raise ArgumentError, "Los argumentos deben ser numéricos" unless num1.is_a?(Numeric) && num2.is_a?(Numeric)
   div = a / b
