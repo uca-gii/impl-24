@@ -1,33 +1,31 @@
-name: Ruby Sinatra CI
+name: Deploy Website
 
 on:
+  push:
+    branches:
+      - feat-herencia
   workflow_dispatch:
-
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
 
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
 
-    - name: Set up Ruby
+    - name: Install Ruby
       uses: ruby/setup-ruby@v1
       with:
         ruby-version: 3.0.0
 
-    - name: Install Bundler 2.4.22
-      run: gem install bundler -v 2.4.22
-
     - name: Install dependencies
-      run: |
-        bundle config set path 'vendor/bundle'
+      run: gem install nokogiri
 
-    - name: Run tests
-      run: |
-        bundle exec rspec 
+    - name: Run Ruby script
+      run: ruby ./temas/herencia/ruby/Students.rb
 
-    - name: Build
-      run: |
-        bundle exec rake build
-
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        deploy_key: ${{ secrets.IISS }}
+        publish_dir: ./temas/herencia/ruby/index.html
