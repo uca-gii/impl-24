@@ -19,7 +19,7 @@ jobs:
         ruby-version: 3.0.0
 
     - name: Install dependencies
-      run: gem install nokogiri
+      run: gem install nokogiri | gem install sinatra
 
     - name: Run Ruby script
       run: ruby ./temas/errores/ruby/Calculator.rb
