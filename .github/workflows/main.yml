@@ -1,4 +1,4 @@
-name: Deploy Website
+name: Ruby Errors
 
 on:
   push:
@@ -19,13 +19,7 @@ jobs:
         ruby-version: 3.0.0
 
     - name: Install dependencies
-      run: gem install nokogiri && gem install sinatra && gem install rackup
+      run: gem install nokogiri && gem install dry-monads
 
     - name: Run Ruby script
       run: ruby ./temas/errores/ruby/Calculator.rb
-
-    - name: Deploy to GitHub Pages
-      uses: peaceiris/actions-gh-pages@v3
-      with:
-        deploy_key: ${{ secrets.IISS }}
-        publish_dir: ./temas/errores/ruby/index.html
