@@ -5,7 +5,7 @@ public class RegistradorAcciones{
         acciones.Add(s);
     }
     public static void verAcciones(){
-        Console.WriteLine("ACCIONES RECOGIDAS POR EL REGISTRADOR:");
+        Console.WriteLine("ACCIONES RECOGIDAS POR ASPECTOS:");
         foreach(string s in acciones){
             Console.WriteLine(s);
         }
