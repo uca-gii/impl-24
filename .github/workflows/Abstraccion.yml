@@ -19,6 +19,9 @@ jobs:
     - name: Install Sinatra gem
       run: gem install sinatra
 
+    - name: Install rackup gem
+      run: gem install rackup
+
     - name: Run script Ruby
       run: ruby ./temas/abstraccion/ruby/abstraccion.rb
     
