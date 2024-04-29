@@ -1,0 +1,48 @@
+name: Abstraccion en Ruby CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Set up Ruby
+      uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: '3.0'  
+
+    - name: Install dependencies
+      run: gem install minitest
+
+    - name: Run tests
+      run: |
+        for file in temas/abstraccion/ruby_test/*_test.rb; do
+          ruby $file -v || exit 1
+        done
+
+    - name: Create issue if tests fail
+      if: ${{ failure() }}
+      uses: actions/github-script@v5
+      with:
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+        script: |
+          const issueTitle = 'Fallo en los Tests Automatizados';
+          const issueBody = 'Se ha detectado un fallo en los tests automáticos. Por favor revisar los resultados.';
+          const labels = ['bug'];
+          github.rest.issues.create({
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            title: issueTitle,
+            body: issueBody,
+            labels: labels
+          });raccionruby
