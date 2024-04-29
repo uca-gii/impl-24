@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("aspectos")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+de95fe06e33ab8d506123bdddcd761e4db91724c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7b910f020340c24c6a09422de02b69f48bdb0052")]
 [assembly: System.Reflection.AssemblyProductAttribute("aspectos")]
 [assembly: System.Reflection.AssemblyTitleAttribute("aspectos")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

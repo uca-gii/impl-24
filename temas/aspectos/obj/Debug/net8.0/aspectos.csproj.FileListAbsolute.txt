@@ -1,0 +1,15 @@
+/home/alex/impl-24/temas/aspectos/bin/Debug/net8.0/aspectos
+/home/alex/impl-24/temas/aspectos/bin/Debug/net8.0/aspectos.deps.json
+/home/alex/impl-24/temas/aspectos/bin/Debug/net8.0/aspectos.runtimeconfig.json
+/home/alex/impl-24/temas/aspectos/bin/Debug/net8.0/aspectos.dll
+/home/alex/impl-24/temas/aspectos/bin/Debug/net8.0/aspectos.pdb
+/home/alex/impl-24/temas/aspectos/obj/Debug/net8.0/aspectos.GeneratedMSBuildEditorConfig.editorconfig
+/home/alex/impl-24/temas/aspectos/obj/Debug/net8.0/aspectos.AssemblyInfoInputs.cache
+/home/alex/impl-24/temas/aspectos/obj/Debug/net8.0/aspectos.AssemblyInfo.cs
+/home/alex/impl-24/temas/aspectos/obj/Debug/net8.0/aspectos.csproj.CoreCompileInputs.cache
+/home/alex/impl-24/temas/aspectos/obj/Debug/net8.0/aspectos.sourcelink.json
+/home/alex/impl-24/temas/aspectos/obj/Debug/net8.0/aspectos.dll
+/home/alex/impl-24/temas/aspectos/obj/Debug/net8.0/refint/aspectos.dll
+/home/alex/impl-24/temas/aspectos/obj/Debug/net8.0/aspectos.pdb
+/home/alex/impl-24/temas/aspectos/obj/Debug/net8.0/aspectos.genruntimeconfig.cache
+/home/alex/impl-24/temas/aspectos/obj/Debug/net8.0/ref/aspectos.dll
