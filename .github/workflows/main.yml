@@ -19,7 +19,7 @@ jobs:
         ruby-version: 3.0.0
 
     - name: Install dependencies
-      run: gem install nokogiri && gem install dry-monads
+      run: gem install nokogiri && gem install optional
 
     - name: Run Ruby script
       run: ruby ./temas/errores/ruby/Calculator.rb
