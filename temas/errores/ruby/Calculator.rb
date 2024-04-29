@@ -55,7 +55,6 @@ get '/dividir/:a/:b' do
 end
 
 get '/' do
-  File.read('index.html')
+  erb :index
 end
-
 
