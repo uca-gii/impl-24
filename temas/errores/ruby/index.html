@@ -31,7 +31,34 @@
         .then(result => document.getElementById("resultado").innerText = result);
     }
 
-    // Implementa funciones restar, multiplicar y dividir de manera similar
+    function dividir() {
+      var num1 = document.getElementById("num1").value;
+      var num2 = document.getElementById("num2").value;
+
+      fetch('/sumar/' + num1 + '/' + num2)
+        .then(response => response.text())
+        .then(result => document.getElementById("resultado").innerText = result);
+    }
+
+    function restar() {
+      var num1 = document.getElementById("num1").value;
+      var num2 = document.getElementById("num2").value;
+
+      fetch('/sumar/' + num1 + '/' + num2)
+        .then(response => response.text())
+        .then(result => document.getElementById("resultado").innerText = result);
+    }
+
+    function multiplicar() {
+      var num1 = document.getElementById("num1").value;
+      var num2 = document.getElementById("num2").value;
+
+      fetch('/sumar/' + num1 + '/' + num2)
+        .then(response => response.text())
+        .then(result => document.getElementById("resultado").innerText = result);
+    }
+
+    
   </script>
 </body>
 </html>
