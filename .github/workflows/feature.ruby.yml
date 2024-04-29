@@ -26,7 +26,7 @@ jobs:
 
     - name: Run tests
       run: |
-        for file in temas/abstraccion/ruby_test/*_test.rb; do
+        for file in temas/abstraccion/ruby/ruby_test/*_test.rb; do
           ruby $file -v || exit 1
         done
 
