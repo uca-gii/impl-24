@@ -50,3 +50,11 @@ get '/dividir/:a/:b' do
   dividir(params[:a].to_i, params[:b].to_i).to_s
 end
 
+require 'sinatra'
+
+get '/' do
+  File.read(File.join('public', 'index.html'))
+end
+
+
+
