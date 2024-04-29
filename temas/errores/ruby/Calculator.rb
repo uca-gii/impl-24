@@ -57,8 +57,7 @@ get '/dividir/:a/:b' do
 end
 
 get '/' do
-  File.read(File.join('public', 'index.html'))
+  File.read('index.html')
 end
-
 
 
