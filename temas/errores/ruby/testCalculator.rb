@@ -49,4 +49,18 @@ class TestCalculator < Test::Unit::TestCase
   def test_multiply_numeric
     assert_equal(2, @calculator.multiply(1, 2))
   end
+
+  # power tests
+
+  def test_power_non_numeric
+    assert_equal(nil, @calculator.power(1, 'a'))
+  end
+
+  def test_power_base_zero_exponent_negative
+    assert_equal(nil, @calculator.power(0, -1))
+  end
+
+  def test_power_base_non_zero_exponent_negative
+    assert_equal(0.5, @calculator.power(2, -1))
+  end
 end
