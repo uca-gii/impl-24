@@ -23,7 +23,7 @@ jobs:
 
 
     - name: Run script Ruby
-      run: ruby aspectos.rb
+      run: ruby ./temas/aspectos/ruby/aspectos.rb
     
     - name: Commit and Push changes
       uses: stefanzweifel/git-auto-commit-action@v5
