@@ -1,5 +1,3 @@
-using PostSharp.Aspects;
-using System;
 public class Juicio : ArchivoPolicial{
     Investigacion InvestigacionJuzgado;
     int idJuez;
@@ -10,17 +8,15 @@ public class Juicio : ArchivoPolicial{
         idJuez = j;
         fechaJuicio = f;
     }
-    [RegistroAspecto]
     public void setFecha(DateTime f, string pwd){
       
         if (pwd != "contraseña")
         {
+            RegistradorAcciones.registrarAccion("Alguien ha intentado cambiar una fecha sin la contraseña");
             throw new InvalidOperationException("Contraseña incorrecta. No se puede establecer la fecha.");
         }
         fechaJuicio = f;
     }
-
-    [RegistroAspecto]
     public void mostrarDetalles(){
         Console.WriteLine("+--------------------------------------+");
         Console.WriteLine("|          Detalles del Juicio         |");
@@ -29,14 +25,17 @@ public class Juicio : ArchivoPolicial{
         Console.WriteLine("| Dirigido por el Juez " + idJuez + "\n");
         Console.WriteLine("| En la fecha " + fechaJuicio + "\n");
         Console.WriteLine("+--------------------------------------+");
+
+        RegistradorAcciones.registrarAccion("Se han consultado los detalles de un archivo");
     }
 
-    [RegistroAspecto]
     public void solicitarRevision(){
         Console.WriteLine("+-------------------------------------------------+");
         Console.WriteLine("|                     Revisión                    |");
         Console.WriteLine("+-------------------------------------------------+");
         Console.WriteLine("| Enviado una solicitud de revisión del juicio");
         Console.WriteLine("+-------------------------------------------------+");
+
+        RegistradorAcciones.registrarAccion("Se ha solicitado una revisión");
     }
 }
