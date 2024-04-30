@@ -1,10 +1,19 @@
-# terraform
+# Definir el proveedor local
+provider "local" {}
 
-provider "null" {}
+# Configurar la provisión del archivo HTML
+resource "local_file" "index" {
+  filename = "${path.module}/index.html"
+}
 
-resource "null_resource" "start_server" {
+# Configurar la provisión del archivo Ruby
+resource "local_file" "calculator" {
+  filename = "${path.module}/calculator.rb"
+}
+
+# Ejecutar un script Ruby
+resource "null_resource" "ruby_script" {
   provisioner "local-exec" {
-    command     = "python3 -m http.server 8083 &"
-    working_dir = "${path.module}"
+    command = "ruby ${path.module}/calculator.rb"
   }
 }

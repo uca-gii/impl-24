@@ -1,6 +1,7 @@
 
 # Calculator.rb
 
+require 'sinatra'
 
 class Calculator
 
@@ -33,3 +34,9 @@ class Calculator
         exponent < 0 ? 1.0 / result : result
     end
 end
+
+get '/' do
+    erb :index
+end
+
+set :port, 4567
