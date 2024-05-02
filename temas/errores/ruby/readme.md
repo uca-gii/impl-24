@@ -16,11 +16,11 @@ Este archivo contiene una clase `Calculator` que proporciona métodos para reali
 
 El código maneja errores utilizando declaraciones condicionales para verificar si los argumentos proporcionados a los métodos son numéricos. Si no lo son, devuelve `nil`. Además, en el método `divide` y `power`, se verifica si se está intentando dividir por cero o elevar cero a un exponente negativo, respectivamente, y devuelve `nil` en esos casos.
 
-### Aplicación de Manejo de Errores
-
 El manejo de errores en Ruby se realiza principalmente mediante el uso de declaraciones condicionales para verificar los tipos de datos de entrada y cualquier otro escenario que pueda causar errores en la ejecución del programa. Esto ayuda a evitar que el programa falle inesperadamente y permite controlar el flujo de ejecución en caso de errores.
 
 ## Uso de Optionals en Ruby
 
-El concepto de Optionals no está presente de forma nativa en Ruby como lo está en algunos otros lenguajes de programación, como Swift o Kotlin. Sin embargo, podrías emular un comportamiento similar utilizando el valor `nil` para indicar la ausencia de un valor. Sin embargo, el uso de Optionals no es tan común en Ruby como en otros lenguajes debido a su estilo de programación más orientado a objetos y dinámico, donde se confía en el manejo de errores mediante excepciones y verificaciones de tipo en tiempo de ejecución.
+El concepto de Optionals no está presente de forma nativa en Ruby como lo está en algunos otros lenguajes de programación, como Swift o Kotlin. Sin embargo, se puede usar una gema de ruby llamada `optional` que realiza funciones similares. 
+
+El uso de Optionals no es tan común en Ruby como en otros lenguajes debido a su estilo de programación más orientado a objetos y dinámico.
 
