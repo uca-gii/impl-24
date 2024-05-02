@@ -4,7 +4,8 @@ on:
   push:
     branches:
       - feat-delegacion
-  workflow_dispatch:
+  workflow_dispatch: 
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -35,13 +36,15 @@ jobs:
       run: |
         cat Gemfile
         bundle install
+
     - name: Run tests
       run: |
         bundle exec rspec 
-      
+
     - name: Start Server
       run: |
         ruby ./temas/herencia/ruby/Adventure.rb 
+
   test:
     runs-on: ubuntu-latest
 
