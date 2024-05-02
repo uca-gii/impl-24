@@ -36,7 +36,7 @@ class TestOrquesta < Minitest::Test
     @orquesta.add_instrumento(@percusion)
 
     output = capture_io { @orquesta.tocar }
-    assert_equal "Tocando Viento\nTocando Cuerda\nTocando Percusion\n", output.join
+    assert_equal "Tocando Flauta de Viento\nTocando Guitarra de Cuerda\nTocando Tambor de Percusion\n", output.join
   end
 
   def test_afinar
@@ -45,6 +45,6 @@ class TestOrquesta < Minitest::Test
     @orquesta.add_instrumento(@percusion)
 
     output = capture_io { @orquesta.afinar }
-    assert_equal "Afinando Viento\nTocando Viento\nAfinando Cuerda\nTocando Cuerda\nAfinando Percusion\nTocando Percusion\n", output.join
+    assert_equal "Afinando Flauta de Viento\nTocando Flauta de Viento\nAfinando Guitarra de Cuerda\nTocando Guitarra de Cuerda\nAfinando Tambor de Percusion\nTocando Tambor de Percusion\n", output.join
   end
 end
