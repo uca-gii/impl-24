@@ -84,8 +84,3 @@ class Aventura
     puts "¡La aventura ha terminado!"
   end
 end
-
-aventura = Aventura.new
-personaje = PersonajeAccion.new
-
-aventura.realizar_acciones(personaje)
