@@ -27,8 +27,6 @@ class Calculator
     def power(base, exponent)
         return nil unless base.is_a?(Numeric) && exponent.is_a?(Numeric)
         return nil if exponent < 0 && base == 0
-        result = 1
-        exponent.abs.times { result *= base }
-        exponent < 0 ? 1.0 / result : result
+        base ** exponent
     end
 end

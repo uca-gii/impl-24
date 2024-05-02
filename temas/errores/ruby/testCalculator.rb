@@ -63,4 +63,8 @@ class TestCalculator < Test::Unit::TestCase
   def test_power_base_non_zero_exponent_negative
     assert_equal(0.5, @calculator.power(2, -1))
   end
+
+  def test_power_base_zero_exponent_positive
+    assert_equal(4, @calculator.power(2, 2))
+  end
 end
