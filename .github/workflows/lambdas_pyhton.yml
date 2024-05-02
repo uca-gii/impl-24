@@ -9,15 +9,17 @@ jobs:
   test:
     runs-on: ubuntu-latest
     
+    container:
+      image: python:3.8
+
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
       
-    - name: Set up Python
-      uses: actions/setup-python@v2
-      with:
-        python-version: '3.8' 
-        
-      
     - name: Run tests
-      run: python ./temas/lambdas/python/tests.py
+      run: |
+        if ! python ./temas/lambdas/python/tests.py; then
+          echo "Test failed, creating issue..."
+          curl -XPOST -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" -d '{"title":"Test Failed","body":"One or more tests failed. Please check the logs.","labels":["bug"]}' "https://api.github.com/repos/${{ github.repository }}/issues"
+          exit 1
+        fi
