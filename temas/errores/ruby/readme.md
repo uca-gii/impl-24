@@ -24,3 +24,11 @@ El concepto de Optionals no está presente de forma nativa en Ruby como lo está
 
 El uso de Optionals no es tan común en Ruby como en otros lenguajes debido a su estilo de programación más orientado a objetos y dinámico.
 
+## Como desplegar la web de la calculadora
+
+Para ello necesitamos ejecutar el terraform de la carpeta usando
+```terraform
+terraform init 
+terraform apply
+```
+Ahora, una vez veamos que se ha desplegado accedemos a https:localhost:4567 
