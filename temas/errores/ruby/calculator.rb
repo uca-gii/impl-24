@@ -1,8 +1,6 @@
 
 # Calculator.rb
 
-require 'sinatra'
-
 class Calculator
 
     def divide(dividend, divisor)
@@ -34,9 +32,3 @@ class Calculator
         exponent < 0 ? 1.0 / result : result
     end
 end
-
-get '/' do
-    erb :index
-end
-
-set :port, 4567
