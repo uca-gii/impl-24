@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - feat-delegacion
-
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -43,15 +42,21 @@ jobs:
       
     - name: Start Server
       run: |
-        bundle exec ruby ./temas/delegacion/ruby/ShoppingCart.rb &
-      
-    - name: Wait for Server
-      run: sleep 5 && ps aux | grep Shoppingcart.rb
+        ruby ./temas/delegacion/ruby/Orquesta.rb 
+  test:
+    runs-on: ubuntu-latest
 
-    - name: Access server
-      run: curl http://localhost:4567/checkout
-  
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
 
+    - name: Install Ruby
+      uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: 3.0.0
 
+    - name: Install dependencies
+      run: gem install test-unit
 
-      
+    - name: Run Ruby tests
+      run: ruby ./temas/delegacion/ruby/testOrquesta.rb
