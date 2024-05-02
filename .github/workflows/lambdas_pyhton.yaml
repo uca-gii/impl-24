@@ -2,8 +2,7 @@ name: Run Python Tests
 
 on:
   push:
-    branches:
-      - feature_lambdas
+    branches: [ feature_lambdas ]
 
 jobs:
   test:
