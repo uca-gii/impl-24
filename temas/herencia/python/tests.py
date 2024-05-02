@@ -47,7 +47,7 @@ class TestAnimales(unittest.TestCase):
 
         # Si no queremos el método de la primera
         self.assertEqual(Volador.mostrar_nombre(aguila), "Aguila")
-        self.assertEqual(Animal.mostrar_nombre(atun), "Atun")
+        self.assertEqual(Animal.mostrar_nombre(atun), "Tuna")       # añadimos fallo para probar la autocreación de issues en el repo
 
     def test_accion(self):
         aguila = Ave("Aguila", "Real")
