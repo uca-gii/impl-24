@@ -1,4 +1,4 @@
-# Explicación del código y manejo de errores en Ruby
+# Manejo de errores en Ruby
 
 ## Calculator.rb
 
