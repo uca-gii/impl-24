@@ -1,6 +1,9 @@
-name: Ruby Sinatra
+name: Aspectos Workflow
 
-on: push
+on: 
+  push:
+    branches:
+      - feat-aspectos
 
 jobs:
   build:
@@ -24,7 +27,7 @@ jobs:
 
     - name: Run script Ruby
       run: ruby ./temas/aspectos/ruby/aspectos.rb
-      
+
   test:
     runs-on: ubuntu-latest
 
@@ -42,6 +45,7 @@ jobs:
     - name: Install dependencies
       run:  |
         gem install minitest
+        gem install aquarium
 
         
     - name: Run Ruby test
