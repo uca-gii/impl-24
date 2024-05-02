@@ -84,6 +84,3 @@ class Aventura
     puts "¡La aventura ha terminado!"
   end
 end
-
-
-
