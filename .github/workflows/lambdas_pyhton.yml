@@ -3,7 +3,7 @@ name: Run Python Tests
 on:
   push:
     branches:
-      - feature_lambdas
+      - feature-lambdas
     workflow_dispatch:
 jobs:
   test:
