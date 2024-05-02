@@ -59,4 +59,4 @@ jobs:
       run: gem install test-unit
 
     - name: Run Ruby tests
-      run: ruby ./temas/errores/ruby/testOrquesta.rb
+      run: ruby ./temas/delegacion/ruby/testOrquesta.rb
