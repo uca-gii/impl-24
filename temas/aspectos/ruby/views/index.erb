@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aspectos en Comercio Electrónico</title>
+   <style>
+    /* Estilos adicionales para hacerlo más atractivo */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    #container {
+      text-align: center;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    input[type="text"] {
+      padding: 8px;
+      margin: 5px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      padding: 10px 20px;
+      margin: 5px;
+      border-radius: 5px;
+      border: none;
+      background-color: #007bff;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    #message {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div id="container">
+    <h1>Aspectos en Comercio Electrónico</h1>
+    <input type="text" id="nombreUsuario" placeholder="Nombre de usuario">
+    <input type="text" id="nombreCuenta" placeholder="Nombre de cuenta">
+    <button onclick="IniciarSesion()"> Iniciar Sesion </button>
+    <button onclick="CambiarCuenta()"> Modificar Cuenta </button>
+    <div id="message"></div>
+    </div>
+  <script>
+
+    function IniciarSesion() {
+      var nombreUsuario = document.getElementById('nombreUsuario').value;
+      var nombreCuenta = document.getElementById('nombreCuenta').value;
+      fetch('/IniciarSesion/' + nombreUsuario + '/' + nombreCuenta)
+      .then(response => response.text())
+      .then(result => document.getElementById('message').innerHTML = result);
+    }
+
+    function CambiarCuenta() {
+      var nombreCuenta = document.getElementById('nombreCuenta').value;
+      fetch('/CambiarCuenta/' + nombreCuenta)
+      .then(response => response.text())
+      .then(result => document.getElementById('message').innerHTML = result); 
+    }
+  </script>
+</body>
+</html>
