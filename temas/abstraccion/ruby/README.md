@@ -10,6 +10,56 @@ Este directorio contiene ejemplos de cómo implementar el concepto de abstracci�
 - [`Dockerfile`](Dockerfile): Configuración para Docker.
 - [`terra.tf`](terra.tf): Configuración para Terraform.
 
+## Explicación teórica
+
+Antes de entrar en detalle con el contenido del directorio, se va a realizar una breve explicación teórica de los conceptos básicos de abstracción con Ruby.
+
+### Módulos(`module`)
+
+**¿Qué son?**
+
+- En Ruby, los módulos son una manera de agrupar métodos, clases y constantes relacionadas. Los módulos proporcionan dos beneficios principales: organización (al actuar como un contenedor de funcionalidades) y la capacidad de reutilizar código.
+
+**Aplicación teórica**
+
+- Desde el punto de vista teórico, los módulos son una herramienta de abstracción que permite separar y organizar funcionalidades de manera clara dentro de un programa. Ayudan a reducir el acoplamiento y aumentar la cohesión dentro del código, facilitando así la mantenibilidad y escalabilidad.
+
+### Atributos de instancia(`@atributos`)
+
+**¿Qué son?**
+
+- Los atributos de instancia en Ruby son variables que pertenecen a una instancia específica de una clase. Cada objeto o instancia de una clase puede tener valores diferentes para estas variables. Se identifican por el prefijo @.
+
+**Aplicación teórica**
+
+- Los atributos de instancia son un ejemplo directo de encapsulamiento. El encapsulamiento permite ocultar los detalles de la implementación de un objeto y exponer solo aquellas partes que necesitan ser accesibles desde el exterior, reduciendo la interdependencia entre los componentes del software.
+
+### `attr_accessor`, `attr_reader`, `attr_writer`
+
+Estos métodos de Ruby son "macros" utilizados dentro de clases para definir rápidamente métodos de lectura y escritura para los atributos de una instancia.
+
+**¿Qué son?**
+
+- `attr_reader`: Genera métodos de solo lectura para los atributos especificados.
+- `attr_writer`: Genera métodos de solo escritura para los atributos especificados.
+- `attr_accessor`: Combina los efectos de `attr_reader` y `attr_writer`, proporcionando métodos tanto de lectura como de escritura para los atributos especificados.
+
+**Aplicación teórica**
+
+- `Ocultación`: Permiten controlar cómo se accede a los datos internos de un objeto y protegen la integridad de estos datos. Por ejemplo, usando attr_reader, puedes evitar que los valores de los atributos sean modificados externamente.
+- `Abstracción`: Al definir interfaces públicas claras para las clases, `attr_accessor`, `attr_reader`, y `attr_writer` ayudan a abstraer los detalles de implementación de los datos.
+
+
+### Uso de `require`
+
+**¿Qúe es?**
+
+- `require` es una declaración que se utiliza en Ruby para cargar y reutilizar código externo dentro de un archivo Ruby. Esto puede incluir bibliotecas estándar, gemas, o archivos definidos por el usuario.
+
+**Aplicación teórica**
+
+- El uso de `require` ilustra el principio de modularidad y reutilización de código. En términos de teoría, facilita la separación de responsabilidades, ya que cada módulo o biblioteca puede enfocarse en una parte específica del problema.
+
 ## Contenido
 
 ### Código ejemplos
