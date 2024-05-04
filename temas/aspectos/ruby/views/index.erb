@@ -58,11 +58,20 @@
     <h1>Aspectos en un Login</h1>
     <input type="text" id="nombreUsuario" placeholder="Nombre de usuario">
     <input type="text" id="contraseña" placeholder="contraseña">
+    <button onclick="CrearUsuario()"> Crear Usuario </button>
     <button onclick="IniciarSesion()"> Iniciar Sesion </button>
     <button onclick="CambiarContraseña()"> Modificar Contraseña </button>
     <div id="message"></div>
   </div>  
   <script>
+
+    function CrearUsuario() {
+      var nombreUsuario = document.getElementById('nombreUsuario').value;
+      var contraseña_ = document.getElementById('contraseña').value;
+      fetch('/CrearUsuario/' + nombreUsuario + '/' + contraseña_)
+      .then(response => response.text())
+      .then(result => document.getElementById('message').innerHTML = result); 
+    }
 
     function IniciarSesion() {
       var nombreUsuario = document.getElementById('nombreUsuario').value;
