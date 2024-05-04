@@ -3,27 +3,26 @@ require 'sinatra'
 require_relative 'aspectos.rb'
 
 
-
 get '/' do
   erb :index
 end
 
-get '/IniciarSesion/:nombre/:username' do
-  nombre_ = params[:nombre]
+get '/IniciarSesion/:username/:password' do
   username_ = params[:username]
+  password_ = params[:password]
   output = StringIO.new
   $stdout = output
-  $user = User.new(nombre_, username_)
-  $user.login_account(username_)
+  $user = User.new(username_, password_)
+  $user.login_account(username_, password_)
   $stdout = STDOUT
   output.string
 end
 
-get '/CambiarCuenta/:username' do
-  new_username = params[:username]
+get '/CambiarContraseña/:password' do
+  new_password = params[:password]
   output = StringIO.new
   $stdout = output
-  $user.update_account(new_username)
+  $user.update_account(new_password)
   $stdout = STDOUT
   output.string
 end

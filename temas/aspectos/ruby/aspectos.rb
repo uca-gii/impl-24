@@ -1,6 +1,5 @@
 require 'aquarium'
-# Aplicación de comercio electrónico separando mediante aspectos
-# La lógica de auditoría de la lógica principal de la aplicación
+
 class Auditor
   def self.log(message)
     puts "[AUDIT] #{message}"
@@ -8,19 +7,26 @@ class Auditor
 end
 
 class User
-  attr_accessor :nombre, :username
-  def initialize(nombre, username)
-    @nombre = nombre
+  attr_accessor :username, :password
+
+  def initialize(username, password)
     @username = username
-  end
-  def login_account(username)
-    puts "¡Bienvenido #{username}!"
-    # Lógica para crear la cuenta...
+    @password = password
   end
 
-  def update_account(username)
-    @username = username
-    puts "El nuevo nombre de la cuenta es #{username}"
+  def login_account(username, password)
+    if @username == username && @password == password
+      puts "¡Bienvenido #{username}!"
+      # Lógica para iniciar sesión...
+      
+    else
+      puts "Nombre de usuario o contraseña incorrectos."
+    end
+  end
+
+  def update_account(password)
+    @password = password
+    puts "La contraseña se ha modificado"
     # Lógica para actualizar la información del usuario...
   end
 end
@@ -28,29 +34,35 @@ end
 # Configuración de aspectos con Aquarium
 include Aquarium::Aspects
 
-Aspect.new :after, :calls_to => :login_account, :for_types => [User] do |join_point, user|
-  Auditor.log("El usuario #{user.nombre} ha iniciado sesión en la cuenta de #{user.username}")
+Aspect.new :after, :calls_to => :login_account, :for_types => [User] do |join_point, user,_, password|
+  if password == user.password
+    Auditor.log("El usuario '#{user.username}' ha iniciado sesión correctamente")
+  else
+    Auditor.log("Intento de inicio de sesión fallido para el usuario '#{user.username}'")
+  end
 end
 
 Aspect.new :after, :calls_to => :update_account, :for_types => [User] do |join_point, user|
-  Auditor.log("El usuario #{user.nombre} ha actualizado el nombre de su cuenta #{user.username}")
+  Auditor.log("El usuario '#{user.username}' ha actualizado su contraseña de cuenta a '#{user.password}'")
 end
 
 # Secuencia de datos para crear múltiples usuarios y actualizar su información
 users_data = [
-  User.new("Juan", "Juanito32"),
-  User.new("Alberto", "Alberto33"),
-  User.new("Antonio", "Antonito35")
+  User.new("Juanito32", "contraseña123"),
+  User.new("Alberto33", "clave456"),
+  User.new("Antonito35", "secreto789")
 ]
 
-
-
+# Uso de los usuarios
 users_data.each do |user|
-  puts "Nombre de usuario: #{user.nombre}"
-  user.login_account(user.username)
+  puts "Nombre de cuenta: #{user.username}"
+  user.login_account(user.username, user.password) # Se pasa también la contraseña
 end
 
-usuario2 = users_data[2]
-username = "Antonito3456"
-
-usuario2.update_account(username)
+# Actualización de la contraseña de la cuenta
+usuario2 = users_data[1]
+new_password = "secrete"
+error_password = "secrete1"
+usuario2.update_account(new_password)
+usuario2.login_account(usuario2.username, new_password)
+usuario2.login_account(usuario2.username, error_password)

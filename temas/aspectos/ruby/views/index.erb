@@ -3,9 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Aspectos en Comercio Electrónico</title>
-   <style>
-    /* Estilos adicionales para hacerlo más atractivo */
+  <title>Aspectos en un Login</title>
+  <style>
     body {
       font-family: Arial, sans-serif;
       background-color: #f4f4f4;
@@ -17,26 +16,27 @@
       height: 100vh;
     }
 
-    #container {
-      text-align: center;
+    .container {
       background-color: #fff;
-      padding: 20px;
-      border-radius: 10px;
+      border-radius: 8px;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      text-align: center;
     }
 
-    input[type="text"] {
-      padding: 8px;
-      margin: 5px;
-      border-radius: 5px;
+    h1 {
+      color: #333;
+    }
+
+    input[type="text"], input[type="password"], button {
+      margin: 10px;
+      padding: 8px 12px;
       border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 16px;
     }
 
     button {
-      padding: 10px 20px;
-      margin: 5px;
-      border-radius: 5px;
-      border: none;
       background-color: #007bff;
       color: #fff;
       cursor: pointer;
@@ -47,32 +47,34 @@
     }
 
     #message {
-      margin-top: 20px;
+      margin-top: 10px;
+      color: #007bff;
+      font-size: 18px;
     }
   </style>
 </head>
 <body>
-  <div id="container">
-    <h1>Aspectos en Comercio Electrónico</h1>
+  <div class="container">
+    <h1>Aspectos en un Login</h1>
     <input type="text" id="nombreUsuario" placeholder="Nombre de usuario">
-    <input type="text" id="nombreCuenta" placeholder="Nombre de cuenta">
+    <input type="text" id="contraseña" placeholder="contraseña">
     <button onclick="IniciarSesion()"> Iniciar Sesion </button>
-    <button onclick="CambiarCuenta()"> Modificar Cuenta </button>
+    <button onclick="CambiarContraseña()"> Modificar Contraseña </button>
     <div id="message"></div>
-    </div>
+  </div>  
   <script>
 
     function IniciarSesion() {
       var nombreUsuario = document.getElementById('nombreUsuario').value;
-      var nombreCuenta = document.getElementById('nombreCuenta').value;
-      fetch('/IniciarSesion/' + nombreUsuario + '/' + nombreCuenta)
+      var contraseña_ = document.getElementById('contraseña').value;
+      fetch('/IniciarSesion/' + nombreUsuario + '/' + contraseña_)
       .then(response => response.text())
       .then(result => document.getElementById('message').innerHTML = result);
     }
 
-    function CambiarCuenta() {
-      var nombreCuenta = document.getElementById('nombreCuenta').value;
-      fetch('/CambiarCuenta/' + nombreCuenta)
+    function CambiarContraseña() {
+      var contraseña_ = document.getElementById('contraseña').value;
+      fetch('/CambiarContraseña/' + contraseña_)
       .then(response => response.text())
       .then(result => document.getElementById('message').innerHTML = result); 
     }
