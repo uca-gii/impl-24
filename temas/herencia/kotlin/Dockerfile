@@ -22,6 +22,7 @@ COPY app/src/package.json ./
 
 RUN npm install --only=production --loglevel=error
 
+# Instala jdk y el compilador de kotlin
 RUN apt-get update && \
     apt-get install -y default-jdk wget unzip && \
     wget https://github.com/JetBrains/kotlin/releases/download/v1.9.23/kotlin-compiler-1.9.23.zip && \
