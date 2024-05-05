@@ -8,11 +8,20 @@ open class miembroGrupo(val name: String) {
     }
 }
 
-interface musicoConInstrumento {
-    fun tocaInstrumento()
+abstract class musicoConInstrumento(name:String) : miembroGrupo(name) {
+    abstract fun tocaInstrumento()
+
+    override fun actua() {
+        super.actua()
+        tocaInstrumento()
+    }
 }
 
-class Cantante(name: String) : miembroGrupo(name) {
+interface Vocalista {
+    fun canta()
+}
+
+class Cantante(name: String) : miembroGrupo(name), Vocalista {
     override fun actua() {
         super.actua()
         canta()
@@ -22,16 +31,12 @@ class Cantante(name: String) : miembroGrupo(name) {
         println("$name calienta sus cuerdas vocales.")
     }
 
-    fun canta() {
+    override fun canta() {
         println("$name tiene una voz de oro!")
     }
 }
 
-class Guitarrista(name: String) : miembroGrupo(name), musicoConInstrumento {
-    override fun actua() {
-        super.actua()
-        tocaInstrumento()
-    }
+class Guitarrista(name: String) : musicoConInstrumento(name) {
 
     override fun preparacion() {
         println("$name comprueba la afinación de su guitarra.")
@@ -42,11 +47,7 @@ class Guitarrista(name: String) : miembroGrupo(name), musicoConInstrumento {
     }
 }
 
-class Pianista(name: String) : miembroGrupo(name), musicoConInstrumento {
-    override fun actua() {
-        super.actua()
-        tocaInstrumento()
-    }
+class Pianista(name: String) : musicoConInstrumento(name) {
 
     override fun preparacion() {
         println("$name calienta tocando un solo de piano.")
@@ -57,15 +58,9 @@ class Pianista(name: String) : miembroGrupo(name), musicoConInstrumento {
     }
 }
 
-class CantanteGuitarrista(name: String) : miembroGrupo(name), musicoConInstrumento {
+class CantanteGuitarrista(name: String) : musicoConInstrumento(name), Vocalista {
     private val cantante = Cantante(name)
     private val guitarrista = Guitarrista(name)
-
-    override fun actua() {
-        super.actua()
-        cantante.canta()
-        guitarrista.tocaInstrumento()
-    }
 
     override fun preparacion() {
         println("$name realiza una doble preparacion de voz y guitarra.")
@@ -73,8 +68,17 @@ class CantanteGuitarrista(name: String) : miembroGrupo(name), musicoConInstrumen
         guitarrista.preparacion()
     }
 
+    override fun actua() {
+        super.actua()
+        canta()
+    }
+
     override fun tocaInstrumento() {
         guitarrista.tocaInstrumento()
+    }
+
+    override fun canta() {
+        cantante.canta()
     }
 }
 
