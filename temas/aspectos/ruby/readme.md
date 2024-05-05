@@ -75,6 +75,81 @@ usuario2.login_account(usuario2.username, error_password)
 
 ## Explicación ##
 
+```
+require 'aquarium'
+```
+Se importa la gema aquarium que provee de herramientas útiles para la definición de aspectos en Ruby.
+
+```
+class Auditor
+  def self.log(message)
+    puts "[AUDIT] #{message}"
+  end
+end
+```
+La clase Auditor será la que registre las acciones que realice el usuario.
+
+```
+class User
+  attr_accessor :username, :password
+
+  def initialize(username, password)
+    @username = username
+    @password = password
+  end
+
+  def login_account(username, password)
+    if @username == username && @password == password
+      puts "¡Bienvenido #{username}!"
+      # Lógica para iniciar sesión...
+      
+    else
+      puts "Nombre de usuario o contraseña incorrectos."
+    end
+  end
+
+  def update_account(password)
+    @password = password
+    puts "La contraseña se ha modificado"
+    # Lógica para actualizar la información del usuario...
+  end
+end
+```
+La clase User está compuesta del nombre de usuario (o de cuenta) y de la contraseña del mismo.
+
+La función login_account se encarga del inicio de sesión del usuario en la aplicación devolviendo un mensaje de bienvenida si fue correcta la contraseña y en caso contrario un mensaje de contraseña incorrecta.
+
+La función update_account cambia la contraseña que tiene el usuario a una nueva que se le pasa por parámetro.
+
+```
+# Configuración de aspectos con Aquarium
+include Aquarium::Aspects
+
+Aspect.new :after, :calls_to => :login_account, :for_types => [User] do |join_point, user,_, password|
+  if password == user.password
+    Auditor.log("El usuario '#{user.username}' ha iniciado sesión correctamente")
+  else
+    Auditor.log("Intento de inicio de sesión fallido para el usuario '#{user.username}'")
+  end
+end
+
+Aspect.new :after, :calls_to => :update_account, :for_types => [User] do |join_point, user|
+  Auditor.log("El usuario '#{user.username}' ha actualizado su contraseña de cuenta a '#{user.password}'")
+end
+```
+Se incluye de la gema aquarium la clase Aspects que servirá para definir los aspectos.
+
+Explicación de las herramientas de Aquarium:
+- :after --> Especifica que el aspecto asociado se ejecutará después del punto de unión declarado.
+- :calls_to => 'FUNCIÓN' --> Especifica que el punto de unión es una llamada a la FUNCIÓN correspondiente.
+- :for_types => [Clase] --> Especifica que el aspecto solo se aplicará a objeto de la clase 'Clase'.
+- do | | --> Los argumentos que se le pasan al aspecto.
+- join_point --> Argumento que representa el punto de unión en el flujo de ejecución del programa.
+- clase --> Argumento que representa una instancia de la clase 'Clase'.
+- _ --> Marcador de posición para argumentos adicionales (por si queremos algún atributo determinado de la clase).
+
+
+
 
 ## Desplegar Web ##
 
