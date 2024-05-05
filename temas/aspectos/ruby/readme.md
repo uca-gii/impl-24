@@ -142,12 +142,42 @@ Se incluye de la gema aquarium la clase Aspects que servirá para definir los as
 Explicación de las herramientas de Aquarium:
 - :after --> Especifica que el aspecto asociado se ejecutará después del punto de unión declarado.
 - :calls_to => 'FUNCIÓN' --> Especifica que el punto de unión es una llamada a la FUNCIÓN correspondiente.
-- :for_types => [Clase] --> Especifica que el aspecto solo se aplicará a objeto de la clase 'Clase'.
+- :for_types => [Clase] --> Especifica que el aspecto solo se aplicará a objetos de la clase 'Clase'.
 - do | | --> Los argumentos que se le pasan al aspecto.
 - join_point --> Argumento que representa el punto de unión en el flujo de ejecución del programa.
 - clase --> Argumento que representa una instancia de la clase 'Clase'.
-- _ --> Marcador de posición para argumentos adicionales (por si queremos algún atributo determinado de la clase).
+- _ --> Marcador de posición para argumentos adicionales (por si se quiere algún atributo determinado de la clase).
 
+El primer aspecto instancia un objeto de la clase Aspect y se llamará después de la ejecución de login_account. En este caso, se coge como argumento adicional la password para comparar si la password con la que se realiza el login es la del propio usuario u otra. El sistema registrará si el usuario inicio sesión correctamente o fue incorrecta la contraseña llamando a la clase Auditor para que registre ese mensaje.
+
+El segundo aspecto instancia un objeto de la clase Aspect y se llamará después de la ejecución de update_account. Los argumentos serán el join_point y la instancia de la clase User ya que no se necesita ningún argumento más. La clase Auditor devolverá el mensaje de actualización de la contraseña para que quede registrado en el sistema.
+
+
+```
+# Secuencia de datos para crear múltiples usuarios y actualizar su información
+users_data = [
+  User.new("Juanito32", "contraseña123"),
+  User.new("Alberto33", "clave456"),
+  User.new("Antonito35", "secreto789")
+]
+
+# Uso de los usuarios
+users_data.each do |user|
+  puts "Nombre de cuenta: #{user.username}"
+  user.login_account(user.username, user.password) # Se pasa también la contraseña
+end
+
+# Actualización de la contraseña de la cuenta
+usuario2 = users_data[1]
+new_password = "secrete"
+error_password = "secrete1"
+usuario2.update_account(new_password)
+usuario2.login_account(usuario2.username, new_password)
+usuario2.login_account(usuario2.username, error_password)
+```
+Prueba para ver el resultado del ejemplo por pantalla.
+
+Nota: Los mensajes que son devueltos por la clase Auditor se muestran al usuario al ser un ejemplo. Si fuera una aplicación real no se mostraría lógicamente.
 
 
 
