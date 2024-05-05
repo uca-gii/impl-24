@@ -35,7 +35,7 @@ jobs:
           ${{ runner.os }}-m2
 
     - name: Install dependencies
-      run: mvn -B dependency:resolve dependency:resolve-plugins
+      run: cd temas/herencia/kotlin && mvn -B dependency:resolve dependency:resolve-plugins
 
     - name: Run tests
       run: cd temas/herencia/kotlin && mvn clean test
