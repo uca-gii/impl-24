@@ -104,17 +104,3 @@ class Manager {
         println("¡La actuación ha sido un exitazo!")
     }
 }
-
-fun main() {
-    val camaron = Cantante("Camarón")
-    val paco = Guitarrista("Paco")
-    val diego = Pianista("Diego")
-    val david = CantanteGuitarrista("David")
-
-
-    val miembroGrupos: List<miembroGrupo> = listOf(camaron, paco, diego, david)
-    val manager = Manager()
-
-    manager.preparaGrupo(miembroGrupos)
-    manager.actuaGrupo(miembroGrupos)
-}
