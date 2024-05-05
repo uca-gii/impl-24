@@ -5,11 +5,11 @@ import { Container, styled, TextField, Button, Box, Typography, FormControl, Inp
 const StyledPaper = styled(Paper)(({ theme }) => ({
   marginTop: theme.spacing(2),
   padding: theme.spacing(2),
-  backgroundColor: '#f7f7f7',  // Un color de fondo suave
-  fontFamily: 'Monospace',   // Tipografía monoespaciada para mejor visualización del output
+  backgroundColor: '#f7f7f7',
+  fontFamily: 'Monospace',
   color: theme.palette.text.secondary,
-  whiteSpace: 'pre-wrap',    // Mantiene el formato del texto
-  overflowX: 'auto'          // Permite scrolling horizontal si el contenido es muy ancho
+  whiteSpace: 'pre-wrap', 
+  overflowX: 'auto'   
 }));
 
 const Footer = styled('footer')(({ theme }) => ({
@@ -42,7 +42,7 @@ function App() {
       body: JSON.stringify(inputs),
     });
     const data = await response.text();
-    setOutput(data); // Manejo de la respuesta del backend
+    setOutput(data);
   };
 
   const addInput = () => {
