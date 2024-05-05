@@ -12,7 +12,8 @@ provider "docker" {}
 resource "docker_image" "node_backend" {
   name         = "kotlin-app:latest"
   build {
-    context    = "path_to_node_backend_directory"
+    context    = path.module
+    dockerfile = "Dockerfile"
   }
 }
 
