@@ -7,7 +7,7 @@ import java.io.PrintStream
 import kotlin.test.assertEquals
 
 
-class GuitarristaTest {
+class TestGuitarrista {
     private val standardOut = System.out
     private val outputStreamCaptor = ByteArrayOutputStream()
 

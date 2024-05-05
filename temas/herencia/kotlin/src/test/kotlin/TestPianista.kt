@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Assertions.*
 import java.io.PrintStream
 import kotlin.test.assertEquals
 
-class PianistaTest {
+class TestPianista {
     private val standardOut = System.out
     private val outputStreamCaptor = ByteArrayOutputStream()
 
