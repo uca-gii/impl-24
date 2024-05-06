@@ -2,7 +2,7 @@ name: .NET Core Build
 
 on:
   push:
-    branches: [ "*" ]
+    branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
 
@@ -15,7 +15,7 @@ jobs:
     
     defaults:
       run:
-        working-directory: temas/aspectos
+        working-directory: temas/inyeccion/Code
 
     steps:
     - uses: actions/checkout@v4
@@ -29,3 +29,7 @@ jobs:
       run: dotnet build --no-restore
     - name: Run
       run: dotnet run
+    - name: Test
+      run: cd ..
+      run: cd Test
+      run: dotnet test
