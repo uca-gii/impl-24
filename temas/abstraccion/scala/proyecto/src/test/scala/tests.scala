@@ -25,7 +25,7 @@ class AnimalSpec extends AnyFlatSpec with Matchers {
 
   it should "have today's date" in {
     val animal = new Animal
-    animal.fecha() shouldBe "¡Hoy es jueves!"
+    animal.fecha() shouldBe "¡Hoy es viernes!" //Error forzado
   }
 
   "A Mamifero" should "swim" in {
