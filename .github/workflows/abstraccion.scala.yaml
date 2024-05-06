@@ -6,31 +6,33 @@ on:
       - feature-abstraccion
 
 jobs:
-  test:
+  build-and-test:
     runs-on: ubuntu-latest
 
-    container:
-      image: hseeberger/scala-sbt:graalvm-ce-21.3.0-java17_1.6.2_3.1.1
-      options: --user root
-
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
-      with:
-        path: ./temas/abstraccion/scala/proyecto
+    - name: Checkout repository
+      uses: actions/checkout@v3
 
-    - name: Cache dependencies
-      uses: actions/cache@v2
+    - name: Set up JDK 17
+      uses: actions/setup-java@v3
       with:
-        path: ~/.sbt
-        key: ${{ runner.os }}-sbt-${{ hashFiles('**/*.sbt') }}
+        java-version: '17'
+        distribution: 'temurin' # AdoptOpenJDK, ahora conocido como Eclipse Temurin
+
+    - name: Cache Scala and SBT files
+      uses: actions/cache@v3
+      with:
+        path: |
+          ~/.sbt
+          ~/.ivy2/cache
+          ~/.cache/coursier
+          ~/.m2
+        key: ${{ runner.os }}-sbt-${{ hashFiles('**/*.sbt') }}-java-17
         restore-keys: |
-          ${{ runner.os }}-sbt-
+          ${{ runner.os }}-sbt-java-17
 
+    - name: Execute sbt clean and compile
+      run: sbt clean compile
 
-    - name: Run tests
-      run: |
-        cd ./temas/abstraccion/scala/proyecto
-        # Ejecuta `sbt test` y guarda la salida en la variable `test_output`
-        test_output=$(sbt test)
-        echo "$test_output" #
+    - name: Execute tests
+      run: sbt test
