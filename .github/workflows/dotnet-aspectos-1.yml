@@ -31,5 +31,7 @@ jobs:
     - name: Build
       run: dotnet build --no-restore
     - name: Run
+      run: dotnet run
+    - name: Test
       run: cd ../Test && dotnet test
 
