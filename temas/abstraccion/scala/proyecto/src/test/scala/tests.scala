@@ -30,7 +30,7 @@ class AnimalSpec extends AnyFlatSpec with Matchers {
 
   "A Mamifero" should "swim" in {
     val ballena = new Mamifero with Nadador
-    ballena.nadar() shouldBe "¡Estoy nadando!"
+    ballena.nadar() shouldBe "¡Estoy adando!"
   }
 
   it should "reproduce" in {

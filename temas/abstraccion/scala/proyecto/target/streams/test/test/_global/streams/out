@@ -1,4 +1,4 @@
-[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(ejemplo.AnimalSpec, org.scalatest.tools.Framework$$anon$1@17d6dcfa, false, [SuiteSelector])[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(ejemplo.AnimalSpec, org.scalatest.tools.Framework$$anon$1@4504050d, false, [SuiteSelector])[0m
 [0m[[0m[0minfo[0m] [0m[0m[32mAnimalSpec:[0m[0m
 [0m[[0m[0minfo[0m] [0m[0m[32mAn Animal[0m[0m
 [0m[[0m[0minfo[0m] [0m[0m[32m- should fly[0m[0m
@@ -7,13 +7,14 @@
 [0m[[0m[0minfo[0m] [0m[0m[31m- should have today's date *** FAILED ***[0m[0m
 [0m[[0m[0minfo[0m] [0m[0m[31m  "¡Hoy es [juev]es!" was not equal to "¡Hoy es [viern]es!" (tests.scala:28)[0m[0m
 [0m[[0m[0minfo[0m] [0m[0m[32mA Mamifero[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[32m- should swim[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m- should swim *** FAILED ***[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  "¡Estoy [n]adando!" was not equal to "¡Estoy []adando!" (tests.scala:33)[0m[0m
 [0m[[0m[0minfo[0m] [0m[0m[32m- should reproduce[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[36mRun completed in 448 milliseconds.[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[36mRun completed in 424 milliseconds.[0m[0m
 [0m[[0m[0minfo[0m] [0m[0m[36mTotal number of tests run: 6[0m[0m
 [0m[[0m[0minfo[0m] [0m[0m[36mSuites: completed 1, aborted 0[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[36mTests: succeeded 5, failed 1, canceled 0, ignored 0, pending 0[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[31m*** 1 TEST FAILED ***[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[36mTests: succeeded 4, failed 2, canceled 0, ignored 0, pending 0[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m*** 2 TESTS FAILED ***[0m[0m
 [0m[[0m[31merror[0m] [0m[0mFailed tests:[0m
 [0m[[0m[31merror[0m] [0m[0m	ejemplo.AnimalSpec[0m
 [0m[[0m[31merror[0m] [0m[0m(Test / [31mtest[0m) sbt.TestsFailedException: Tests unsuccessful[0m

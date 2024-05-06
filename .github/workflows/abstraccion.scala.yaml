@@ -37,7 +37,7 @@ jobs:
         test_output=$(sbt test 2>&1)
         
         # Verifica si hubo errores en la salida de sbt test
-        if echo "$test_output" | grep -q '\[error\] Failed tests'; then
+        if echo "$test_output" | grep -q 'TESTS FAILED\|TEST FAILED'; then
           echo "Tests failed"
           # Agrega aquí el código para crear el issue en GitHub
         else
