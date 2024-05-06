@@ -30,11 +30,18 @@ jobs:
     - name: Run tests
       run: |
         cd ./temas/abstraccion/scala/proyecto
-        sbt test > test-output.txt 2>&1
-
+        
+        # Ejecuta `sbt` y espera el prompt
+        echo "Running sbt..."
+        sbt
+        
+        # Una vez en la interfaz interactiva de `sbt`, ejecuta el comando `test`
+        echo "Executing sbt test..."
+        test
+        
         # Captura el código de salida del comando sbt test
         TEST_EXIT_CODE=$?
-
+        
         # Verifica si los tests pasaron o fallaron
         if [ $TEST_EXIT_CODE -ne 0 ]; then
           echo "Tests failed"
