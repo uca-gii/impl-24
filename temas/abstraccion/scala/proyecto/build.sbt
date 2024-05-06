@@ -2,6 +2,12 @@ name := "proyecto"
 
 version := "0.1"
 
-scalaVersion := "2.13.8"
+scalaVersion := "3.4.1"
 
-libraryDependencies += "org.scalatest" %% "scalatest" % "3.2.9" % "test"
+// Agregar dependencias del proyecto
+libraryDependencies ++= Seq(
+  "org.typelevel" %% "cats-core" % "2.7.0",
+  "org.scalatest" %% "scalatest" % "3.2.10" % Test
+)
+
+// Otras configuraciones de sbt pueden ir aquí
