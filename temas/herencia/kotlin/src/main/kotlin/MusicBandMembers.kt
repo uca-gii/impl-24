@@ -1,4 +1,4 @@
-open class miembroGrupo(val name: String) {
+open class MiembroGrupo(val name: String) {
     open fun actua() {
         println("$name hace su actuación,")
     }
@@ -8,7 +8,7 @@ open class miembroGrupo(val name: String) {
     }
 }
 
-abstract class musicoConInstrumento(name:String) : miembroGrupo(name) {
+abstract class MusicoConInstrumento(name:String) : MiembroGrupo(name) {
     abstract fun tocaInstrumento()
 
     override fun actua() {
@@ -21,7 +21,7 @@ interface Vocalista {
     fun canta()
 }
 
-class Cantante(name: String) : miembroGrupo(name), Vocalista {
+class Cantante(name: String) : MiembroGrupo(name), Vocalista {
     override fun actua() {
         super.actua()
         canta()
@@ -36,7 +36,7 @@ class Cantante(name: String) : miembroGrupo(name), Vocalista {
     }
 }
 
-class Guitarrista(name: String) : musicoConInstrumento(name) {
+class Guitarrista(name: String) : MusicoConInstrumento(name) {
 
     override fun preparacion() {
         println("$name comprueba la afinación de su guitarra.")
@@ -47,7 +47,7 @@ class Guitarrista(name: String) : musicoConInstrumento(name) {
     }
 }
 
-class Pianista(name: String) : musicoConInstrumento(name) {
+class Pianista(name: String) : MusicoConInstrumento(name) {
 
     override fun preparacion() {
         println("$name calienta tocando un solo de piano.")
@@ -58,7 +58,7 @@ class Pianista(name: String) : musicoConInstrumento(name) {
     }
 }
 
-class CantanteGuitarrista(name: String) : musicoConInstrumento(name), Vocalista {
+class CantanteGuitarrista(name: String) : MusicoConInstrumento(name), Vocalista {
     private val cantante = Cantante(name)
     private val guitarrista = Guitarrista(name)
 
@@ -83,7 +83,7 @@ class CantanteGuitarrista(name: String) : musicoConInstrumento(name), Vocalista 
 }
 
 class Manager {
-    fun preparaGrupo(miembros: List<miembroGrupo>) {
+    fun preparaGrupo(miembros: List<MiembroGrupo>) {
         println("El manager dice a la banda que se prepare.")
         println("------------------------------------------")
         miembros.forEach { 
@@ -94,7 +94,7 @@ class Manager {
         println("==========================================")
     }
 
-    fun actuaGrupo(miembros: List<miembroGrupo>) {
+    fun actuaGrupo(miembros: List<MiembroGrupo>) {
         println("El manager da la señal para que comience la actuación.")
         println("------------------------------------------")
         miembros.forEach {
