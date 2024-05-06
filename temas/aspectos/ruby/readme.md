@@ -2,7 +2,7 @@
 ## Ejemplo ##
 Este ejemplo trata sobre una interfaz de login. Se requiere que el sistema registre cada acción que realice el usuario tales como el inicio de sesión o la modificación de contraseñas. Por tanto, se utilizará un aspecto que tendrá como objetivo registrar las acciones de los usuarios sin tener que modificar nada del código original. Para ello, se ha utilizado la gema aquarium, la cual provee de herramientas útiles para la definición de aspectos tales como :after, :calls_to, join_point, etc.. 
 
-```
+```ruby
 require 'aquarium'
 
 class Auditor
@@ -75,12 +75,12 @@ usuario2.login_account(usuario2.username, error_password)
 
 ## Explicación ##
 
-```
+```ruby
 require 'aquarium'
 ```
 Se importa la gema aquarium que provee de herramientas útiles para la definición de aspectos en Ruby.
 
-```
+```ruby
 class Auditor
   def self.log(message)
     puts "[AUDIT] #{message}"
@@ -89,7 +89,7 @@ end
 ```
 La clase Auditor será la que registre las acciones que realice el usuario.
 
-```
+```ruby
 class User
   attr_accessor :username, :password
 
@@ -121,7 +121,7 @@ La función login_account se encarga del inicio de sesión del usuario en la apl
 
 La función update_account cambia la contraseña que tiene el usuario a una nueva que se le pasa por parámetro.
 
-```
+```ruby
 # Configuración de aspectos con Aquarium
 include Aquarium::Aspects
 
@@ -153,7 +153,7 @@ El primer aspecto instancia un objeto de la clase Aspect y se llamará después 
 El segundo aspecto instancia un objeto de la clase Aspect y se llamará después de la ejecución de update_account. Los argumentos serán el join_point y la instancia de la clase User ya que no se necesita ningún argumento más. La clase Auditor devolverá el mensaje de actualización de la contraseña para que quede registrado en el sistema.
 
 
-```
+```ruby
 # Secuencia de datos para crear múltiples usuarios y actualizar su información
 users_data = [
   User.new("Juanito32", "contraseña123"),
@@ -185,7 +185,7 @@ Nota: Los mensajes que son devueltos por la clase Auditor se muestran al usuario
 
 Para desplegar la web necesitamos ejecutar el terraform con estos comandos:
 
-```terraform
+``` terraform
 terraform init
 terraform apply
 ```
