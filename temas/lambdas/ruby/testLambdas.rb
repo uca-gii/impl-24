@@ -1,5 +1,5 @@
 require 'minitest/autorun'
-require 'rx'
+require_relative 'lambdas.rb'
 
 class TemperatureSensorTest < Minitest::Test
   def test_simulate_temperature_sensor
@@ -11,7 +11,7 @@ class TemperatureSensorTest < Minitest::Test
     mock_observer.expect(:on_next, nil, [{ sensor_id: 2, temperature: Integer }])
 
     # Se espera que se llame a on_completed en algún momento
-    mock_observer.expect(:on_completed, nil).twice
+    mock_observer.expect(:on_completed, nil)
 
     # Simulación de lecturas de temperatura de sensores
     sensor1_observable = simulate_temperature_sensor(1)
