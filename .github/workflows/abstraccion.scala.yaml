@@ -10,8 +10,8 @@ jobs:
     runs-on: ubuntu-latest
 
     container:
-      image: hseeberger/scala-sbt:8u302_1.5.5_2.13.6
-      options: --user root  # Este es un truco para evitar problemas de permisos
+      image: hseeberger/scala-sbt  # Usa la última imagen disponible
+      options: --user root
 
     steps:
     - name: Checkout code
@@ -27,10 +27,15 @@ jobs:
         restore-keys: |
           ${{ runner.os }}-sbt-
 
+    - name: Install specific Java and SBT versions
+      run: |
+        apt-get update
+        apt-get install -y openjdk-17-jdk
+        sbt -Dsbt.version=1.9.9 about
+
     - name: Run tests
       run: |
         cd ./temas/abstraccion/scala/proyecto
-        
         # Ejecuta `sbt test` y guarda la salida en la variable `test_output`
         test_output=$(sbt test)
-        # echo "$test_output" #
+        echo "$test_output" #
