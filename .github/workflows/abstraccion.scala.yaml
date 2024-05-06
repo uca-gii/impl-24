@@ -41,5 +41,5 @@ jobs:
           echo "Tests failed"
           # Agrega aquí el código para crear el issue en GitHub
         else
-          echo "Tests passed"
+          echo "$test_output"
         fi
