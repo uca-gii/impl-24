@@ -34,13 +34,10 @@ jobs:
         cd ./temas/abstraccion/scala/proyecto
         
         # Ejecuta `sbt test` directamente sin entrar en la interfaz interactiva
-        sbt test
+        test_output=$(sbt test 2>&1)
         
-        # Captura el código de salida del comando sbt test
-        TEST_EXIT_CODE=$?
-        
-        # Verifica si los tests pasaron o fallaron
-        if [ $TEST_EXIT_CODE -ne 0 ]; then
+        # Verifica si hubo errores en la salida de sbt test
+        if echo "$test_output" | grep -q '\[error\] Failed tests'; then
           echo "Tests failed"
           # Agrega aquí el código para crear el issue en GitHub
         else
