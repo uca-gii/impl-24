@@ -12,6 +12,11 @@ def simulate_temperature_sensor(sensor_id)
         sleep(1)
       end
     end
+
+    Thread.new do
+      sleep(20)
+      observer.on_completed
+    end
   end
 end
 
