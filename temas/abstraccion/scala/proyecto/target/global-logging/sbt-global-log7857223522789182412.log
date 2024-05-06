@@ -1,0 +1,24 @@
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(test, Some(a7cccb20-09c3-428b-9e1e-619307af0dc0), Some(CommandSource(console0)))[0m
+[0m[[0m[0mdebug[0m] [0m[0mEvaluating tasks: Test / test[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning task... Cancel: Signal, check cycles: false, forcegc: true[0m
+[0m[[0m[0minfo[0m] [0m[0mcompiling 1 Scala source to C:\Users\Alberto\Desktop\UNIVERSIDAD\3ºGII\2ºCuatri\IISS\Prácticas\PracticaFinal\impl-24\temas\abstraccion\scala\proyecto\target\scala-2.13\test-classes ...[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mAnimalSpec:[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mAn Animal[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should fly[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should swim[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should walk[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m- should have today's date *** FAILED ***[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  "¡Hoy es [juev]es!" was not equal to "¡Hoy es [viern]es!" (tests.scala:28)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mA Mamifero[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should swim[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should reproduce[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[36mRun completed in 544 milliseconds.[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[36mTotal number of tests run: 6[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[36mSuites: completed 1, aborted 0[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[36mTests: succeeded 5, failed 1, canceled 0, ignored 0, pending 0[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m*** 1 TEST FAILED ***[0m[0m
+[0m[[0m[31merror[0m] [0m[0mFailed tests:[0m
+[0m[[0m[31merror[0m] [0m[0m	ejemplo.AnimalSpec[0m
+[0m[[0m[31merror[0m] [0m[0m(Test / [31mtest[0m) sbt.TestsFailedException: Tests unsuccessful[0m
+[0m[[0m[31merror[0m] [0m[0mTotal time: 6 s, completed 6 may 2024 15:33:15[0m
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(shell, None, None)[0m
