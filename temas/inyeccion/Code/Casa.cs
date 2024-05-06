@@ -6,6 +6,7 @@ public class Casa
     private List<Habitacion> habitaciones; //Posible implementacion de iterable para poder cambiar
                                             //el contenedor de habitaciones sin cambiar el resto del código
 
+
     public Casa()
     {
         habitaciones = new List<Habitacion>();
@@ -18,6 +19,8 @@ public class Casa
     public List<Habitacion> getHabitaciones(){
         return habitaciones;
     }
+
+    //Métodos para mostrar y probar habitaciones
 
     public void MostrarHabitaciones()
     {
