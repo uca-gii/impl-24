@@ -34,7 +34,7 @@ jobs:
         cd ./temas/abstraccion/scala/proyecto
         
         # Ejecuta `sbt test` directamente sin entrar en la interfaz interactiva
-        test_output=$(sbt test 2>&1)
+        sbt test
         
         # Verifica si hubo errores en la salida de sbt test
         if echo "$test_output" | grep -q 'TESTS FAILED\|TEST FAILED'; then
