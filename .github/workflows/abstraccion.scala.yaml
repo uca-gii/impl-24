@@ -27,11 +27,6 @@ jobs:
         restore-keys: |
           ${{ runner.os }}-sbt-
 
-    - name: Install specific Java and SBT versions
-      run: |
-        apt-get update
-        apt-get install -y openjdk-17-jdk
-        sbt -Dsbt.version=1.9.9 about
 
     - name: Run tests
       run: |
