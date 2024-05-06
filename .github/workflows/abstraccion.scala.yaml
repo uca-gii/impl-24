@@ -36,7 +36,7 @@ jobs:
         echo "$test_output" # Esta línea es opcional y solo para depurar
         
         # Verifica si hubo errores en la salida de sbt test
-        if echo "$test_output" | grep -q 'FAILED'; then
+        if echo "$test_output" | grep -E '\*\*\* FAILED \*\*\*|Failed tests:|\[error\]'; then
           echo "Tests failed"
           exit 1  # Cambia el estado a fallido para que GitHub Actions lo refleje
         else
