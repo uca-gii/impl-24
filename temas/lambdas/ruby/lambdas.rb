@@ -20,7 +20,7 @@ sensor1_observable = simulate_temperature_sensor(1)
 sensor2_observable = simulate_temperature_sensor(2)
 
 # Lambda para verificar si una lectura es anómala
-is_anomalous = ->(temperature) { temperature > 35 }
+is_anomalous = ->(data) { data[:temperature] > 35 }
 
 # Lambda para suscribirse a lecturas anómalas
 subscribe_to_anomalous_readings = ->(sensor_id) do
