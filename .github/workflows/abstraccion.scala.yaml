@@ -31,5 +31,6 @@ jobs:
       run: |
         cd ./temas/abstraccion/scala/proyecto
         
-        # Ejecuta `sbt test` y usa directamente el estado de salida para controlar el flujo
-        sbt test
+        # Ejecuta `sbt test` y guarda la salida en la variable `test_output`
+        test_output=$(sbt test)
+        echo "$test_output" #
