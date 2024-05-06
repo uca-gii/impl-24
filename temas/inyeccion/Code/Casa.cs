@@ -20,7 +20,7 @@ public class Casa
         return habitaciones;
     }
 
-    //Métodos para mostrar y probar habitaciones
+   
 
     public void MostrarHabitaciones()
     {
