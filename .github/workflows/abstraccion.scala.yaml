@@ -14,13 +14,10 @@ jobs:
       options: --user root  # Este es un truco para evitar problemas de permisos
 
     steps:
-    - name: Use Node.js 20
-      uses: actions/setup-node@v2
-      with:
-        node-version: '20'
-
     - name: Checkout code
       uses: actions/checkout@v2
+      with:
+        path: ./temas/abstraccion/scala/proyecto
 
     - name: Cache dependencies
       uses: actions/cache@v2
@@ -32,7 +29,7 @@ jobs:
 
     - name: Run tests
       run: |
-        # Ejecuta los tests y guarda la salida en un archivo temporal
+        cd ./temas/abstraccion/scala/proyecto
         sbt test > test-output.txt 2>&1
 
         # Captura el código de salida del comando sbt test
@@ -41,9 +38,8 @@ jobs:
         # Verifica si los tests pasaron o fallaron
         if [ $TEST_EXIT_CODE -ne 0 ]; then
           echo "Tests failed"
-          #Agrega aquí el código para crear el issue en GitHub
+          # Agrega aquí el código para crear el issue en GitHub
         else
           echo "Tests passed"
         fi
       shell: bash
-
