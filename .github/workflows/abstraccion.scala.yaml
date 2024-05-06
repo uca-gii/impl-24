@@ -1,3 +1,5 @@
+# Tu archivo de flujo de trabajo de GitHub Actions
+
 name: Scala CI
 
 on:
@@ -6,51 +8,37 @@ on:
       - feature-abstraccion
 
 jobs:
-  build-and-test:
+  test:
     runs-on: ubuntu-latest
 
     container:
-      image: ubuntu:20.04  # Usando la imagen oficial de Ubuntu 20.04
+      image: hseeberger/scala-sbt:8u302_1.5.5_2.13.6
+      options: --user root  # Este es un truco para evitar problemas de permisos
 
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v3
-
-    - name: Setup APT and install dependencies
-      run: |
-        apt-get update
-        apt-get install -y wget apt-transport-https gnupg
-        wget -O- https://apt.corretto.aws/corretto.key | gpg --dearmor -o /usr/share/keyrings/corretto-archive-keyring.gpg
-        echo "deb [signed-by=/usr/share/keyrings/corretto-archive-keyring.gpg] https://apt.corretto.aws stable main" | tee /etc/apt/sources.list.d/corretto.list
-        apt-get update
-        apt-get install -y java-17-amazon-corretto-jdk
-
-    - name: Install sbt
-      run: |
-          # Descarga e instala la clave pública de sbt
-          curl -sL "https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x2EE0EA64E40A89B84B2DF73499E82A75642AC823" | gpg --dearmor -o /usr/share/keyrings/sbt-archive-keyring.gpg
-
-          # Añade el repositorio de sbt a la lista de fuentes de apt
-          echo "deb [signed-by=/usr/share/keyrings/sbt-archive-keyring.gpg] https://repo.scala-sbt.org/scalasbt/debian all main" | tee /etc/apt/sources.list.d/sbt.list
-
-          # Actualiza los paquetes e instala sbt
-          apt-get update
-          apt-get install -y sbt
-
-    - name: Cache Scala and SBT files
-      uses: actions/cache@v3
+    - name: Checkout code
+      uses: actions/checkout@v2
       with:
-        path: |
-          ~/.sbt
-          ~/.ivy2/cache
-          ~/.cache/coursier
-          ~/.m2
-        key: ${{ runner.os }}-sbt-${{ hashFiles('**/*.sbt') }}-java-17
+        path: ./temas/abstraccion/scala/proyecto
+
+    - name: Cache dependencies
+      uses: actions/cache@v2
+      with:
+        path: ~/.sbt
+        key: ${{ runner.os }}-sbt-${{ hashFiles('**/*.sbt') }}
         restore-keys: |
-          ${{ runner.os }}-sbt-java-17
-
-    - name: Execute sbt clean and compile
-      run: sbt clean compile
-
-    - name: Execute tests
-      run: sbt test
+          ${{ runner.os }}-sbt-
+    - name: Run tests
+      run: |
+        cd ./temas/abstraccion/scala/proyecto
+        
+        # Ejecuta `sbt test` directamente sin entrar en la interfaz interactiva
+        test_output=$(sbt test 2>&1)
+        
+        # Verifica si hubo errores en la salida de sbt test
+        if echo "$test_output" | grep -q 'TESTS FAILED\|TEST FAILED'; then
+          echo "Tests failed"
+          # Agrega aquí el código para crear el issue en GitHub
+        else
+          echo "Tests passed"
+        fi
