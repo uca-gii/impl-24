@@ -2,10 +2,13 @@ name: .NET Core Build
 
 on:
   push:
-    branches: [ "*" ]
+    branches: [ "feature-aspectos" ]
   pull_request:
     branches: [ "main" ]
-
+    
+workflow_dispatch:
+  branch:
+    - main
 jobs:
   build:
     runs-on: ubuntu-latest

@@ -2,11 +2,11 @@ name: .NET Core Build
 
 on:
   push:
-    branches: [ "hotfix-inyeccion" ]
+    branches: [ "feature-inyeccion" ]
   pull_request:
     branches: [ "main" ]
 
-workflows_dispatch:
+workflow_dispatch:
   branch:
     - main
   
