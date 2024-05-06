@@ -21,7 +21,7 @@ public class Casa
     }
 
    
-
+    //Metodos para mostrar y probar habitaciones
     public void MostrarHabitaciones()
     {
         Console.WriteLine("---------MOSTRANDO DETALLES----------------------");
