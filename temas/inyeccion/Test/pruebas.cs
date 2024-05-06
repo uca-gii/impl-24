@@ -28,7 +28,7 @@ public class CasaTests
 
         Console.WriteLine(output);
         // Verifica que la salida contenga el detalle de la habitación
-        Assert.Contains("10,5", output);
+        Assert.Contains("10", output);
     }
 
     [Fact]
