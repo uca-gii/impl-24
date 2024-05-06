@@ -26,4 +26,21 @@ jobs:
           ${{ runner.os }}-sbt-
 
     - name: Run tests
-      run: sbt test
+      run: |
+        if sbt test; then
+          echo "Tests passed"
+        else
+          echo "Tests failed"
+          mkdir -p .github
+          echo "### Tests failed" > .github/issue-body.md
+          echo "The tests have failed. Please check the logs for more information." >> .github/issue-body.md
+          echo "![Test Failure](https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/271/cross-mark-button_274c.png)" >> .github/issue-body.md
+          echo "#### Error details:" >> .github/issue-body.md
+          tail -n 50 target/test-reports/*.log >> .github/issue-body.md
+          echo "Creating an issue..."
+          curl --request POST \
+            --url https://api.github.com/repos/${{ github.repository }}/issues \
+            --header "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
+            --header 'Content-Type: application/json' \
+            --data "{\"title\":\"Tests failed on branch '${{ github.ref }}'\",\"body\":\"$(cat .github/issue-body.md)\"}"
+        fi
