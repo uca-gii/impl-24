@@ -26,12 +26,16 @@ jobs:
         apt-get install -y java-17-amazon-corretto-jdk
 
     - name: Install sbt
-      run: |
-        echo "deb https://repo.scala-sbt.org/scalasbt/debian all main" | tee /etc/apt/sources.list.d/sbt.list
-        echo "deb https://repo.scala-sbt.org/scalasbt/debian /" | tee -a /etc/apt/sources.list.d/sbt.list
-        wget -qO - https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x2EE0EA64E40A89B84B2DF73499E82A75642AC823 | apt-key add -
-        apt-get update
-        apt-get install -y sbt
+        run: |
+          # Descarga e instala la clave pública de sbt
+          curl -sL "https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x2EE0EA64E40A89B84B2DF73499E82A75642AC823" | gpg --dearmor -o /usr/share/keyrings/sbt-archive-keyring.gpg
+
+          # Añade el repositorio de sbt a la lista de fuentes de apt
+          echo "deb [signed-by=/usr/share/keyrings/sbt-archive-keyring.gpg] https://repo.scala-sbt.org/scalasbt/debian all main" | tee /etc/apt/sources.list.d/sbt.list
+
+          # Actualiza los paquetes e instala sbt
+          apt-get update
+          apt-get install -y sbt
 
     - name: Cache Scala and SBT files
       uses: actions/cache@v3
