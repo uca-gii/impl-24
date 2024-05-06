@@ -1,0 +1,29 @@
+name: Scala CI
+
+on:
+  push:
+    branches:
+      - feature-abstraccion
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    container:
+      image: hseeberger/scala-sbt:8u302_1.5.5_2.13.6
+      options: --user root  # Este es un truco para evitar problemas de permisos
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Cache dependencies
+      uses: actions/cache@v2
+      with:
+        path: ~/.sbt
+        key: ${{ runner.os }}-sbt-${{ hashFiles('**/*.sbt') }}
+        restore-keys: |
+          ${{ runner.os }}-sbt-
+
+    - name: Run tests
+      run: sbt test
