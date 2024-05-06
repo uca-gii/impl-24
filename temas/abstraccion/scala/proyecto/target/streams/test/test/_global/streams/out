@@ -1,4 +1,4 @@
-[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(ejemplo.AnimalSpec, org.scalatest.tools.Framework$$anon$1@1a164fd8, false, [SuiteSelector])[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(ejemplo.AnimalSpec, org.scalatest.tools.Framework$$anon$1@17d6dcfa, false, [SuiteSelector])[0m
 [0m[[0m[0minfo[0m] [0m[0m[32mAnimalSpec:[0m[0m
 [0m[[0m[0minfo[0m] [0m[0m[32mAn Animal[0m[0m
 [0m[[0m[0minfo[0m] [0m[0m[32m- should fly[0m[0m
@@ -9,7 +9,7 @@
 [0m[[0m[0minfo[0m] [0m[0m[32mA Mamifero[0m[0m
 [0m[[0m[0minfo[0m] [0m[0m[32m- should swim[0m[0m
 [0m[[0m[0minfo[0m] [0m[0m[32m- should reproduce[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[36mRun completed in 523 milliseconds.[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[36mRun completed in 448 milliseconds.[0m[0m
 [0m[[0m[0minfo[0m] [0m[0m[36mTotal number of tests run: 6[0m[0m
 [0m[[0m[0minfo[0m] [0m[0m[36mSuites: completed 1, aborted 0[0m[0m
 [0m[[0m[0minfo[0m] [0m[0m[36mTests: succeeded 5, failed 1, canceled 0, ignored 0, pending 0[0m[0m

@@ -1,3 +1,5 @@
+# Tu archivo de flujo de trabajo de GitHub Actions
+
 name: Scala CI
 
 on:
@@ -31,13 +33,8 @@ jobs:
       run: |
         cd ./temas/abstraccion/scala/proyecto
         
-        # Ejecuta `sbt` y espera el prompt
-        echo "Running sbt..."
-        sbt
-        
-        # Una vez en la interfaz interactiva de `sbt`, ejecuta el comando `test`
-        echo "Executing sbt test..."
-        test | exit | tee test-output.txt
+        # Ejecuta `sbt test` directamente sin entrar en la interfaz interactiva
+        sbt test
         
         # Captura el código de salida del comando sbt test
         TEST_EXIT_CODE=$?
@@ -49,4 +46,3 @@ jobs:
         else
           echo "Tests passed"
         fi
-      shell: bash
