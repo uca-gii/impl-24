@@ -1,9 +1,6 @@
 name: Ruby Errors
 
 on:
-  push:
-    branches:
-      - feat-errores
   workflow_dispatch:
 
 jobs:
