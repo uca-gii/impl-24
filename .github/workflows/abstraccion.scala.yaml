@@ -9,15 +9,29 @@ jobs:
   build-and-test:
     runs-on: ubuntu-latest
 
+    container:
+      image: ubuntu:20.04  # Usando la imagen oficial de Ubuntu 20.04
+
     steps:
     - name: Checkout repository
       uses: actions/checkout@v3
 
-    - name: Set up JDK 17
-      uses: actions/setup-java@v3
-      with:
-        java-version: '17'
-        distribution: 'temurin' # AdoptOpenJDK, ahora conocido como Eclipse Temurin
+    - name: Setup APT and install dependencies
+      run: |
+        apt-get update
+        apt-get install -y wget apt-transport-https gnupg
+        wget -O- https://apt.corretto.aws/corretto.key | gpg --dearmor -o /usr/share/keyrings/corretto-archive-keyring.gpg
+        echo "deb [signed-by=/usr/share/keyrings/corretto-archive-keyring.gpg] https://apt.corretto.aws stable main" | tee /etc/apt/sources.list.d/corretto.list
+        apt-get update
+        apt-get install -y java-17-amazon-corretto-jdk
+
+    - name: Install sbt
+      run: |
+        echo "deb https://repo.scala-sbt.org/scalasbt/debian all main" | tee /etc/apt/sources.list.d/sbt.list
+        echo "deb https://repo.scala-sbt.org/scalasbt/debian /" | tee -a /etc/apt/sources.list.d/sbt.list
+        wget -qO - https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x2EE0EA64E40A89B84B2DF73499E82A75642AC823 | apt-key add -
+        apt-get update
+        apt-get install -y sbt
 
     - name: Cache Scala and SBT files
       uses: actions/cache@v3
