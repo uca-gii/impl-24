@@ -3,6 +3,7 @@ require 'test/unit'
 require_relative 'calculator'
 require 'optional'
 
+
 class TestCalculator < Test::Unit::TestCase
   def setup
     @calculator = Calculator.new

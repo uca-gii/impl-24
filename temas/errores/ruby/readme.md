@@ -13,12 +13,12 @@ Este archivo contiene una clase `Calculator` que proporciona métodos para reali
 - `power(base, exponent)`: Calcula la potencia de `base` elevado a `exponent`. Maneja el caso en que `exponent` es negativo y `base` es cero devolviendo `nil`.
 
 ### Manejo de Errores en Ruby
-
 El código maneja errores usando la librería Optional en Ruby, esta librería te proporciona una alternativa al uso del `nil` como manera de indicar que ha ocurrido un error enalguna parte del programa. 
 
 Esta librería usa los métodos `Some` que indica que no ha ocurrido ningún error y `None` en el caso contrario, de esta manera es el usuario el que mediante `some?` o `none?` quien decide que hacer en los casos donde ha ocurrido un error.
 
 Un ejemplo a esto último se puede observar e el fichero : `streams.rb`
+
 
 ## Como desplegar la web de la calculadora
 
