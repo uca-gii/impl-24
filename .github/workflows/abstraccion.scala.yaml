@@ -37,7 +37,7 @@ jobs:
         
         # Una vez en la interfaz interactiva de `sbt`, ejecuta el comando `test`
         echo "Executing sbt test..."
-        sbt test | tee test-output.txt
+        test | tee test-output.txt
         
         # Captura el código de salida del comando sbt test
         TEST_EXIT_CODE=$?

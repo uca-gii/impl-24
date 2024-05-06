@@ -22,3 +22,4 @@
 [0m[[0m[31merror[0m] [0m[0m(Test / [31mtest[0m) sbt.TestsFailedException: Tests unsuccessful[0m
 [0m[[0m[31merror[0m] [0m[0mTotal time: 6 s, completed 6 may 2024 15:33:15[0m
 [0m[[0m[0mdebug[0m] [0m[0m> Exec(shell, None, None)[0m
+[0m[[0m[0mdebug[0m] [0m[0mForcing garbage collection...[0m
