@@ -1,5 +1,4 @@
-﻿﻿// See https://aka.ms/new-console-template for more information
-using System;
+﻿using System;
 
 // Definición de la interfaz INotifier
 public interface INotifier
@@ -42,6 +41,22 @@ public class NotificationManager
     }
 }
 
+public class Operations
+{
+    // Declaración de un delegado que apunta a cualquier método que reciba un int y devuelva un int
+    public delegate int Operation(int number);
+
+    public static int Double(int x)
+    {
+        return x * 2;
+    }
+
+    public static int Triple(int x)
+    {
+        return x * 3;
+    }
+}
+
 // Programa principal
 public class Program
 {
@@ -55,5 +70,13 @@ public class Program
         INotifier smsNotifier = new SmsNotifier();
         manager = new NotificationManager(smsNotifier);
         manager.Notify("Otro mensaje, ahora por SMS.");
+
+        // Instanciando el delegado con un método específico
+        Operations.Operation op = Operations.Double;
+        Console.WriteLine("El doble de 5 es: " + op(5));
+
+        // Cambiando la referencia del delegado a otro método
+        op = Operations.Triple;
+        Console.WriteLine("El triple de 5 es: " + op(5));
     }
 }
