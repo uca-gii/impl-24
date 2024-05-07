@@ -25,7 +25,7 @@ jobs:
 
     - name: Build and Run Tests
       run: |
-        dotnet test Tests/Tests.csproj
+        dotnet test delegacion/Tests/Tests.csproj
         if [ $? -ne 0 ]; then
           echo "Test failed, creating issue..."
           curl -XPOST -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" -d '{"title":"Test Failed","body":"One or more tests failed. Please check the logs.","labels":["bug"]}' "https://api.github.com/repos/${{ github.repository }}/issues"
