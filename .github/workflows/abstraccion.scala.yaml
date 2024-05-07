@@ -17,7 +17,7 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v3
       with:
-        path: ./temas/abstraccion/scala/proyecto
+        path: proyecto
 
     - name: Cache dependencies
       uses: actions/cache@v3
@@ -32,12 +32,10 @@ jobs:
 
     - name: List project files
       run: |
-        cd ./temas/abstraccion/scala/proyecto
         ls -la
-      
-    - name: Run tests with verbose logging
-      with:
-        path: ./temas/abstraccion/scala/proyecto
-      run: 
-        sbt 'set logLevel in Test := Level.Debug' test
+        ls -la proyecto/temas/abstraccion/scala/proyecto
 
+    - name: Run tests with verbose logging
+      run: |
+        cd proyecto/temas/abstraccion/scala/proyecto
+        sbt 'set logLevel in Test := Level.Debug' test
