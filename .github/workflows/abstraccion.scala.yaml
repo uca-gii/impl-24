@@ -30,8 +30,13 @@ jobs:
         restore-keys: |
           ${{ runner.os }}-sbt-
 
-    - name: Run tests
+    - name: List project files
       run: |
         cd ./temas/abstraccion/scala/proyecto
-        sbt test
-      shell: bash
+        ls -la
+      
+    - name: Run tests with verbose logging
+      run: |
+        cd ./temas/abstraccion/scala/proyecto
+        sbt 'set logLevel in Test := Level.Debug' test
+
