@@ -8,7 +8,7 @@ name: .NET Core Build
     
 workflow_dispatch:
   branch:
-   - main
+    - main
 jobs:
   build:
     runs-on: ubuntu-latest
