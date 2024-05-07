@@ -1,4 +1,4 @@
-name: RUn C# Tests
+name: Run C# Tests
 
 on:
   push:
@@ -11,18 +11,17 @@ jobs:
     runs-on: ubuntu-latest
   
     container:
-      image: mono:6.8
+      image: mcr.microsoft.com/dotnet/sdk:6.0
     
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
 
-    - name: Compile and Run tests
+    - name: Build and Run Tests
       run: |
-        mcs -out:TestsDelegacion.exe Ejercicio_delegacion_1.cs Ejercicio_delegacion_2.cs Tests_delegacion.cs
-        if ! mono TestsDelegacion.exe; then
+        dotnet test Tests/Tests.csproj
+        if [ $? -ne 0 ]; then
           echo "Test failed, creating issue..."
           curl -XPOST -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" -d '{"title":"Test Failed","body":"One or more tests failed. Please check the logs.","labels":["bug"]}' "https://api.github.com/repos/${{ github.repository }}/issues"
           exit 1
         fi
-      
