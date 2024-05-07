@@ -30,12 +30,18 @@ jobs:
         restore-keys: |
           ${{ runner.os }}-sbt-
 
-    - name: List project files
-      run: |
-        ls -la
-        ls -la proyecto/temas/abstraccion/scala/proyecto
-
     - name: Run tests with verbose logging
       run: |
         cd proyecto/temas/abstraccion/scala/proyecto
         sbt 'set logLevel in Test := Level.Debug' test
+
+    - name: Create issue on test failure
+      if: failure()
+      uses: imjohnbo/issue-bot@v3
+      with:
+        assignees: "Alberto-mp"
+        labels: "bug, test failure"
+        title: "Tests failed in CI"
+        body: "Tests have failed on the latest commit. Please review the logs and take necessary action."
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
