@@ -20,7 +20,7 @@ public class RegistroTests
 
         var output = CaptureConsoleOutput(() => RegistradorAcciones.verAcciones());
 
-        Assert.Contains("ACCIONES RECOGIDAS POR EL REGISTRADOR:", output);
+        Assert.Contains("ACCIONES RECOGIDAS POR ASPECTOS:", output);
         Assert.Contains("Acción 1", output);
         Assert.Contains("Acción 2", output);    
         
