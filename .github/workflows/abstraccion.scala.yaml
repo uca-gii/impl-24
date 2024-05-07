@@ -11,19 +11,22 @@ jobs:
 
     container:
       image: hseeberger/scala-sbt:8u302_1.5.5_2.13.6
-      options: --user root  # Esto permite ejecutar los comandos como root para evitar problemas de permisos
+      options: --user root
 
     steps:
     - name: Checkout code
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
       with:
         path: ./temas/abstraccion/scala/proyecto
 
     - name: Cache dependencies
-      uses: actions/cache@v2
+      uses: actions/cache@v3
       with:
-        path: ~/.sbt
-        key: ${{ runner.os }}-sbt-${{ hashFiles('**/*.sbt') }}
+        path: |
+          ~/.sbt
+          ~/.ivy2/cache
+          ~/.cache/coursier
+        key: ${{ runner.os }}-sbt-${{ hashFiles('**/*.sbt', '**/*.scala') }}
         restore-keys: |
           ${{ runner.os }}-sbt-
 
@@ -31,14 +34,4 @@ jobs:
       run: |
         cd ./temas/abstraccion/scala/proyecto
         sbt test
-      id: sbt-test
-
-    - name: Create Issue on Test Failure
-      if: failure() && github.ref == 'refs/heads/feature-abstraccion'
-      uses: imjohnbo/issue-bot@v3
-      with:
-        title: "Tests Failed on Feature Branch"
-        body: "Some tests failed. Please check the logs and correct the errors."
-        labels: "bug, automated issue"
-        assignees: "github_username"  # Reemplaza 'github_username' con tu nombre de usuario de GitHub
-        token: ${{ secrets.GITHUB_TOKEN }}
+      shell: bash
