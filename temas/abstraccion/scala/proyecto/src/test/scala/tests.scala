@@ -25,12 +25,12 @@ class AnimalSpec extends AnyFlatSpec with Matchers {
 
   it should "have today's date" in {
     val animal = new Animal
-    animal.fecha() shouldBe "¡Hoy es viernes!" //Error forzado
+    animal.fecha() shouldBe "¡Hoy es jueves!" 
   }
 
   "A Mamifero" should "swim" in {
     val ballena = new Mamifero with Nadador
-    ballena.nadar() shouldBe "¡Estoy adando!"
+    ballena.nadar() shouldBe "¡Estoy nadando!"
   }
 
   it should "reproduce" in {
