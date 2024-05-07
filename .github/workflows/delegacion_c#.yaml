@@ -1,0 +1,28 @@
+name: RUn C# Tests
+
+on:
+  push:
+    branches:
+      - feature-delegacion
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+  
+    container:
+      image: mono:6.8
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Compile and Run tests
+      run: |
+        mcs -out:TestsDelegacion.exe Ejercicio_delegacion_1.cs Ejercicio_delegacion_2.cs Tests_delegacion.cs
+        if ! mono TestsDelegacion.exe; then
+          echo "Test failed, creating issue..."
+          curl -XPOST -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" -d '{"title":"Test Failed","body":"One or more tests failed. Please check the logs.","labels":["bug"]}' "https://api.github.com/repos/${{ github.repository }}/issues"
+          exit 1
+        fi
+      
