@@ -36,7 +36,8 @@ jobs:
         ls -la
       
     - name: Run tests with verbose logging
-      run: |
-        cd ./temas/abstraccion/scala/proyecto
+      with:
+        path: ./temas/abstraccion/scala/proyecto
+      run: 
         sbt 'set logLevel in Test := Level.Debug' test
 
