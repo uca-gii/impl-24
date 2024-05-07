@@ -14,6 +14,7 @@ public class Investigacion: ArchivoPolicial{
         return identificador;
     }
 
+   [RegistroAspecto]
 public void mostrarDetalles()
 {
     Console.WriteLine("+--------------------------------------+");
@@ -24,17 +25,15 @@ public void mostrarDetalles()
     Console.WriteLine("| Sospechoso: " + idSospechoso);
     Console.WriteLine("| Fecha del delito: " + fechaDelito.ToShortDateString());
     Console.WriteLine("+--------------------------------------+");
-
-    RegistradorAcciones.registrarAccion("Se han consultado los detalles de un archivo");
 }
 
+
+    [RegistroAspecto]
     public void solicitarRevision(){
         Console.WriteLine("+-------------------------------------------------+");
         Console.WriteLine("|                     Revisión                    |");
         Console.WriteLine("+-------------------------------------------------+");
         Console.WriteLine("| Enviado una solicitud de revisión de la investigacion");
         Console.WriteLine("+-------------------------------------------------+");
-
-        RegistradorAcciones.registrarAccion("Se ha solicitado la revisión de un caso");
     }
 }
