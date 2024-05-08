@@ -1,4 +1,4 @@
-package main.java;
+package com.example.myexample;
 
 public class UserManager {
     private User currentUser;

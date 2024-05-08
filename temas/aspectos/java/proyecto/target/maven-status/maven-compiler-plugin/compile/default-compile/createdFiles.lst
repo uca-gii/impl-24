@@ -1,0 +1,4 @@
+com\example\myexample\LoggingAspect.class
+com\example\myexample\User.class
+com\example\myexample\UserManagerAspect.class
+com\example\myexample\UserManager.class

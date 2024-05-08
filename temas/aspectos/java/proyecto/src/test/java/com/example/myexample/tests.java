@@ -1,4 +1,4 @@
-package test.java;
+package com.example.myexample;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -60,7 +60,7 @@ class UserManagerAspectTest {
     void testGetCurrentUserWithAspects() {
         // Arrange
         User user = new User("TestUser", 12);
-        userManager.setCurrentUser(user);
+        userManagerAspect.setCurrentUser(user);
 
         // Act
         User currentUser = userManagerAspect.getCurrentUser();

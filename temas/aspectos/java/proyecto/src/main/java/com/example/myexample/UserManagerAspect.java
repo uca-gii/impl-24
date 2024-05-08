@@ -1,3 +1,5 @@
+package com.example.myexample;
+
 class UserManagerAspect {
     private User currentUser;
 
