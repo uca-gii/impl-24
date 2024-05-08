@@ -22,9 +22,15 @@ Un ejemplo a esto último se puede observar e el fichero : `streams.rb`
 
 ## Como desplegar la web de la calculadora
 
-Para ello necesitamos ejecutar el terraform de la carpeta usando
+Para ello necesitamos ejecutar el terraform (que despliega un Dockerfile) de la carpeta usando
+
 ```terraform
 terraform init 
 terraform apply
 ```
-Ahora, una vez veamos que se ha desplegado accedemos a https:localhost:4567 
+Ahora, una vez veamos que se ha desplegado accedemos a `https:localhost:4567 ``
+
+Cuando se requiera dejar el puerto libre, se deberá eliminar el contenedor de docker que ejecuta la imagen con el comando
+`docker container stop <nombre-contenedor>`
+`docker container rm <nombre-contenedor>`
+

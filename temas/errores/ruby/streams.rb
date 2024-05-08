@@ -1,3 +1,10 @@
+
+# Este script es un ejemplo de como se puede utilizar
+# Optional y Rx para manejar errores en flujos de datos.
+# En este caso, se tiene un flujo de numeros que se dividen entre si.
+# Si el divisor es 0, se omite el resultado y se continua con el siguiente numero.
+# Al final, se imprime el resultado de las divisiones validas.
+
 require 'optional'
 require 'rx'
 require './calculator'
