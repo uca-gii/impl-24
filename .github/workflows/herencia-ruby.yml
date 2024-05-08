@@ -1,9 +1,6 @@
-name: Ruby Sinatra CI
+name: java maven
 
 on:
-  push:
-    branches:
-      - feat-herencia
   workflow_dispatch: 
 
 jobs:
@@ -12,38 +9,15 @@ jobs:
 
     steps:
     - name: Checkout code
-      uses: actions/checkout@v4
-
-    - name: Set up Ruby
-      uses: ruby/setup-ruby@v1
-      with:
-        ruby-version: 3.0.0
-        bundler-cache: true
-
-    - name: Install Bundler 2.4.22
-      run: gem install bundler -v 2.4.22
-
-    - name: Create Gemfile
-      run: |
-        echo "source 'https://rubygems.org'" > Gemfile
-        echo "ruby '3.0.0'" >> Gemfile
-        echo "gem 'sinatra'" >> Gemfile
-        echo "gem 'rspec'" >> Gemfile
-        echo "gem 'rake'" >> Gemfile
-        echo "gem 'rackup'" >> Gemfile
+      uses: actions/checkout@v2
       
-    - name: Install dependencies
-      run: |
-        cat Gemfile
-        bundle install
+    - name: Set up JDK 11
+      uses: actions/setup-java@v2
+      with:
+        java-version: '11'
 
-    - name: Run tests
-      run: |
-        bundle exec rspec 
-
-    - name: Start Server
-      run: |
-        ruby ./temas/herencia/ruby/Adventure.rb 
+    - name: Build with Maven
+      run: mvn -B package --file pom.xml
 
   test:
     runs-on: ubuntu-latest
@@ -52,13 +26,10 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
 
-    - name: Install Ruby
-      uses: ruby/setup-ruby@v1
+    - name: Set up JDK 11
+      uses: actions/setup-java@v2
       with:
-        ruby-version: 3.0.0
+        java-version: '11'
 
-    - name: Install dependencies
-      run: gem install test-unit
-
-    - name: Run Ruby tests
-      run: ruby ./temas/herencia/ruby/testAdventure.rb
+    - name: Build with Maven
+      run: mvn -B test --file pom.xml
