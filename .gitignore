@@ -36,10 +36,15 @@
 .classpath
 .factorypath
 
+#Terraform 
+/.terraform/
+*.terraform.lock.hcl
+
 # Other
 .DS_Store
 .vscode/settings.json
 .project
+
 
 # Sentinel runtime directory
 .sentinel
