@@ -1,8 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "9GVp6z7pCgUluNwp1i+1FFkDJ+zQV4TBNgpita6DxsEEOjPrRCD2Un63KHrDQLGYcs5aZ+SmwBYakcVbVKmqBw==",
+  "dgSpecHash": "E3DbZd2iHBG5A9Sf+lbn8wf7oiy/S98Cxf8Q+2DtU2QQfzguyVnkeC2/zdZdx7sU7MZ/B0aptl81VqnaIQakOw==",
   "success": true,
   "projectFilePath": "/home/joseagus/Escritorio/impl-24/temas/inyeccion/Csharp_Inyeccion/Csharp_Inyeccion.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "/home/joseagus/.nuget/packages/microsoft.extensions.dependencyinjection/8.0.0/microsoft.extensions.dependencyinjection.8.0.0.nupkg.sha512",
+    "/home/joseagus/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/8.0.0/microsoft.extensions.dependencyinjection.abstractions.8.0.0.nupkg.sha512"
+  ],
   "logs": []
 }

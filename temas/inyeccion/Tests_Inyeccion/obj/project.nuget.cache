@@ -1,12 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "Tyi37o29APXnL12JreJt11mLOhlFjF7phVyq//hnhPonF3Rb0jkKxwCq0W4VrN/nNmH+1g895DQ3B1qoyGUBRw==",
+  "dgSpecHash": "bGubp8O+Ze7S0YaYdZTqxrQm6iM8Ykshyr9GkHYexHVnpuMF64foWped8WDRrlQXZBn0ZZb8IsWgucvNxu7LeA==",
   "success": true,
   "projectFilePath": "/home/joseagus/Escritorio/impl-24/temas/inyeccion/Tests_Inyeccion/Tests_Inyeccion.csproj",
   "expectedPackageFiles": [
     "/home/joseagus/.nuget/packages/castle.core/5.1.1/castle.core.5.1.1.nupkg.sha512",
     "/home/joseagus/.nuget/packages/coverlet.collector/6.0.0/coverlet.collector.6.0.0.nupkg.sha512",
     "/home/joseagus/.nuget/packages/microsoft.codecoverage/17.9.0/microsoft.codecoverage.17.9.0.nupkg.sha512",
+    "/home/joseagus/.nuget/packages/microsoft.extensions.dependencyinjection/8.0.0/microsoft.extensions.dependencyinjection.8.0.0.nupkg.sha512",
+    "/home/joseagus/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/8.0.0/microsoft.extensions.dependencyinjection.abstractions.8.0.0.nupkg.sha512",
     "/home/joseagus/.nuget/packages/microsoft.net.test.sdk/17.9.0/microsoft.net.test.sdk.17.9.0.nupkg.sha512",
     "/home/joseagus/.nuget/packages/microsoft.testplatform.objectmodel/17.9.0/microsoft.testplatform.objectmodel.17.9.0.nupkg.sha512",
     "/home/joseagus/.nuget/packages/microsoft.testplatform.testhost/17.9.0/microsoft.testplatform.testhost.17.9.0.nupkg.sha512",
