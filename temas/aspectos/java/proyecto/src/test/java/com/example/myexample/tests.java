@@ -75,7 +75,7 @@ class UserManagerAspectTest {
         User user = new User("TestUser", 12);
 
         // Act
-        userManagerAspect.setCurrentUser(user);
+        // userManagerAspect.setCurrentUser(user); provocamos fallo
 
         // Assert
         assertEquals(user, userManagerAspect.getCurrentUser(), "setCurrentUser should set the user");
