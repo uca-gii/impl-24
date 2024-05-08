@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "Csharp_Inyeccion/1.0.0": {
+        "runtime": {
+          "Csharp_Inyeccion.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Csharp_Inyeccion/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

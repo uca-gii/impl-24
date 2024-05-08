@@ -1,0 +1,15 @@
+/home/joseagus/Escritorio/impl-24/temas/inyeccion/Csharp_Inyeccion/bin/Debug/net8.0/Csharp_Inyeccion
+/home/joseagus/Escritorio/impl-24/temas/inyeccion/Csharp_Inyeccion/bin/Debug/net8.0/Csharp_Inyeccion.deps.json
+/home/joseagus/Escritorio/impl-24/temas/inyeccion/Csharp_Inyeccion/bin/Debug/net8.0/Csharp_Inyeccion.runtimeconfig.json
+/home/joseagus/Escritorio/impl-24/temas/inyeccion/Csharp_Inyeccion/bin/Debug/net8.0/Csharp_Inyeccion.dll
+/home/joseagus/Escritorio/impl-24/temas/inyeccion/Csharp_Inyeccion/bin/Debug/net8.0/Csharp_Inyeccion.pdb
+/home/joseagus/Escritorio/impl-24/temas/inyeccion/Csharp_Inyeccion/obj/Debug/net8.0/Csharp_Inyeccion.GeneratedMSBuildEditorConfig.editorconfig
+/home/joseagus/Escritorio/impl-24/temas/inyeccion/Csharp_Inyeccion/obj/Debug/net8.0/Csharp_Inyeccion.AssemblyInfoInputs.cache
+/home/joseagus/Escritorio/impl-24/temas/inyeccion/Csharp_Inyeccion/obj/Debug/net8.0/Csharp_Inyeccion.AssemblyInfo.cs
+/home/joseagus/Escritorio/impl-24/temas/inyeccion/Csharp_Inyeccion/obj/Debug/net8.0/Csharp_Inyeccion.csproj.CoreCompileInputs.cache
+/home/joseagus/Escritorio/impl-24/temas/inyeccion/Csharp_Inyeccion/obj/Debug/net8.0/Csharp_Inyeccion.sourcelink.json
+/home/joseagus/Escritorio/impl-24/temas/inyeccion/Csharp_Inyeccion/obj/Debug/net8.0/Csharp_Inyeccion.dll
+/home/joseagus/Escritorio/impl-24/temas/inyeccion/Csharp_Inyeccion/obj/Debug/net8.0/refint/Csharp_Inyeccion.dll
+/home/joseagus/Escritorio/impl-24/temas/inyeccion/Csharp_Inyeccion/obj/Debug/net8.0/Csharp_Inyeccion.pdb
+/home/joseagus/Escritorio/impl-24/temas/inyeccion/Csharp_Inyeccion/obj/Debug/net8.0/Csharp_Inyeccion.genruntimeconfig.cache
+/home/joseagus/Escritorio/impl-24/temas/inyeccion/Csharp_Inyeccion/obj/Debug/net8.0/ref/Csharp_Inyeccion.dll
