@@ -100,7 +100,7 @@ end
 
 ## Desplegar Web
 
-Para desplegar la web necesitamos ejecutar el terraform con estos comandos:
+Para desplegar la web necesitamos ejecutar el terraform (que despliega el Dockerfile) con estos comandos:
 
 ```terraform
 terraform init
@@ -109,3 +109,5 @@ terraform apply
 Una vez que Terraform haya completado el despliegue, la web estará disponible en la siguiente dirección: 
 
 `https:localhost/4568`
+
+En caso de querer dejar libre el puerto, es necesario parar y eliminar el contenedor docker.
