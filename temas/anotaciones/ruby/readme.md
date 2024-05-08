@@ -35,13 +35,13 @@ En este caso, la anotación `@CompareAnnotation` se utiliza para realizar una in
 de dependencias desde la clase `BankAccountComparatorById` hacia la clase `BankAccount`, 
 instanciando el método `comparator`.
 
-1. `BankAccount.java`. Esta clase representa una cuenta bancaria e incluye la anotación `@CompareAnnotation` que
+1. [`BankAccount.java`](temas/anotaciones/ruby/BankAccount/src/main/java/uca/iiss/BankAccount.java). Esta clase representa una cuenta bancaria e incluye la anotación `@CompareAnnotation` que
    especifica cómo comparar instancias de esta clase.
     
-3. `BankAccountComparatorById.java`. Esta clase implementa un comparador para ordenar instancias de `BankAccount`
+3. [`BankAccountComparatorById.java`](temas/anotaciones/ruby/BankAccount/src/main/java/uca/iiss/BankAccountComparatorById.java). Esta clase implementa un comparador para ordenar instancias de `BankAccount`
    por su identificador.
      
-4. `CompareAnnotation.java`. Define la anotación `@CompareAnnotation`.
+4. [`CompareAnnotation.java`](temas/anotaciones/ruby/BankAccount/src/main/java/uca/iiss/CompareAnnotation.java). Define la anotación `@CompareAnnotation`.
      ```java
       @Retention(RetentionPolicy.RUNTIME) // tiempo que está presente en la compilacion
       @Target(ElementType.TYPE) // elementos a los que se aplica
@@ -49,5 +49,5 @@ instanciando el método `comparator`.
           Class<? extends Comparator<BankAccount>> compare();
       }
     ```
-5. `BankAccountSort.java`. Finalmente, el método `sort()` de esta clase se deberá ordenar siguiendo el `id`
+5. [`BankAccountSort.java`](temas/anotaciones/ruby/BankAccount/src/main/java/uca/iiss/BankAccountSort.java). Finalmente, el método `sort()` de esta clase se deberá ordenar siguiendo el `id`
 dada la anotación anterior
