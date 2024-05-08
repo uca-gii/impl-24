@@ -16,19 +16,26 @@ class LoggingAspect {
 
     @Before("accessUser()")
     public void beforeAccessUser() {
-        System.out.println("Accessing user data");
+        System.out.println("---------------------------------------------------------");
+        System.out.println("Usted acaba de acceder a la información del usuario");
+        System.out.println("---------------------------------------------------------");
     }
 
     @After("modifyUser()")
     public void afterModifyUser() {
-        System.out.println("User data modified");
+        System.out.println("---------------------------------------------------------");
+        System.out.println("ATENCION! USTED ACABA DE MODIFICAR INFORMACION DE USUARIO.");
+        System.out.println("Puede que se haya informacion sensible. Revise.");
+        System.out.println("---------------------------------------------------------");
     }
 
     @Around("execution(* User.setName(String)) || execution(* User.setAge(int))")
     public Object aroundUserPropertyChange(ProceedingJoinPoint pjp) throws Throwable {
-        System.out.println("Changing user property");
+        System.out.println("---------------------------------------------------------");
+        System.out.println("Cambiando propiedad del usuario....");
         Object returnValue = pjp.proceed();
-        System.out.println("User property changed");
+        System.out.println("Propiedad cambiada con éxito");
+        System.out.println("---------------------------------------------------------");
         return returnValue;
     }
 }
