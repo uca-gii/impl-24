@@ -97,6 +97,12 @@ class Percusion
   end
 end
 ```
+## Dinamismo del include
+En Ruby, los módulos y clases se pueden cargar dinámicamente en tiempo de ejecución. Esto significa que no es necesario cargar todo el código al principio; puedes agregarlo según sea necesario. 
+
+Por ejemplo, si tienes una aplicación que utiliza plugins o extensiones, puedes cargar esos módulos solo cuando el usuario activa una función específica.
+
+Cuando usas `include` para mezclar un módulo en una clase, estás agregando dinámicamente los métodos y funciones definidos en ese módulo a la clase. Esto permite que las instancias de la clase accedan a esa funcionalidad adicional sin necesidad de heredar de una clase base específica.
 
 ## Desplegar Web
 
