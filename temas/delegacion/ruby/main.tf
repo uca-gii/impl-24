@@ -25,5 +25,6 @@ resource "docker_container" "app_container" {
   ports {
     internal = 4568
     external = 4568
+
   }
 }
