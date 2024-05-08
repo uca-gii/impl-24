@@ -17,18 +17,6 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v3
 
-    - name: Setup Environment
-      run: |
-        dotnet --version
-        pwd
-        ls -la
-
-    - name: Change Directory to Project Folder
-      run: |
-        cd temas/delegacion/Tests
-        pwd
-        ls -la
-
     - name: Build and Run Tests
       run: |
         cd temas/delegacion/Tests
