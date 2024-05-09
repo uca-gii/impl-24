@@ -1,6 +1,6 @@
 # Manejo de errores en Ruby
 
-## [Calculator.rb](Calculator.rb)
+## [Calculator.rb](calculator.rb)
 
 Este archivo contiene una clase `Calculator` que proporciona métodos para realizar operaciones matemáticas básicas como suma, resta, multiplicación, división y potencia. Utiliza la biblioteca Sinatra para crear una aplicación web mínima que expone estas operaciones a través de una interfaz web.
 
@@ -20,6 +20,12 @@ Esta librería usa los métodos `Some` que indica que no ha ocurrido ningún err
 
 Un ejemplo a esto último se puede observar en el fichero : [`streams.rb`](streams.rb)
 
+Para ejecutarlo nos debemos situar en el directorio donde se encuentra el archivo y poner el siguiente comando:
+
+```
+ruby streams.rb
+```
+A continuación se podrá ver las salidas de todas las divisiones válidas que ejecuta y el resultado del array final sólo con las diviones válidas.
 
 # Construir programa y pruebas
 Para verificar la corrección del ejemplo se han desarrollado unas pruebas, en ruby usamos para ello la gema `test/unit` que permite hacer test simples y precisos de nuestro código.
