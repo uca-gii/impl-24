@@ -1,9 +1,12 @@
-name: Aspectos Workflow
+name: Aspectos RUBY (Marta y Sergio)
 
 on: 
-  push:
+# push:
+#    branches:
+#      - feat-aspectos
+  workflow_dispatch:
     branches:
-      - feat-aspectos
+      - main
 
 jobs:
   build:
