@@ -28,7 +28,7 @@ end
 
 En el ejemplo proporcionado, se ha creado una adaptación de la clase "Aventura" en Ruby. Los mecanismos utilizados en Ruby difieren de los empleados en la implementación en Java.
 
-El enlace a todas las clases y módulos se proporciona [aqui](temas/herencia/ruby/Adventure.rb)
+El enlace a todas las clases y módulos se proporciona [aqui](Adventure.rb)
 
 ## Ejemplo
 
@@ -146,10 +146,10 @@ end
 ```
 # Construir programa y pruebas
 Para verificar la corrección del ejemplo se han desarrollado unas pruebas, en ruby usamos para ello la gema `minitest` que permite, entre otras cosas, comparar flujos de salida. 
-La prueba la puede ver desde auí directamente con este enlace: [Tests](temas/herencia/ruby/testAdventure.rb)
+La prueba la puede ver desde auí directamente con este enlace: [Tests](testAdventure.rb)
 
 Para construir el programa y las pruebas se ha desarrollado un github Action, puede runnearlo manualmente desde
-el siguiente enlace : [Action](.github/workflows/herencia.ruby.yml)
+el siguiente enlace : [Action](../../../.github/workflows/herencia.ruby.yml)
 
 # Desplegar web 
 Para desplegar la web necesitamos ejecutar el terraform (que usa un Dockerfile) con estos comandos:
