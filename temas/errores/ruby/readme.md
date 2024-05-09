@@ -20,6 +20,7 @@ Esta librería usa los métodos `Some` que indica que no ha ocurrido ningún err
 
 Un ejemplo a esto último se puede observar en el fichero : [`streams.rb`](streams.rb)
 
+
 # Construir programa y pruebas
 Para verificar la corrección del ejemplo se han desarrollado unas pruebas, en ruby usamos para ello la gema `test/unit` que permite hacer test simples y precisos de nuestro código.
 La prueba la puede ver desde aquí directamente con este enlace: [Tests](testCalculator.rb)
