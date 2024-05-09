@@ -51,3 +51,11 @@ instanciando el método `comparator`.
     ```
 5. [`BankAccountSort.java`](temas/anotaciones/ruby/BankAccount/src/main/java/uca/iiss/BankAccountSort.java). Finalmente, el método `sort()` de esta clase se deberá ordenar siguiendo el `id`
 dada la anotación anterior
+
+# Construir programa y pruebas
+Para verificar la corrección del ejemplo se han desarrollado unas pruebas, en java hemos decidido usar los test de `junit` dentro de un proyecto maven
+
+La prueba la puede ver desde aquí directamente con este enlace: [Tests](temas/anotaciones/java/BankAccount/src/test/java/BankAccountTest.java)
+
+Para construir el programa y las pruebas se ha desarrollado un Github Action, puede runnearlo manualmente desde
+el siguiente enlace : [Action](.github/workflows/anotaciones-java.yml)
