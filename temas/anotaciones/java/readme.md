@@ -53,6 +53,8 @@ instanciando el método `comparator`.
 dada la anotación anterior
 
 # Construir programa y pruebas
+El programa se ha construirdo dentro de un proyecto maven, con las dependencias y configuraciones visibles en el archovo [pom.xml](BankAccount/pom.xml)
+
 Para verificar la corrección del ejemplo se han desarrollado unas pruebas, en java hemos decidido usar los test de `junit` dentro de un proyecto maven
 
 La prueba la puede ver desde aquí directamente con este enlace: [Tests](BankAccount/src/test/java/BankAccountTest.java)
