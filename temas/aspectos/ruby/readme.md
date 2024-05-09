@@ -183,7 +183,7 @@ Nota: Los mensajes que son devueltos por la clase Auditor se muestran al usuario
 
 ## Desplegar Web ##
 
-Para desplegar la web necesitamos ejecutar el terraform con estos comandos:
+Para desplegar la web necesitamos ejecutar el terraform con estos comandos y poseer el Dockerfile en cuestión:
 
 ``` terraform
 terraform init
@@ -192,5 +192,3 @@ terraform apply
 Una vez que Terraform haya completado el despliegue, la web estará disponible en la siguiente dirección: 
 
 `https:localhost/4568`
-
-Nota: Este Terraform ha sido creado para máquinas que utilicen Windows como SO. Para poder ejecutar el Terraform en otros SO, modificar los comandos de instalación según lo requiera su SO.
