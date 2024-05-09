@@ -18,7 +18,7 @@ jobs:
     
     defaults:
       run:
-        working-directory: temas/aspectos/Code
+        working-directory: temas/aspectos/C#/Code
 
     steps:
     - uses: actions/checkout@v4

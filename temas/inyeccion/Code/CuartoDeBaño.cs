@@ -2,9 +2,9 @@ using System;
 
 public class CuartoDeBaño : Habitacion
 {
-    public CuartoDeBaño(string nombre, double m2)
+    public CuartoDeBaño(string nom, double m2)
     {
-        this.nombre = nombre;
+        this.nombre = nom;
         this.metrosCuadrados = m2;
     }
 

@@ -17,4 +17,9 @@
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <!-- Agrega el paquete para Microsoft.Extensions.DependencyInjection -->
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="7.0.0" /> <!-- Ajusta según tu versión de .NET -->
+  </ItemGroup>
+
 </Project>

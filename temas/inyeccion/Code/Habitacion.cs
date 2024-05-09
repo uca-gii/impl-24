@@ -1,17 +1,17 @@
 using System;
 public abstract class Habitacion
 {
-    protected string nombre;
+    protected string? nombre;
 
     protected double metrosCuadrados;
     
     public double getMetrosCuadrados(){
         return metrosCuadrados;
     }
-    public void setMetrosCuadrados(double MetrosCuadrados){
-        this.metrosCuadrados = metrosCuadrados;
+    public void setMetrosCuadrados(double m2){
+        this.metrosCuadrados = m2;
     }
-    public string getNombre(){
+    public string? getNombre(){
         return nombre;
     }
 

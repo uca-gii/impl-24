@@ -18,7 +18,7 @@ jobs:
     
     defaults:
       run:
-        working-directory: temas/inyeccion/Code
+        working-directory: temas/inyeccion/C#/Code
 
     steps:
     - uses: actions/checkout@v4
