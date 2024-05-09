@@ -1,4 +1,4 @@
-name: Ruby Sinatra CI
+name: Herencia RUBY (Marta Y Sergio)
 
 on:
   workflow_dispatch: 
