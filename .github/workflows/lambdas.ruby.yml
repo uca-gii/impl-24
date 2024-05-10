@@ -1,6 +1,10 @@
-name: Ruby Lambdas Workflow
+name: Lambdas RUBY (Marta y Sergio)
 
-on: push
+on: 
+# push
+  workflow_dispatch:
+    branches:
+      - main
 
 jobs:
   build:
