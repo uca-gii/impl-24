@@ -20,13 +20,32 @@ jobs:
       uses: ruby/setup-ruby@v1
       with:
         ruby-version: 3.0.0
+    
+    - name: Install dependencies
+      run:  |
+        gem install rx
 
     - name: Run script Ruby
       run: ruby ./temas/lambdas/ruby/lambdas.rb
     
-    - name: Commit and Push changes
-      uses: stefanzweifel/git-auto-commit-action@v5
+  test:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Set up Ruby
+      uses: ruby/setup-ruby@v1
       with:
-        commit_message: Update test
-        commit_user_name: SBaston [GitHub Actions]
-        commit_user_email: sergiojose.bastonlosey@alum.uca.es
+        ruby-version: 3.0.0
+
+    - name: Install dependencies
+      run:  |
+        gem install minitest
+        gem install rx
+
+    - name: Run Ruby test
+      run: ruby ./temas/lambdas/ruby/testLambdas.rb
