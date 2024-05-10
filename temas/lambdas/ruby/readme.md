@@ -116,7 +116,7 @@ Se define la siguiente función para realizar la simulación.
 sensor1_observable = simulate_temperature_sensor(1)
 sensor2_observable = simulate_temperature_sensor(2)
 ```
-Se instancian dos objetos que contendrán el hash con el ID del sensor y la temperatura en Celsius para cada sensor respectivamente.
+Se instancian dos observables que contendrán el hash con el ID del sensor y la temperatura en Celsius para cada sensor respectivamente.
 
 ```ruby
 to_fahrenheit = ->(data) do
@@ -131,12 +131,12 @@ El hash entonces contendrá el ID del sensor, la temperatura en Celsius y la tem
 sensor1_with_fahrenheit = sensor1_observable.map(&to_fahrenheit)
 sensor2_with_fahrenheit = sensor2_observable.map(&to_fahrenheit)
 ```
-Se crean dos instancias con los nuevos hashes que contendrán. Se utiliza el operador de map en el contexto del Observable para transformar el hash inicial `sensorX_observable` a un nuevo hash llamando a la función `to_fahrenheit`.
+Se crean dos observables con los nuevos hashes que contendrán. Se utiliza el operador de map en el contexto del Observable para transformar el hash inicial `sensorX_observable` a un nuevo hash llamando a la función `to_fahrenheit`.
 
 ```ruby
 is_anomalous = ->(data) { data[:temperature_celsius] > 35 }
 ```
-Esta función lambda servirá para seleccionar aquellos hashes que su temperatura en Celsius sea mayor que 35.
+Esta función lambda verificará si una lectura de temperatura es anómala, es decir, que su temperatura en Celsius sea mayor que 35.
 
 ```ruby
  subscribe_to_anomalous_readings = ->(sensor_id) do
@@ -144,12 +144,13 @@ Esta función lambda servirá para seleccionar aquellos hashes que su temperatur
       puts "Sensor #{sensor_id} - Lectura anómala: #{data[:temperature_celsius]}°C / #{data[:temperature_fahrenheit]}°F\n" }
   end
 ```
-Esta función lambda imprimirá por pantalla los sensores.
+Esta función lambda servirá para suscribirse a lecturas anómalas de temperatura.
 
 ```ruby
 anomalous_readings1 = sensor1_with_fahrenheit.select(&is_anomalous)
 anomalous_readings2 = sensor2_with_fahrenheit.select(&is_anomalous)
 ```
+Se crean dos observables que solo contendrán aquellos hashes con lecturas anómalas mediante el operador de `select` que los filtrará.
 
 ```ruby
 subscription1 = anomalous_readings1.subscribe(
@@ -164,6 +165,10 @@ subscription2 = anomalous_readings2.subscribe(
     -> { puts "Sensor 2 - La secuencia ha finalizado\n" }  # on_completed
 )
 ```
+Se definen las dos suscripciones a los observables `anomalous_readingsX` y se especifican qué tienen qué hacer en cada caso de evento. Hay tres tipos de casos:
+- Evento exitoso (on_next): llamará a la función lambda `subscribe_to_anomalous_readings` que imprimirá por pantalla las lecturas anómalas de un determinado sensor.
+- Evento erróneo (on_error): se ejecutará si existe algún error en el flujo de datos.
+- Evento completado (on_completed): se realizará cuando el flujo de datos ha finalizado correctamente para X sensor.
 
 ```ruby
 sleep(18)
@@ -173,3 +178,28 @@ subscription1.dispose
 subscription2.dispose
 end
 ```
+Se esperan 18 segundos para que se generen algunas lecturas anómalas.
+Finalmente, con la función `dispose` se cancelan las suscripciones para que los observables terminen de monitorizar los eventos.
+
+Nota: el programa dura 18 segundos pero se establece que a partir de los 15 segundos se complete el evento para que se pueda mostrar por pantalla el mensaje de `Sensor X - La secuencia ha finalizado'.
+
+# Construir programa y pruebas #
+Para verificar la corrección del ejemplo se han desarrollado unas pruebas. En ruby usamos para ello la gema `minitest` que permite, entre otras cosas, comparar flujos de salida. 
+La prueba la puede ver desde aquí directamente con este enlace: [Tests](testLambdas.rb)
+
+Para construir el programa y las pruebas se ha desarrollado un github Action, puede runnearlo manualmente desde
+el siguiente enlace : [Action](../../../.github/workflows/lambdas.ruby.yml)
+
+## Desplegar Web ##
+Para desplegar la web necesitamos ejecutar el terraform (que despliega el [Dockerfile](Dockerfile)) con estos comandos:
+
+
+```terraform
+terraform init
+terraform apply
+```
+Una vez que Terraform haya completado el despliegue, la web estará disponible en la siguiente dirección: 
+
+`https:localhost/4568`
+
+En caso de querer dejar libre el puerto, es necesario parar y eliminar el contenedor docker.
