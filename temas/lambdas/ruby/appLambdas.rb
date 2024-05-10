@@ -2,7 +2,7 @@ require 'sinatra'
 require_relative 'lambdas.rb'
 
 get '/' do
-    erb: index
+    erb :index
 end
 
 get '/IniciarSimulador' do
