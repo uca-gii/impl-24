@@ -40,7 +40,8 @@ def run_temperature_monitoring_simulation
 
   # Lambda para suscribirse a lecturas anómalas
   subscribe_to_anomalous_readings = ->(sensor_id) do
-    ->(data) { puts "Sensor #{sensor_id} - Lectura anómala: #{data[:temperature_celsius]}°C / #{data[:temperature_fahrenheit]}°F\n" }
+    ->(data) { 
+      puts "Sensor #{sensor_id} - Lectura anómala: #{data[:temperature_celsius]}°C / #{data[:temperature_fahrenheit]}°F\n" }
   end
 
   # Aplicamos la lambda de verificación a ambos flujos de datos
