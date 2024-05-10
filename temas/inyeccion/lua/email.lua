@@ -1,4 +1,3 @@
--- Archivo: email.lua
 local EmailService = {}
 
 function EmailService:new()
@@ -8,7 +7,7 @@ function EmailService:new()
 end
 
 function EmailService:sendEmail(to, subject, body)
-    -- Aquí iría la lógica para enviar el correo electrónico
+    -- Lógica para enviar el correo electrónico
     print("Enviando correo a:", to)
     print("Asunto:", subject)
     print("Cuerpo:", body)

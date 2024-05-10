@@ -1,4 +1,3 @@
--- Archivo: main.lua
 local EmailService = require("email")
 local App = require("app")
 
