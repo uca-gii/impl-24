@@ -1,4 +1,3 @@
--- Archivo: app.lua
 local App = {}
 
 function App:new(emailService)
