@@ -1,9 +1,9 @@
 name: Inyección Lua (Marta y Sergio)
 
-on: push
-  # workflow_dispatch:
-  #   branches:
-  #     - main
+on: 
+   workflow_dispatch:
+     branches:
+       - main
 
 jobs:
   build:
