@@ -1,0 +1,29 @@
+name: Run C# Tests
+
+on:
+  push:
+    branches:
+      - feature-anotaciones
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    container:
+      image: mcr.microsoft.com/dotnet/sdk:8.0
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Build and Run Tests
+      run: |
+        cd temas/anotaciones/Tests_Anotaciones
+        dotnet add package NUnit
+        dotnet test 
+        if [ $? -ne 0 ]; then
+          echo "Test failed, creating issue..."
+          curl -XPOST -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" -d '{"title":"Test Failed","body":"One or more tests failed. Please check the logs.","labels":["bug"]}' "https://api.github.com/repos/${{ github.repository }}/issues"
+          exit 1
+        fi
