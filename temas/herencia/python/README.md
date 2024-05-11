@@ -1,6 +1,6 @@
 # Herencia en Python
 
-## Frase de Introducción
+## Introducción
 Bienvenido al repositorio sobre Herencia en Python. Aquí encontrarás información detallada sobre cómo utilizar la Herencia en Python para escribir código más limpio y eficiente.
 
 ## Estructura de Directorio
@@ -91,27 +91,40 @@ class Pez(Nadador, Animal):
 Métodos Usados en el Ejemplo:
 
 ### Clase `Animal`:
-- `__init__(self, nombre)`: Constructor que inicializa el objeto `Animal` con un nombre.
-- `mostrar_nombre(self)`: Método que devuelve el nombre del animal. Este método muestra cómo se puede proporcionar un comportamiento básico en una superclase que otras clases pueden heredar o sobrescribir.
+- `__init__(self, nombre)`: 
+Constructor que inicializa el objeto `Animal` con un nombre.
+- `mostrar_nombre(self)`: 
+Método que devuelve el nombre del animal. Este método muestra cómo se puede proporcionar un comportamiento básico en una superclase que otras clases pueden heredar o sobrescribir.
 
 ### Clase `Volador`:
-- `__init__(self, nombre, raza)`: Constructor que inicializa el objeto `Volador` con un nombre y una raza.
-- `mostrar_nombre(self)`: Método que devuelve el nombre del animal volador. Demuestra cómo una clase puede tener su propia implementación de un método que también existe en otra superclase.
-- `volar(self)`: Método que indica la capacidad de volar del animal. Específico para clases que representan animales voladores.
-- `mostrar_raza(self)`: Método que devuelve la raza del animal volador.
+- `__init__(self, nombre, raza)`: 
+Constructor que inicializa el objeto `Volador` con un nombre y una raza.
+- `mostrar_nombre(self)`: 
+Método que devuelve el nombre del animal volador. Demuestra cómo una clase puede tener su propia implementación de un método que también existe en otra superclase.
+- `volar(self)`: 
+Método que indica la capacidad de volar del animal. Específico para clases que representan animales voladores.
+- `mostrar_raza(self)`: 
+Método que devuelve la raza del animal volador.
 
 ### Clase `Nadador`:
-- `__init__(self, nombre, raza)`: Constructor que inicializa el objeto `Nadador` con un nombre y una raza.
-- `mostrar_nombre(self)`: Similar a `Volador`, muestra cómo se puede tener diferentes implementaciones del mismo método en diferentes clases.
-- `nadar(self)`: Método que indica la capacidad de nadar del animal.
-- `mostrar_raza(self)`: Método que devuelve la raza del animal nadador.
+- `__init__(self, nombre, raza)`: 
+Constructor que inicializa el objeto `Nadador` con un nombre y una raza.
+- `mostrar_nombre(self)`: 
+Similar a `Volador`, muestra cómo se puede tener diferentes implementaciones del mismo método en diferentes clases.
+- `nadar(self)`: 
+Método que indica la capacidad de nadar del animal.
+- `mostrar_raza(self)`: 
+Método que devuelve la raza del animal nadador.
 
 ### Clase `Ave` (Herencia Múltiple de `Animal` y `Volador`):
-- `__init__(self, nombre, raza)`: Constructor que llama explícitamente a los constructores de las superclases `Animal` y `Volador` para asegurar que todos los atributos necesarios estén correctamente inicializados.
-- `accion(self)`: Método que devuelve una cadena que identifica al objeto como un ave y llama al método `volar()` de la superclase `Volador`. Este método ilustra cómo una clase puede utilizar métodos de sus superclases a través de la herencia múltiple.
+- `__init__(self, nombre, raza)`: 
+Constructor que llama explícitamente a los constructores de las superclases `Animal` y `Volador` para asegurar que todos los atributos necesarios estén correctamente inicializados.
+- `accion(self)`: 
+Método que devuelve una cadena que identifica al objeto como un ave y llama al método `volar()` de la superclase `Volador`. Este método ilustra cómo una clase puede utilizar métodos de sus superclases a través de la herencia múltiple.
 
 ### Clase `Pez` (Herencia Múltiple de `Nadador` y `Animal`):
-- `__init__(self, nombre, raza)`: Constructor que inicializa ambas superclases, `Nadador` y `Animal`, demostrando el uso adecuado de la herencia múltiple para combinar funcionalidades de ambas superclases.
+- `__init__(self, nombre, raza)`: 
+Constructor que inicializa ambas superclases, `Nadador` y `Animal`, demostrando el uso adecuado de la herencia múltiple para combinar funcionalidades de ambas superclases.
 
 Este código proporciona un claro ejemplo de cómo la herencia simple y la herencia múltiple pueden ser usadas en Python para crear jerarquías de clases flexibles y reutilizar funcionalidades, permitiendo a las subclases extender o modificar comportamientos de las superclases. La herencia también facilita la implementación de polimorfismo, donde métodos con el mismo nombre pueden tener comportamientos diferentes en diferentes clases.
 
