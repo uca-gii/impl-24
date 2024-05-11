@@ -77,7 +77,7 @@ Combina reduce() con una lambda para sumar todos los números en una lista. La f
 
 
 ## Código de tests
-A continuación, se muestra un ejemplo de cómo se pueden utilizar las funciones lambda en Python:
+Ahora, se muestra unos tests para probar el correcto uso de las funciones lambda en Python:
 [**tests.py**](tests.py)
 
 ```python
