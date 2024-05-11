@@ -51,8 +51,7 @@ jobs:
 
     - name: Set LUA_PATH and LUA_CPATH
       run: |
-        export LUA_PATH="./?.lua;./?/init.lua;$LUA_PATH"
-        export LUA_CPATH="./?.so;$LUA_CPATH"
+        luarocks path
         
 
     - name: Run Test script
