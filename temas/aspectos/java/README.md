@@ -361,12 +361,12 @@ Para ejecutar el código y los tests en una máquina de fábrica, sigue estos pa
 
 
 ### 1. Instalación de Java JDK 17
-# Primero, necesitas asegurarte de que Java JDK 17 está instalado en tu sistema.
-# Puedes descargar e instalar Java JDK desde:
-# https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html
-# Sigue las instrucciones específicas para tu sistema operativo.
+#### Primero, necesitas asegurarte de que Java JDK 17 está instalado en tu sistema.
+#### Puedes descargar e instalar Java JDK desde:
+#### https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html
+#### Sigue las instrucciones específicas para tu sistema operativo.
 
-# Verifica la instalación ejecutando:
+#### Verifica la instalación ejecutando:
 ```bash
 java -version
 ```
@@ -391,11 +391,14 @@ mvn -version
 #### https://git-scm.com/downloads
 
 #### Instala Git y luego ejecuta el siguiente comando para clonar el repositorio:
+```bash
 git clone https://github.com/sistemas-sw/impl-24.git
-
+```
 ### 4. Cambiar al Directorio del Repositorio
 #### Una vez clonado el repositorio, navega al directorio donde se encuentra el código:
+```bash
 cd impl-24/temas/aspectos/java/proyecto
+```
 
 ### 5. Ejecutar los Tests con Maven
 #### Finalmente, puedes ejecutar los tests utilizando Maven.

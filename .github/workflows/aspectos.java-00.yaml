@@ -1,9 +1,7 @@
 name: Java CI
 
 on:
-  push:
-    branches:
-      - feature-aspectos
+  workflow_dispatch:
 
 jobs:
   test:
