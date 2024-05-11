@@ -1,9 +1,6 @@
 name: Run Python Tests
 
 on:
-  push:
-    branches:
-      - feature-herencia
   workflow_dispatch:
 
 jobs:
