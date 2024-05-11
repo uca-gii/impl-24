@@ -10,4 +10,3 @@ libraryDependencies ++= Seq(
   "org.scalatest" %% "scalatest" % "3.2.10" % Test
 )
 
-// Otras configuraciones de sbt pueden ir aquí
