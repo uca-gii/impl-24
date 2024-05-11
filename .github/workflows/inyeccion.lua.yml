@@ -1,9 +1,9 @@
 name: Inyección Lua (Marta y Sergio)
 
-on: 
-  workflow_dispatch:
-    branches:
-      - main
+on: push
+  # workflow_dispatch:
+  #   branches:
+  #     - main
 
 jobs:
   build:
@@ -48,7 +48,7 @@ jobs:
         luarocks install luacheck
         luarocks install luaunit
         luarocks install luassert
-        
+
       
 
     - name: Run Test script
