@@ -52,7 +52,8 @@ jobs:
     - name: Set LUA_PATH and LUA_CPATH
       run: |
         luarocks path
-        
+        export LUA_PATH='/home/runner/.local/share/luver/lua-versions/5.4.3/installation/share/lua/5.4/?.lua;/usr/local/share/lua/5.4/?.lua;/usr/local/share/lua/5.4/?/init.lua;/usr/local/lib/lua/5.4/?.lua;/usr/local/lib/lua/5.4/?/init.lua;./?.lua;./?/init.lua;/home/runner/.luarocks/share/lua/5.4/?.lua;/home/runner/.luarocks/share/lua/5.4/?/init.lua;/home/runner/.local/share/luver/lua-versions/5.4.3/installation/share/lua/5.4/?/init.lua'
+        export LUA_CPATH='/usr/local/lib/lua/5.4/?.so;/usr/local/lib/lua/5.4/loadall.so;./?.so;/home/runner/.luarocks/lib/lua/5.4/?.so;/home/runner/.local/share/luver/lua-versions/5.4.3/installation/lib/lua/5.4/?.so'
 
     - name: Run Test script
       run: lua ./temas/inyeccion/lua/testInyeccion.lua
