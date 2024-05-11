@@ -26,11 +26,19 @@ fun divide(a: Int, b: Int): Int {
 }
 
 fun readFile(fileName: String): String {
-    return File(fileName).readText()
+    try {
+        return File(fileName).readText()
+    } catch (e: IOException) {
+        throw IOException("No se pudo leer el archivo '$fileName'.")
+    }
 }
 
 fun writeFile(fileName: String, content: String) {
-    File(fileName).writeText(content)
+    try {
+        File(fileName).writeText(content)
+    } catch (e: IOException) {
+        throw IOException("No se pudo escribir en el archivo '$fileName'.")
+    }
 }
 
 fun main() {

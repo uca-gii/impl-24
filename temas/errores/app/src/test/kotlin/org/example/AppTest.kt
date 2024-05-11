@@ -3,7 +3,7 @@ package org.example
 import kotlin.test.Test
 import kotlin.test.assertNotNull
 import kotlin.test.assertEquals
-import kotlin.test.fail
+import kotlin.test.assertFailsWith
 import java.io.IOException
 
 class AppTest {
@@ -15,47 +15,43 @@ class AppTest {
     
     @Test
     fun testDivisionByZero() {
-        try {
+        assertFailsWith<ArithmeticException> {
             divide(10, 0)
-            fail("Expected ArithmeticException")
-        } catch (e: ArithmeticException) {
-            assertEquals("No se puede dividir por cero.", e.message, "Unexpected exception message")
         }
     }
     
     @Test
     fun testInvalidAgeException() {
-        try {
+        val exception = assertFailsWith<InvalidAgeException> {
             checkAge(16)
-            fail("Expected InvalidAgeException")
-        } catch (e: InvalidAgeException) {
-            assertEquals("No tienes la edad suficiente.", e.message, "Unexpected exception message")
         }
+        assertEquals("No tienes la edad suficiente.", exception.message, "Unexpected exception message")
     }
     
     @Test
-    fun testIOException() {
+    fun testIOExceptionReading() {
         val fileName = "nonexistent_file.txt"
-        try {
+        val exception = assertFailsWith<IOException> {
             readFile(fileName)
-            fail("Expected IOException")
-        } catch (e: IOException) {
-            assertEquals("No se pudo leer el archivo '$fileName'.", e.message, "Unexpected exception message")
         }
+        assertEquals("No se pudo leer el archivo '$fileName'.", exception.message)
     }
     
     @Test
     fun testIndexOutOfBoundsException() {
-        try {
+        assertFailsWith<IndexOutOfBoundsException> {
             mightThrowException()
-            fail("Expected IndexOutOfBoundsException")
-        } catch (e: IndexOutOfBoundsException) {
-            // No se puede predecir el mensaje exacto de la excepción, 
-            // ya que depende del entorno de ejecución y de cómo se imprime el stack trace
-            assertNotNull(e.message, "Exception message should not be null")
         }
     }
     
-    // No es posible probar el método writeFile directamente en los test unitarios 
-    // sin introducir dependencias adicionales o complicaciones en el entorno de prueba.
+    // Aquí puedes agregar un test para writeFile si decides simular la operación de escritura
+    @Test
+    fun testIOExceptionWriting() {
+        val fileName = "path/to/readonly/directory/temp_file.txt"
+        val content = "Some content"
+        val exception = assertFailsWith<IOException> {
+            writeFile(fileName, content)
+        }
+        assertEquals("No se pudo escribir en el archivo '$fileName'.", exception.message)
+    }
 }
