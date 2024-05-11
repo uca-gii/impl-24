@@ -10,7 +10,7 @@ class AnimalSpec extends AnyFlatSpec with Matchers {
 
   "An Animal" should "fly" in {
     val animal = new Animal with Volador
-    animal.volar() shouldBe "¡Estoy volando!"
+    animal.volar() shouldBe "¡Estoy volando!" 
   }
 
   it should "swim" in {
