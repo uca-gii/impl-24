@@ -1,6 +1,6 @@
 -- Archivo: test.lua
-local lu = require('./temas/inyeccion/lua/luaunit')
-local luassert = require('./temas/inyeccion/lua/luassert')
+local lu = require('luaunit')
+local luassert = require('luassert')
 local EmailService = require('./temas/inyeccion/lua/email')
 local App = require('./temas/inyeccion/lua/app')
 
