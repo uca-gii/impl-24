@@ -1,0 +1,5 @@
+[0m[[0m[31merror[0m] [0m[0mC:\Users\Alberto\Desktop\UNIVERSIDAD\3ºGII\2ºCuatri\IISS\Prácticas\PracticaFinal\impl-24\temas\abstraccion\scala\proyecto\src\test\scala\tests.scala:28:11: `override` modifier required to override concrete member:[0m
+[0m[[0m[31merror[0m] [0m[0moverride def fecha(): String (defined in class Animal)[0m
+[0m[[0m[31merror[0m] [0m[0m      def fecha(): String = "¡Hoy es jueves!"[0m
+[0m[[0m[31merror[0m] [0m[0m          ^[0m
+[0m[[0m[31merror[0m] [0m[0mone error found[0m

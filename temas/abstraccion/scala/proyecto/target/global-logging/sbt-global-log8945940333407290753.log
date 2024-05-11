@@ -1,0 +1,14 @@
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(test, Some(c0689fe6-45a6-42b1-adc9-084872c931b5), Some(CommandSource(console0)))[0m
+[0m[[0m[0mdebug[0m] [0m[0mEvaluating tasks: Test / test[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning task... Cancel: Signal, check cycles: false, forcegc: true[0m
+[0m[[0m[0minfo[0m] [0m[0mcompiling 1 Scala source to C:\Users\Alberto\Desktop\UNIVERSIDAD\3ºGII\2ºCuatri\IISS\Prácticas\PracticaFinal\impl-24\temas\abstraccion\scala\proyecto\target\scala-2.13\test-classes ...[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\Alberto\Desktop\UNIVERSIDAD\3ºGII\2ºCuatri\IISS\Prácticas\PracticaFinal\impl-24\temas\abstraccion\scala\proyecto\src\test\scala\tests.scala:4:8: not found: object ejemplo[0m
+[0m[[0m[31merror[0m] [0m[0mimport ejemplo.Animal[0m
+[0m[[0m[31merror[0m] [0m[0m       ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\Alberto\Desktop\UNIVERSIDAD\3ºGII\2ºCuatri\IISS\Prácticas\PracticaFinal\impl-24\temas\abstraccion\scala\proyecto\src\test\scala\tests.scala:5:8: not found: object ejemplo[0m
+[0m[[0m[31merror[0m] [0m[0mimport ejemplo.Mamifero[0m
+[0m[[0m[31merror[0m] [0m[0m       ^[0m
+[0m[[0m[31merror[0m] [0m[0mtwo errors found[0m
+[0m[[0m[31merror[0m] [0m[0m(Test / [31mcompileIncremental[0m) Compilation failed[0m
+[0m[[0m[31merror[0m] [0m[0mTotal time: 0 s, completed 6 may 2024 14:52:37[0m
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(shell, None, None)[0m
