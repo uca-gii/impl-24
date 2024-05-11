@@ -1,6 +1,6 @@
 # Lambdas en Python
 
-## Frase de Introducción
+## Introducción
 Bienvenido al repositorio sobre Lambdas en Python. Aquí encontrarás información detallada sobre cómo utilizar funciones lambda en Python para escribir código más limpio y eficiente.
 
 ## Estructura de Directorio
