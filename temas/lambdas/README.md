@@ -154,8 +154,9 @@ python3 --version
 #### https://git-scm.com/downloads
 
 #### Instala Git y luego ejecuta el siguiente comando para clonar el repositorio:
-git clone [URL_DEL_REPOSITORIO](https://github.com/sistemas-sw/impl-24.git)
-
+```bash
+git clone [https://github.com/sistemas-sw/impl-24.git](https://github.com/sistemas-sw/impl-24.git)
+```
 
 ### 3. Cambiar al Directorio del Repositorio
 #### Una vez clonado el repositorio, navega al directorio donde se encuentra el código:
