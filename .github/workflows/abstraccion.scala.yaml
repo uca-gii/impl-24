@@ -1,9 +1,7 @@
 name: Scala CI
 
 on:
-  push:
-    branches:
-      - feature-abstraccion
+  workflow_dispatch:
 
 jobs:
   test:
