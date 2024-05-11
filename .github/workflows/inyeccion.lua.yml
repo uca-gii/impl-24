@@ -54,6 +54,7 @@ jobs:
         luarocks path
         export LUA_PATH='/home/runner/.local/share/luver/lua-versions/5.4.3/installation/share/lua/5.4/?.lua;/usr/local/share/lua/5.4/?.lua;/usr/local/share/lua/5.4/?/init.lua;/usr/local/lib/lua/5.4/?.lua;/usr/local/lib/lua/5.4/?/init.lua;./?.lua;./?/init.lua;/home/runner/.luarocks/share/lua/5.4/?.lua;/home/runner/.luarocks/share/lua/5.4/?/init.lua;/home/runner/.local/share/luver/lua-versions/5.4.3/installation/share/lua/5.4/?/init.lua'
         export LUA_CPATH='/usr/local/lib/lua/5.4/?.so;/usr/local/lib/lua/5.4/loadall.so;./?.so;/home/runner/.luarocks/lib/lua/5.4/?.so;/home/runner/.local/share/luver/lua-versions/5.4.3/installation/lib/lua/5.4/?.so'
+        export PATH='/home/runner/.luarocks/bin:/home/runner/.local/share/luver/lua-versions/5.4.3/installation/bin:/snap/bin:/usr/local/games:/usr/games:/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:/home/runner/.dotnet/tools:/usr/local/.ghcup/bin:/home/runner/.config/composer/vendor/bin:/home/runner/.cargo/bin:/opt/pipx_bin:/home/runner/.local/bin:/home/runner/.local/share/luver/self/bin:/tmp/luver_current_1730_1715449874_iES/bin'
 
     - name: Run Test script
       run: lua ./temas/inyeccion/lua/testInyeccion.lua
