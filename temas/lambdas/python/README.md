@@ -9,8 +9,6 @@ Bienvenido al repositorio sobre Lambdas en Python. Aquí encontrarás informaci�
 - `/tests.py`: Archivo python donde se encuentra el codigo de los tests.
 
 ## Conceptos Previos
-Antes de profundizar en el uso de las funciones lambda en Python, es importante entender algunos conceptos básicos que facilitarán la comprensión de los ejemplos y código proporcionado en este repositorio:
-## Conceptos Previos
 Antes de explorar los ejemplos proporcionados en este repositorio, es esencial entender algunos conceptos clave relacionados con el uso de funciones lambda en Python. Las funciones lambda son pequeñas funciones anónimas definidas con la palabra clave `lambda`. Aquí se detallan varios usos y técnicas que se emplean en el código de ejemplo.py:
 
 - **Funciones Lambda para Operaciones Simples**:
