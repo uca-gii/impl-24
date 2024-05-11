@@ -56,7 +56,7 @@ jobs:
         echo "LUA_PATH: $LUA_PATH"
         echo "LUA_CPATH: $LUA_CPATH"
         echo "Content of luaunit installation directory:"
-        ls -l $(luarocks path --lr-path luaunit)
+        find / -name "luaunit" -type d
 
     - name: Run Test script
       run: lua ./temas/inyeccion/lua/testInyeccion.lua
