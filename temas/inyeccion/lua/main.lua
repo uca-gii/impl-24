@@ -1,5 +1,5 @@
-local EmailService = require("email")
-local App = require("app")
+local EmailService = require("./temas/inyeccion/lua/email")
+local App = require("./temas/inyeccion/lua/app")
 
 -- Crear una instancia de EmailService
 local emailService = EmailService:new()
