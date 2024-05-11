@@ -53,6 +53,10 @@ jobs:
       run: |
         export LUA_PATH="./?.lua;./?/init.lua;$LUA_PATH"
         export LUA_CPATH="./?.so;$LUA_CPATH"
+        echo "LUA_PATH: $LUA_PATH"
+        echo "LUA_CPATH: $LUA_CPATH"
+        echo "Content of luaunit installation directory:"
+        ls -l $(luarocks path --lr-path luaunit)
 
     - name: Run Test script
       run: lua ./temas/inyeccion/lua/testInyeccion.lua
