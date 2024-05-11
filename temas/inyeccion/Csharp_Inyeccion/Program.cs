@@ -1,7 +1,7 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using System;
+using Microsoft.Extensions.DependencyInjection;
 
-
-// Interfaces
+// Definición de las interfaces
 public interface INotifier
 {
     void SendNotification(string message);
@@ -57,10 +57,27 @@ public class OrderProcessor : IOrderProcessor
 
     public void ProcessOrder(string orderId)
     {
-        _logger?.Log($"Inicio del procesamiento del pedido {orderId}.");
-        Console.WriteLine($"Procesando el pedido {orderId}.");
-        _notifier?.SendNotification($"Su pedido {orderId} ha sido procesado exitosamente.");
-        _logger?.Log($"Pedido {orderId} procesado y notificado.");
+        try
+        {
+            _logger.Log($"Inicio del procesamiento del pedido {orderId}.");
+            Console.WriteLine($"Procesando el pedido {orderId}.");
+
+            if (orderId.Contains("VIP"))
+            {
+                _notifier.SendNotification($"Su pedido VIP {orderId} ha sido procesado con prioridad.");
+            }
+            else
+            {
+                _notifier.SendNotification($"Su pedido {orderId} ha sido procesado exitosamente.");
+            }
+
+            _logger.Log($"Pedido {orderId} procesado y notificado.");
+        }
+        catch (Exception ex)
+        {
+            _logger.Log($"Error durante el procesamiento del pedido {orderId}: {ex.Message}");
+            throw;  // Re-throw the exception if you need to handle it further up the stack.
+        }
     }
 }
 
