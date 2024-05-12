@@ -23,3 +23,25 @@ jobs:
 
     - name: Run script Ruby
       run: ruby ./temas/abstraccion/ruby/abstraccion.rb
+  
+  test:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Set up Ruby
+      uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: 3.0.0
+
+    - name: Install dependencies
+      run:  |
+        gem install minitest
+        
+
+    - name: Run Ruby test
+      run: ruby ./temas/lambdas/ruby/testAbstraccion.rb
