@@ -3,7 +3,7 @@ name: Kotlin CI Test
 on:
   push:
     branches:
-      - feature-anotaciones
+      - feature-errores
   workflow_dispatch:
 
 jobs:
