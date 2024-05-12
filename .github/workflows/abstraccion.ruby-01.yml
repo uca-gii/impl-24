@@ -44,4 +44,4 @@ jobs:
         
 
     - name: Run Ruby test
-      run: ruby ./temas/lambdas/ruby/testAbstraccion.rb
+      run: ruby ./temas/abstraccion/ruby/testAbstraccion.rb
