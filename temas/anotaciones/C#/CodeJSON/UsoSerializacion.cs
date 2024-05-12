@@ -1,5 +1,5 @@
 using Newtonsoft.Json;
-class Usoclases
+class UsoSerializacion
 {
     static void Main(string[] args)
     {
