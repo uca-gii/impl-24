@@ -3,57 +3,46 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lambdas en un simulador de sensores</title>
-<style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f4f4f4;
-      color: #333;
-    }
-    .container {
-      max-width: 800px;
-      margin: 20px auto;
-      padding: 20px;
-      background-color: #fff;
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
-    h1 {
-      text-align: center;
-    }
-    button {
-      display: block;
-      margin: 20px auto;
-      padding: 10px 20px;
-      background-color: #007bff;
-      color: #fff;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-    button:hover {
-      background-color: #0056b3;
-    }
-    #message {
-      text-align: center;
-      margin-top: 20px;
-    }
-  </style>
+  <title>Abstracción con Figuras Geométricas</title>
 </head>
 <body>
-  <div class="container">
-    <h1>Lambdas en un simulador de sensores</h1>
-    <button onclick="IniciarSimulador()">Iniciar Simulador </button>
+  
+    <h1>Abstracción con Figuras Geométricas</h1>
+    <input type="number" id="radio" placeholder="Radio del Circulo">
+    <input type="number" id="ancho" placeholder="Ancho del Rectangulo">
+    <input type="number" id="alto" placeholder="Alto del Rectangulo">
+    <input type="number" id="base" placeholder="Base del Triangulo">
+    <input type="number" id="altura" placeholder="Altura del Triangulo">
+    <input type="number" id="lado1" placeholder="Primer lado del Triangulo">
+    <input type="number" id="lado2" placeholder="Segundo lado del Triangulo">
+    <input type="number" id="lado3" placeholder="Tercer lado del Triangulo">
+    <button onclick="Circulo()">Circulo </button>
+    <button onclick="Rectangulo()">Rectangulo </button>
+    <button onclick="Triangulo()">Triangulo </button>
     <div id="message"></div>
-   </div>
+    
   
   <script>
-
-    function IniciarSimulador() {
-        fetch('/IniciarSimulador')
+    function Circulo() {
+        var radio = document.getElementById('radio').value;
+        fetch('/Circulo/' + radio)
+        .then(response => response.text())
+        .then(result => document.getElementById('message').innerHTML = result); 
+    }
+    function Rectangulo() {
+        var ancho = document.getElementById('ancho').value;
+        var alto = document.getElementById('alto').value;
+        fetch('/Rectangulo/' + ancho + '/' + alto)
+        .then(response => response.text())
+        .then(result => document.getElementById('message').innerHTML = result);
+    }
+    function Triangulo() {
+        var base = document.getElementById('base').value;
+        var altura = document.getElementById('altura').value;
+        var lado1 = document.getElementById('lado1').value;
+        var lado2 = document.getElementById('lado2').value;
+        var lado3 = document.getElementById('lado3').value;
+        fetch('/Triangulo/' + base + '/' + altura + '/' + lado1 + '/' + lado2 + '/' + lado3)
         .then(response => response.text())
         .then(result => document.getElementById('message').innerHTML = result);
     }
