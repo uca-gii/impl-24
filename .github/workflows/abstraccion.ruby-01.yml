@@ -1,9 +1,10 @@
 name: Abstraccion RUBY (Marta y Sergio)
 
-on: push
-  # workflow_dispatch:
-  #   branches:
-  #     - main
+on:
+# push
+   workflow_dispatch:
+     branches:
+       - main
 
 jobs:
   build:

@@ -53,18 +53,3 @@ module Figura
   end
 end
 
-# # Ejemplo de uso
-# rectangulo = Figura::Rectangulo.new(5, 10)
-# puts "Rectángulo:"
-# puts "Área: #{rectangulo.area}"
-# puts "Perímetro: #{rectangulo.perimetro}"
-
-# circulo = Figura::Circulo.new(3)
-# puts "\nCírculo:"
-# puts "Área: #{circulo.area}"
-# puts "Perímetro: #{circulo.perimetro}"
-
-# triangulo = Figura::Triangulo.new(4, 6, 2, 5, 7)
-# puts "\nTriángulo:"
-# puts "Área: #{triangulo.area}"
-# puts "Perímetro: #{triangulo.perimetro}"

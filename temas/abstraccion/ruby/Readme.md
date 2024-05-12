@@ -4,10 +4,16 @@ Este ejemplo trata sobre un módulo `Figura` que encapsula cada figura geométri
 
 
 ## Explicación ##
-El código se compone de un module Figura con tres clases distintas:
+El código se compone de un module Figura con tres clases distintas cada una con los métodos de área y perímetro:
 - Rectangulo
 - Circulo
 - Triangulo
+
+La abstracción se logra al encapsular la lógica de cálculo de cada figura geométrica en clases separadas, lo que permite tratar cada figura como una entidad independiente y simplifica su uso en otras partes del código.
+
+El módulo `Figura` sirve como contenedor para organizar las clases relacionadas, lo que facilita la agrupación y el acceso a estas clases dentro del código.
+
+La interfaz pública de cada clase oculta los detalles de implementación lo que permite a otras personas utilizar estas clases sin necesidad de conocer cómo se realizan los cálculos internamente.
 ```ruby
 module Figura
   class Rectangulo
