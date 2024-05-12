@@ -1,0 +1,66 @@
+# Abstracción en Ruby #
+## Ejemplo ##
+Este ejemplo trata sobre un módulo `Figura` que encapsula cada figura geométrica, `Rectángulo`, `Círculo` y `Triángulo`, en clases independientes. Cada clase proporciona métodos para calcular el área y el perímetro de su respectiva figura, ocultando los detalles de implementación y simplificando su uso. El ejemplo se encuentra aquí [abstraccion.rb](../../../temas/abstraccion/ruby/abstraccion.rb).
+
+
+## Explicación ##
+El código se compone de un module Figura con tres clases distintas:
+- Rectangulo
+- Circulo
+- Triangulo
+```ruby
+module Figura
+  class Rectangulo
+    attr_reader :ancho, :alto
+
+    def initialize(ancho, alto)
+      @ancho = ancho
+      @alto = alto
+    end
+
+    def area
+      @ancho * @alto
+    end
+
+    def perimetro
+      2 * (@ancho + @alto)
+    end
+  end
+
+  class Circulo
+    attr_reader :radio
+
+    def initialize(radio)
+      @radio = radio
+    end
+
+    def area
+      Math::PI * @radio**2
+    end
+
+    def perimetro
+      2 * Math::PI * @radio
+    end
+  end
+
+  class Triangulo
+    attr_reader :base, :altura, :lado1, :lado2, :lado3
+
+    def initialize(base, altura, lado1, lado2, lado3)
+      @base = base
+      @altura = altura
+      @lado1 = lado1
+      @lado2 = lado2
+      @lado3 = lado3
+    end
+
+    def area
+      0.5 * @base * @altura
+    end
+
+    def perimetro
+      @lado1 + @lado2 + @lado3
+    end
+  end
+end
+```
