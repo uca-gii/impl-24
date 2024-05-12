@@ -6,42 +6,42 @@ get '/' do
 end
 
 get '/Circulo/:radio' do
-    radio = params[:radio]
+    radio = params[:radio].to_f
     circulo = Figura::Circulo.new(radio)
     output = StringIO.new
     $stdout = output
     puts "Círculo: "
-    puts "Área: #{circulo.area}"
-    puts "Perímetro: #{circulo.perimetro}"
+    puts "Área: #{circulo.area.to_s}"
+    puts "Perímetro: #{circulo.perimetro.to_s}"
     $stdout = STDOUT
     output.string
 end
 
 get '/Rectangulo/:ancho/:alto' do
-    ancho = params[:ancho]
-    alto = params[:alto]
+    ancho = params[:ancho].to_f
+    alto = params[:alto].to_f
     rectangulo = Figura::Rectangulo.new(ancho, alto)
     output = StringIO.new
     $stdout = output
     puts "Rectángulo: "
-    puts "Área: #{rectangulo.area}"
-    puts "Perímetro: #{rectangulo.perimetro}"
+    puts "Área: #{rectangulo.area.to_s}"
+    puts "Perímetro: #{rectangulo.perimetro.to_s}"
     $stdout = STDOUT
     output.string
 end
 
 get '/Triangulo/:base/:altura/:lado1/:lado2/:lado3' do
-    base = params[:base]
-    altura = params[:altura]
-    lado1 = params[:lado1]
-    lado2 = params[:lado2]
-    lado3 = params[:lado3]
+    base = params[:base].to_f
+    altura = params[:altura].to_f
+    lado1 = params[:lado1].to_f
+    lado2 = params[:lado2].to_f
+    lado3 = params[:lado3].to_f
     triangulo = Figura::Triangulo.new(base, altura, lado1, lado2, lado3)
     output = StringIO.new
     $stdout = output
     puts "Triángulo: "
-    puts "Área: #{triangulo.area}"
-    puts "Perímetro: #{triangulo.perimetro}"
+    puts "Área: #{triangulo.area.to_s}"
+    puts "Perímetro: #{triangulo.perimetro.to_s}"
     $stdout = STDOUT
     output.string
 end
