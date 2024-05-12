@@ -64,3 +64,27 @@ module Figura
   end
 end
 ```
+
+# Construir programa y pruebas #
+
+Para verificar la corrección del ejemplo se han desarrollado unas pruebas, en ruby usamos para ello la gema `minitest` que permite, entre otras cosas, comparar flujos de salida. La prueba la puede ver desde aquí directamente con este enlace: [Tests](testAbstraccion.rb)
+
+Para construir el programa y las pruebas se ha desarrollado un github Action, puede runnearlo manualmente desde el siguiente enlace : [Action](../../../.github/workflows/abstraccion.ruby-01.yml).
+
+## Desplegar Web
+
+Para desplegar la web necesitamos ejecutar el terraform (que despliega el [Dockerfile](../../../temas/abstraccion/ruby/Dockerfile)) con estos comandos:
+
+
+```terraform
+terraform init
+terraform apply
+```
+
+Enlace al archivo [Terraform](../../../temas/abstraccion/ruby/Abstraccion.tf).
+
+Una vez que Terraform haya completado el despliegue, la web estará disponible en la siguiente dirección: 
+
+`https:localhost/4568`
+
+En caso de querer dejar libre el puerto, es necesario parar y eliminar el contenedor Docker. Puede utilizar el comando `terraform destroy` para eliminar el contenedor Docker.
