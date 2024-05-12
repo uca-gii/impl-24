@@ -1,6 +1,7 @@
 # Inyección en Lua #
 ## Ejemplo ##
-Este ejemplo consiste en una App que requiere un servicio de correo electrónico para funcionar. Para ello, en vez de crear directamente una instancia de `EmailService` dentro de `App`, se utilizará el principio de Inversión de Control (IoC) para pasarle una instancia de `EmailService` como una dependencia cuando se crea una instancia de `App` entonces se reducirá el acomplamiento entre clases y permitirá que `App` sea más flexible y reutilizable. Para probar el ejemplo se dispone de un main.
+Este ejemplo consiste en una app que enviará un mensaje a un usuario dado su correo electrónico. Para poder crearse una instancia de App se necesitará disponer del correo electrónico. Por ello, en vez de crear directamente una instancia de `EmailService` dentro de `App`, se utilizará el principio de Inversión de Control (IoC) para pasarle una instancia de `EmailService` como una dependencia cuando se crea una instancia de `App`, entonces se reducirá el acomplamiento entre clases y permitirá que `App` sea más flexible y reutilizable. Para la prueba del ejemplo se dispone de un [main](main.lua) y los módulos de [email](email.lua) y [app](app.lua).
+
 ```lua
 -- email.lua
 local EmailService = {}
@@ -56,3 +57,8 @@ local app = App:new(emailService)
 local user = { email = "usuario@example.com" }
 app:notifyUser(user)
 ```
+
+## Explicación ##
+El ejemplo consta de dos módulos:
+- `EmailService`: una estructura básica para un servicio de correo electrónico.
+- `App`: una aplicación que utiliza un servicio de correo electrónico para notificar a los usuarios.
