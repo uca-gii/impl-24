@@ -1,4 +1,3 @@
--- Archivo: test.lua
 local lu = require('luaunit')
 local luassert = require('luassert')
 local EmailService = require('./temas/inyeccion/lua/email')
