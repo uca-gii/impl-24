@@ -151,7 +151,8 @@ public void SendNotification(string message)
 ```
 - **Notify**
 Este método está definido en la clase `NotificationManager` y delega el proceso de enviar una notificación a un objeto `INotifier`. Actúa como un puente entre el cliente del código y las implementaciones concretas de `INotifier`, lo que permite cambiar la forma de notificación sin alterar el resto del sistema.
-    - **Funcionamiento:**Primero muestra un mensaje de preparación y luego llama al método `SendNotification` del objeto `notifier` asignado. Esta estructura facilita la inyección de dependencia y demuestra un uso práctico del patrón de diseño Estrategia.
+    - **Funcionamiento:**
+    Primero muestra un mensaje de preparación y luego llama al método `SendNotification` del objeto `notifier` asignado. Esta estructura facilita la inyección de dependencia y demuestra un uso práctico del patrón de diseño Estrategia.
 ```csharp
 public void Notify(string message)
 {
