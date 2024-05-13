@@ -35,7 +35,7 @@ jobs:
           ${{ runner.os }}-m2
 
     - name: Run tests
-      run: cd temas/abstraccion/java-01 && mvn clean test
+      run: cd temas/anotaciones/java-01 && mvn clean test
 
     - name: Create issue if tests fail
       if: ${{ failure() }}
