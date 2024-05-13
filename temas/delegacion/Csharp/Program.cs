@@ -62,20 +62,20 @@ public class Program
 {
     public static void Main()
     {
+        Console.WriteLine("===== Notificación por Email =====");
         INotifier emailNotifier = new EmailNotifier();
         NotificationManager manager = new NotificationManager(emailNotifier);
         manager.Notify("Hola! Este es un mensaje de prueba.");
 
-        // Cambiar la estrategia de notificación en tiempo de ejecución
+        Console.WriteLine("\n===== Cambio a Notificación por SMS =====");
         INotifier smsNotifier = new SmsNotifier();
         manager = new NotificationManager(smsNotifier);
         manager.Notify("Otro mensaje, ahora por SMS.");
 
-        // Instanciando el delegado con un método específico
+        Console.WriteLine("\n===== Operaciones Matemáticas con Delegados =====");
         Operations.Operation op = Operations.Double;
         Console.WriteLine("El doble de 5 es: " + op(5));
 
-        // Cambiando la referencia del delegado a otro método
         op = Operations.Triple;
         Console.WriteLine("El triple de 5 es: " + op(5));
     }
