@@ -252,7 +252,8 @@ public class DependencyInjector {
 
 [OrderTest](src/test/java/OrderTests.java) contiene el código de los test con JUnit para los anteriores códigos presentados. 
 
-```javapackage main.java;
+```java
+package main.java;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
