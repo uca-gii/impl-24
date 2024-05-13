@@ -16,7 +16,7 @@ Antes de explorar los ejemplos proporcionados en este repositorio, es esencial e
   La herencia permite que una clase (subclase) herede atributos y métodos de otra clase (superclase). En el ejemplo, la clase `Animal` actúa como una superclase que proporciona atributos y métodos básicos como `mostrar_nombre`, que son heredados por otras clases.
 
 - **Herencia Múltiple**:
-  Python permite que una clase herede de múltiples clases, proporcionando una forma de combinar funcionalidades de múltiples superclases. En el código, `Ave` hereda tanto de `Animal` como de `Volador`, combinando sus atributos y métodos.
+  Python permite que una clase herede de múltiples clases, proporcionando una forma de combinar funcionalidades de múltiples superclases. Esto puede resultar en una situación compleja cuando diferentes clases base tienen métodos con el mismo nombre. Python utiliza el método de resolución de orden de método (MRO) para determinar el orden en el que se buscan los métodos. Este orden está definido por el algoritmo C3 linearization. En el código, `Ave` hereda tanto de `Animal` como de `Volador`, combinando sus atributos y métodos. 
 
 - **Polimorfismo**:
   El polimorfismo permite que métodos con el mismo nombre actúen de manera diferente en diferentes clases. Por ejemplo, el método `mostrar_nombre` se define tanto en `Animal` como en `Volador` y `Nadador`, pero su implementación puede ser diferente en cada clase.
@@ -235,40 +235,40 @@ Estos tests aseguran que la herencia múltiple, el acceso a métodos y propiedad
 Para ejecutar el código y los tests en una máquina de fábrica, sigue estos pasos detallados que incluyen la descarga del código, instalación de Python y ejecución de los tests:
 
 ### 1. Instalación de Python
-#### Primero, necesitas asegurarte de que Python 3.8 está instalado en tu sistema.
-#### Puedes descargar e instalar Python desde:
-#### https://www.python.org/downloads/release/python-380/
-#### Sigue las instrucciones específicas para tu sistema operativo.
+Primero, necesitas asegurarte de que Python 3.8 está instalado en tu sistema.
+Puedes descargar e instalar Python desde:
+(https://www.python.org/downloads/release/python-380/)
+Sigue las instrucciones específicas para tu sistema operativo.
 
-#### Verifica la instalación ejecutando:
+Verifica la instalación ejecutando:
 ```bash
 python --version
 ```
-#### o
+o
 ```bash
 python3 --version
 ```
-# Esto debería mostrar la versión de Python 3.8 instalada.
+Esto debería mostrar la versión de Python 3.8 instalada.
 
 ### 2. Clonar el Repositorio
-#### A continuación, necesitas descargar el código del repositorio.
-#### Si el código está disponible en GitHub, puedes clonar el repositorio utilizando Git.
-#### Si aún no tienes Git instalado, puedes descargarlo desde:
-#### https://git-scm.com/downloads
-
-#### Instala Git y luego ejecuta el siguiente comando para clonar el repositorio:
+A continuación, necesitas descargar el código del repositorio.
+Si el código está disponible en GitHub, puedes clonar el repositorio utilizando Git.
+Si aún no tienes Git instalado, puedes descargarlo desde:
+(https://git-scm.com/downloads
+)
+Instala Git y luego ejecuta el siguiente comando para clonar el repositorio:
 git clone [URL_DEL_REPOSITORIO](https://github.com/sistemas-sw/impl-24.git)
 
 
 ### 3. Cambiar al Directorio del Repositorio
-#### Una vez clonado el repositorio, navega al directorio donde se encuentra el código:
+Una vez clonado el repositorio, navega al directorio donde se encuentra el código:
 ```bash
 cd .temas/herencia/python
 ```
 ### 4. Ejecutar los Tests
-#### Finalmente, puedes ejecutar los tests utilizando `unittest`.
-#### Desde el directorio del proyecto, ejecuta:
+Finalmente, puedes ejecutar los tests utilizando `unittest`.
+Desde el directorio del proyecto, ejecuta:
 ```bash
 python -m unittest
 ```
-#### Este comando buscará archivos de test en el directorio, ejecutará los tests y mostrará los resultados en la terminal.
+Este comando buscará archivos de test en el directorio, ejecutará los tests y mostrará los resultados en la terminal.
