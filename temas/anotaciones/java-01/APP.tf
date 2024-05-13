@@ -9,17 +9,17 @@ terraform {
 
 provider "docker" {}
 
-resource "docker_image" "aspectos_java" {
-  name         = "aspectos-java:latest"
+resource "docker_image" "anotaciones_java" {
+  name         = "anotaciones-java:latest"
   build {
     context    = path.module
     dockerfile = "Dockerfile"
   }
 }
 
-resource "docker_container" "aspectos_java_container" {
-  image = docker_image.aspectos_java.name
-  name  = "aspectos_java_container"
+resource "docker_container" "anotaciones_java_container" {
+  image = docker_image.anotaciones_java.name
+  name  = "anotaciones_java_container"
   ports {
     internal = 3200
     external = 3200
