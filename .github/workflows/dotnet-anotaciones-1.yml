@@ -18,7 +18,7 @@ jobs:
     
     defaults:
       run:
-        working-directory: temas/anotaciones/C#/CodeJSON
+        working-directory: temas/anotaciones/csharp/Code
 
     steps:
     - uses: actions/checkout@v4
@@ -30,11 +30,7 @@ jobs:
       run: dotnet restore
     - name: Build
       run: dotnet build --no-restore
-    - name: Run Json
+    - name: Run
       run: dotnet run
-    - name: Test Json
-      run: cd ../TestJSON && dotnet test
-    - name: Run Validacion
-      run: cd ../CodeValidacion && dotnet run
-    - name: Test Validacion
-      run: cd ../TestValidacion && dotnet test
+    - name: Test
+      run: cd ../Test && dotnet test
