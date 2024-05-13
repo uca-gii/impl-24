@@ -392,3 +392,115 @@ namespace C_
     }
 }
 ```
+## Ejecucion desde una Terminal
+Para ejecutar y gestionar un proyecto de C# en Linux, es esencial tener instalado el SDK de .NET. Aquí te guío paso a paso desde la instalación de .NET SDK hasta la compilación, ejecución y prueba de tu proyecto C#.
+### 1.Instalacion el SDK de .NET
+El .NET SDK incluye todo lo necesario para desarrollar y ejecutar aplicaciones C#. Para instalar .NET en Linux, sigue estos pasos:
+#### 1.1 Instalar SDK de .NET
+Microsoft proporciona varias maneras de instalar .NET en Linux. La más común es a través de los paquetes proporcionados para tu distribución específica.
+```bash
+wget https://packages.microsoft.com/config/ubuntu/$(lsb_release -rs)/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
+sudo dpkg -i packages-microsoft-prod.deb
+sudo apt-get update; \
+sudo apt-get install -y apt-transport-https && \
+sudo apt-get update && \
+sudo apt-get install -y dotnet-sdk-6.0
+```
+#### 1.2 Verificar la instalacion
+Después de instalar, verifica que .NET se ha instalado correctamente:
+```bash
+dotnet --version
+```
+### 2. Clonar el repositorio
+Si el código está disponible en GitHub, puedes clonar el repositorio utilizando Git.
+Si aún no tienes Git instalado, puedes descargarlo desde:
+https://git-scm.com/downloads
+```bash
+git clone https://github.com/sistemas-sw/impl-24.git
+```
+### 3.Preparar Proyecto
+Asegúrate de que tienes un archivo `.csproj` adecuado tanto para tu proyecto principal como para tus tests. Específicamente, necesitas configurar el proyecto de test para que haga referencia al proyecto principal si están separados.
+#### Modificar el archivo UnitTest1.csproj para hacer referencia al proyecto principal
+Suponiendo que tu proyecto principal se llama `Csharp.csproj` y reside en un directorio relativo conocido desde tus tests, puedes agregar la siguiente línea en tu `UnitTest1.csproj` dentro del elemento `<ItemGroup>`:
+```xml
+<ItemGroup>
+  <ProjectReference Include="../Csharp/Csharp.csproj" />
+</ItemGroup>
+```
+Esta configuración asegura que tu proyecto de pruebas pueda acceder a las clases y métodos del proyecto principal, permitiendo a NUnit ejecutar pruebas correctamente.
+
+### 4.Compilacion Proyecto
+Una vez clonado el repositorio y ver que tenemos el `.csproj` correctamente configurado, navega al directorio donde se encuentra el codigo:
+```bash
+cd impl-24/temas/delegacion/Csharp/
+```
+Compila tu proyecto para verificar que todo está configurado correctamente y que no hay errores de compilación.
+```bash
+dotnet build
+```
+Este comando compilará tanto el proyecto principal como los proyectos de pruebas asociados, mostrando cualquier error de compilación que necesite ser resuelto.
+
+### 5.Ejecucion del Proyecto
+Para ejecutar el proyecto y ver su comportamiento en tiempo de ejecución, utiliza:
+```bash
+dotnet run
+```
+Este comando iniciará la ejecución del proyecto principal, lo cual debería resultar en la ejecución de los métodos definidos en el método `Main()` y la visualización de los resultados en la consola.
+
+### 6.Ejecucion de Pruebas Unitarias
+Finalmente, ejecuta las pruebas unitarias para asegurarte de que todo funciona según lo esperado, pero antes debes irte al directorio donde se encuentra los test, para ello usa:
+```bash
+cd impl-24/temas/delegacion/Tests/
+```
+Una vez en el directorio correcto ejecuta:
+```bash
+dotnet test
+```
+Este comando buscará y ejecutará todos los tests definidos en tu proyecto de pruebas, reportando resultados para cada test y resumiendo el número de pruebas que pasaron, fallaron o fueron omitidas.
+
+## Errores Comunes y sus Soluciones
+Durante la configuración, compilación y ejecución de proyectos C# en Linux, puedes encontrarte con varios problemas. A continuación, se describen algunos de los errores más comunes junto con sus soluciones para ayudarte a resolverlos de manera eficiente.
+### 1.Problemas de Versión de .NET SDK
+#### Error: Versión Incorrecta del .NET SDK
+#### Síntomas: Mensajes de error indicando que la versión del SDK no es compatible con el proyecto.
+#### Solución: 
+Asegúrate de que tienes instalada la versión correcta del .NET SDK que exige tu proyecto. Puedes listar todas las versiones instaladas y seleccionar la adecuada con los siguientes comandos:
+```bash
+dotnet --list-sdks
+dotnet new globaljson --sdk-version <versión_deseada>
+```
+### 2.Referencias de Proyecto Incorrectas
+#### Error: Falta de Referencias entre Proyectos
+#### Síntomas: Errores de compilación donde se mencionan tipos o miembros no definidos que deberían estar en otros proyectos.
+#### Solución:
+Verifica las referencias de proyecto en tus archivos .csproj. Asegúrate de que el proyecto de test tiene una referencia correcta al proyecto principal, como se muestra a continuación:
+```xml
+<ItemGroup>
+  <ProjectReference Include="../Csharp/Csharp.csproj" />
+</ItemGroup>
+``` 
+### 3.Errores de Compilación
+#### Error: Fallos al Compilar el Proyecto
+#### Síntomas: Mensajes de error durante la compilación que pueden incluir problemas con sintaxis, referencias a librerías faltantes, etc.
+#### Solución:
+- **Revisa los mensajes de error para entender cuál es el problema específico.**
+- **Si faltan dependencias o paquetes, asegúrate de que están incluidos en el archivo .csproj y vuelve a intentar la compilación:**
+```bash
+dotnet restore
+dotnet build
+```
+### 4.Problemas al Ejecutar el Proyecto
+#### Error: Errores de Ejecución
+#### Síntomas: Excepciones o comportamientos inesperados al ejecutar el proyecto.
+#### Solución:
+- **Asegúrate de que todas las configuraciones de entorno y de proyecto son correctas.**
+- **Utiliza herramientas de depuración o añade declaraciones de impresión para rastrear el flujo de ejecución y entender dónde falla.**
+### 5.Errores al Ejecutar Pruebas
+#### Error: Fallos en las Pruebas Unitarias
+#### Síntomas: Pruebas unitarias que fallan cuando deberían pasar.
+#### Solución:
+- **Revisa las aserciones y la lógica de las pruebas. Asegúrate de que el entorno de pruebas está configurado correctamente y que no hay dependencias externas afectando los resultados.**
+- **Utiliza el modo detallado para obtener más información sobre los fallos:**
+```bash
+dotnet test --logger "console;verbosity=detailed"
+```
