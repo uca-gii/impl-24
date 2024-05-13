@@ -1,9 +1,6 @@
-name: Ruby Errors
+name: Errores RUBY (Marta Y Sergio)
 
 on:
-  push:
-    branches:
-      - feat-errores
   workflow_dispatch:
 
 jobs:
@@ -12,7 +9,7 @@ jobs:
 
     steps:
     - name: Checkout code
-      uses: actions/checkout@v2
+      uses: actions/checkout@v4
 
     - name: Install Ruby
       uses: ruby/setup-ruby@v1
@@ -20,7 +17,8 @@ jobs:
         ruby-version: 3.0.0
 
     - name: Install dependencies
-      run: gem install test-unit
+      run: gem install test-unit && gem install optional
+
 
     - name: Run Ruby tests
       run: ruby ./temas/errores/ruby/testCalculator.rb
@@ -32,12 +30,13 @@ jobs:
 
     steps:
     - name: Checkout code
-      uses: actions/checkout@v2
+      uses: actions/checkout@v4
 
     - name: Install Ruby
       uses: ruby/setup-ruby@v1
       with:
         ruby-version: 3.0.0
-
+    - name: Install dependencies
+      run: gem install test-unit && gem install optional && gem install rx
     - name: Run Ruby script
       run: ruby ./temas/errores/ruby/calculator.rb
