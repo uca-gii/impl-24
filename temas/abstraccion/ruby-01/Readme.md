@@ -1,6 +1,6 @@
 # Abstracción en Ruby #
 ## Ejemplo ##
-Este ejemplo trata sobre un módulo `Figura` que encapsula cada figura geométrica, `Rectángulo`, `Círculo` y `Triángulo`, en clases independientes. Cada clase proporciona métodos para calcular el área y el perímetro de su respectiva figura, ocultando los detalles de implementación y simplificando su uso. El ejemplo se encuentra aquí [abstraccion.rb](../../../temas/abstraccion/ruby/abstraccion.rb).
+Este ejemplo trata sobre un módulo `Figura` que encapsula cada figura geométrica, `Rectángulo`, `Círculo` y `Triángulo`, en clases independientes. Cada clase proporciona métodos para calcular el área y el perímetro de su respectiva figura, ocultando los detalles de implementación y simplificando su uso. El ejemplo se encuentra aquí [abstraccion.rb](abstraccion.rb).
 
 
 ## Explicación ##
@@ -79,7 +79,7 @@ Para construir el programa y las pruebas se ha desarrollado un github Action, pu
 
 ## Desplegar Web
 
-Para desplegar la web necesitamos ejecutar el terraform (que despliega el [Dockerfile](../../../temas/abstraccion/ruby/Dockerfile)) con estos comandos:
+Para desplegar la web necesitamos ejecutar el terraform (que despliega el [Dockerfile](Dockerfile)) con estos comandos:
 
 
 ```terraform
@@ -87,7 +87,7 @@ terraform init
 terraform apply
 ```
 
-Enlace al archivo [Terraform](../../../temas/abstraccion/ruby/Abstraccion.tf).
+Enlace al archivo [Terraform](Abstraccion.tf).
 
 Una vez que Terraform haya completado el despliegue, la web estará disponible en la siguiente dirección: 
 
