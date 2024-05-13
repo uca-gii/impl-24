@@ -1,5 +1,0 @@
-[0m[[0m[31merror[0m] [0m[0mC:\Users\Alberto\Desktop\UNIVERSIDAD\3ºGII\2ºCuatri\IISS\Prácticas\PracticaFinal\impl-24\temas\abstraccion\scala\proyecto\src\main\scala\ejemplo.scala:22:7: class Animal needs to be abstract. Missing implementation for:[0m
-[0m[[0m[31merror[0m] [0m[0m  def fecha(): String // inherited from trait Volador[0m
-[0m[[0m[31merror[0m] [0m[0mclass Animal extends Volador with Nadador with Caminante {[0m
-[0m[[0m[31merror[0m] [0m[0m      ^[0m
-[0m[[0m[31merror[0m] [0m[0mone error found[0m
