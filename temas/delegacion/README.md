@@ -131,9 +131,9 @@ public class Program
 ## Métodos Utilizados en el Ejemplo
 En este proyecto se implementan varios métodos que demuestran el uso de interfaces, delegación y patrones de diseño en C#. A continuación se detalla la funcionalidad y el propósito de cada uno de los métodos utilizados en el ejemplo.
 ### Metodos de Notificacion
-- **SendNotifer**
+- **SendNotifer:**
 Este método es parte de la interfaz `INotifier` y es implementado por las clases `EmailNotifier` y `SmsNotifier`. Su propósito principal es enviar una notificación, adaptándose al medio específico según la clase que lo implemente:
-- **EmailNotifier.SendNotification**
+- **EmailNotifier.SendNotification:**
 Envía una notificación vía email. Este método toma un mensaje como parámetro y muestra una salida que simula el envío de un email con ese mensaje.
 ```csharp
 public void SendNotification(string message)
@@ -141,7 +141,7 @@ public void SendNotification(string message)
     Console.WriteLine($"Enviando Email: {message}");
 }
 ```
-- **SmsNotifier.SendNotification**
+- **SmsNotifier.SendNotification:**
 Funciona de manera similar al notificador de email, pero simula el envío de un SMS.
 ```csharp
 public void SendNotification(string message)
@@ -149,7 +149,7 @@ public void SendNotification(string message)
     Console.WriteLine($"Enviando SMS: {message}");
 }
 ```
-- **Notify**
+- **Notify:**
 Este método está definido en la clase `NotificationManager` y delega el proceso de enviar una notificación a un objeto `INotifier`. Actúa como un puente entre el cliente del código y las implementaciones concretas de `INotifier`, lo que permite cambiar la forma de notificación sin alterar el resto del sistema.
     - **Funcionamiento:**
     Primero muestra un mensaje de preparación y luego llama al método `SendNotification` del objeto `notifier` asignado. Esta estructura facilita la inyección de dependencia y demuestra un uso práctico del patrón de diseño Estrategia.
