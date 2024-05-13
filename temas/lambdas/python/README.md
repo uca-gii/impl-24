@@ -130,40 +130,40 @@ Prueba funcionReduccion(), donde se utiliza reduce() con una lambda para sumar t
 Para ejecutar el código y los tests en una máquina de fábrica, sigue estos pasos detallados que incluyen la descarga del código, instalación de Python y ejecución de los tests:
 
 ### 1. Instalación de Python
-#### Primero, necesitas asegurarte de que Python 3.8 está instalado en tu sistema.
-#### Puedes descargar e instalar Python desde:
-#### https://www.python.org/downloads/release/python-380/
-#### Sigue las instrucciones específicas para tu sistema operativo.
+Primero, necesitas asegurarte de que Python 3.8 está instalado en tu sistema.
+Puedes descargar e instalar Python desde:
+(https://www.python.org/downloads/release/python-380/)
+Sigue las instrucciones específicas para tu sistema operativo.
 
-#### Verifica la instalación ejecutando:
+Verifica la instalación ejecutando:
 ```bash
 python --version
 ```
-#### o
+o
 ```bash
 python3 --version
 ```
-# Esto debería mostrar la versión de Python 3.8 instalada.
+Esto debería mostrar la versión de Python 3.8 instalada.
 
 ### 2. Clonar el Repositorio
-#### A continuación, necesitas descargar el código del repositorio.
-#### Si el código está disponible en GitHub, puedes clonar el repositorio utilizando Git.
-#### Si aún no tienes Git instalado, puedes descargarlo desde:
-#### https://git-scm.com/downloads
+A continuación, necesitas descargar el código del repositorio.
+Si el código está disponible en GitHub, puedes clonar el repositorio utilizando Git.
+Si aún no tienes Git instalado, puedes descargarlo desde:
+(https://git-scm.com/downloads)
 
-#### Instala Git y luego ejecuta el siguiente comando para clonar el repositorio:
+Instala Git y luego ejecuta el siguiente comando para clonar el repositorio:
 git clone [URL_DEL_REPOSITORIO](https://github.com/sistemas-sw/impl-24.git)
 
 
 ### 3. Cambiar al Directorio del Repositorio
-#### Una vez clonado el repositorio, navega al directorio donde se encuentra el código:
+Una vez clonado el repositorio, navega al directorio donde se encuentra el código:
 ```bash
 cd .temas/lambdas/python
 ```
 ### 4. Ejecutar los Tests
-#### Finalmente, puedes ejecutar los tests utilizando `unittest`.
-#### Desde el directorio del proyecto, ejecuta:
+Finalmente, puedes ejecutar los tests utilizando `unittest`.
+Desde el directorio del proyecto, ejecuta:
 ```bash
 python -m unittest
 ```
-#### Este comando buscará archivos de test en el directorio, ejecutará los tests y mostrará los resultados en la terminal.
+Este comando buscará archivos de test en el directorio, ejecutará los tests y mostrará los resultados en la terminal.
