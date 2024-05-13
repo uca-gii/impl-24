@@ -128,6 +128,8 @@ La implementación y construcción se realizará colaborativamente entre todos l
 
 Al finalizar el trabajo, o cada vez que se decida que hay ejemplos (_features_) ya completos y se desee su revisión por parte del profesor, debe hacerse un PR para solicitar su **integración** en el repositorio _origin_.
 
+#### Convención de nombres de carpetas
+
 En caso de **colisiones** en los PR (por ejemplo, colisión en el nombre de las carpetas que contienen los ejemplos), se rechazará el PR. Entonces se deberá hacer un nuevo PR que resuelva los conflictos añadiendo un sufijo en el nombre de cada carpeta final que contiene todo lo entregado.
 
 Por ejemplo, si hay tres equipos que usan _kotlin_ para implementar su ejemplo de _herencia_, los dos equipos que hagan el PR final más tarde tendrán que retocar la estructura de carpetas:
@@ -135,6 +137,14 @@ Por ejemplo, si hay tres equipos que usan _kotlin_ para implementar su ejemplo d
 `temas/herencia/kotlin/` (donde entregó el primer equipo)
 `temas/herencia/kotlin-01/` (donde entrega el segundo equipo)
 `temas/herencia/kotlin-02/` (donde entrega el tercer equipo)
+
+#### Convención de nombrado de ficheros de workflow
+
+GitHub Actions obliga a que los ficheros de definición de workflows de un determinado repo se guarden todos en una carpeta de nombre `.github/workflows/` en la __raíz del repo__. Esto puede causar problemas de colisión de ficheros de _workflow_ en el repo origin, al sincronizar los cambios que se hagan en cada repositorio forkeado. Para evitarlo, se seguirá una convención de nombrado de los ficheros `.yaml` o `.yml` que contengan la definición de los workflows entregados por cada equipo para cada tema y lenguaje elegido.
+
+La convención de nombrado de los ficheros `.yaml` a situar en `.github/workflows/` será: `<tema>.<lenguaje>-<numero>.yaml`. Por ejemplo, si un equipo entrega un _workflow_ para el tema de _herencia_ hecho en _Kotlin_, el fichero de workflow se debe llamar `herencia.kotlin.yaml`. Si hubiera dos equipos que han elegido hacer sus ejercicios en _Kotlin_ para el tema de _herencia_, los ficheros de workflow se deberán llamar `herencia.kotlin.yaml` (para el primer equipo) y `herencia.kotlin-01.yaml` (para el segundo equipo).
+
+#### Criterios de valoración
 
 Se valorará:
 
