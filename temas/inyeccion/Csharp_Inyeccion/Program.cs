@@ -59,8 +59,8 @@ public class OrderProcessor : IOrderProcessor
     {
         try
         {
-            _logger.Log($"Inicio del procesamiento del pedido {orderId}.");
-            Console.WriteLine($"Procesando el pedido {orderId}.");
+            _logger.Log($"=== Inicio del procesamiento del pedido {orderId} ===");
+            Console.WriteLine($"Procesando el pedido {orderId}.\n");
 
             if (orderId.Contains("VIP"))
             {
@@ -72,6 +72,7 @@ public class OrderProcessor : IOrderProcessor
             }
 
             _logger.Log($"Pedido {orderId} procesado y notificado.");
+            Console.WriteLine("=== Fin del procesamiento del pedido ===\n");
         }
         catch (Exception ex)
         {
@@ -86,14 +87,22 @@ public class Program
 {
     public static void Main(string[] args)
     {
+        Console.WriteLine("\nConfigurando servicios y resolviendo dependencias...\n");
         var services = new ServiceCollection();
         ConfigureServices(services, args);
         var serviceProvider = services.BuildServiceProvider();
+        Console.WriteLine("Servicios configurados con éxito.\n");
 
         var orderProcessor = serviceProvider.GetService<IOrderProcessor>();
         if (orderProcessor != null)
         {
+            Console.WriteLine("Iniciando procesamiento de pedido...");
             orderProcessor.ProcessOrder("123456");
+            Console.WriteLine("Procesamiento de pedido completado.\n");
+        }
+        else
+        {
+            Console.WriteLine("No se pudo resolver IOrderProcessor.");
         }
     }
 

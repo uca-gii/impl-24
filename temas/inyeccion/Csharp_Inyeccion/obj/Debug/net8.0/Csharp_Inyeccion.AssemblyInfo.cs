@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Csharp_Inyeccion")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+45217e748170b950379b581ae8a3bc5393ef8953")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f90f5a16aae6f34b441f942be3485f6e45adc746")]
 [assembly: System.Reflection.AssemblyProductAttribute("Csharp_Inyeccion")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Csharp_Inyeccion")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
