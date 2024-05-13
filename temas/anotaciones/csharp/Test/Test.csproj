@@ -21,8 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CodeJSON\CodeJSON.csproj" />
+    <ProjectReference Include="..\Code\Code.csproj" />
   </ItemGroup>
-
 
 </Project>
