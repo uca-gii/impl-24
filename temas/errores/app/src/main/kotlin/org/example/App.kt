@@ -1,5 +1,4 @@
 package org.example
-
 import java.io.File
 import java.io.IOException
 
@@ -22,6 +21,9 @@ fun mightThrowException() {
 }
 
 fun divide(a: Int, b: Int): Int {
+    if (b == 0) {
+        throw ArithmeticException("No se puede dividir por cero.")
+    }
     return a / b
 }
 
