@@ -36,10 +36,18 @@
 .classpath
 .factorypath
 
+#scala
+.scala-build
+.metals
+.bsp
+.class
+*.tasty
+
 # Other
 .DS_Store
 .vscode/settings.json
 .project
+.vscode
 
 # Terraform
 **/.terraform
