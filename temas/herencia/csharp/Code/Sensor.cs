@@ -1,23 +1,29 @@
-// Clase base "Sensor"
-public class Sensor {
+using Herencia;
 
-    // Propiedadad de la clase "Sensor" protegida
-    protected int Id { get; set; }
+namespace Herencia
+{
+    // Clase base "Sensor"
+    public class Sensor {
 
-    // Campos de la clase "Sensor" públicos
-    public int Megapixeles;
-    public int Resolucion;
+        // Propiedadad de la clase "Sensor" protegida
+        protected int Id { get; set; }
 
-    // Constructor de la clase "Sensor"
-    public Sensor() {
-        Id = new Random().Next(1, 1000);
-    }
+        // Campos de la clase "Sensor" públicos
+        public int Megapixeles;
+        public int Resolucion;
 
-    // Clase anidada "Registro" marcada como sealed para evitar que sea heredada
-    public sealed class datosRegistro { 
-        public DateTime Fecha;
-        public datosRegistro() {
-            Fecha = DateTime.Now;
+        // Constructor de la clase "Sensor"
+        public Sensor() {
+            Id = new Random().Next(1, 1000);
+        }
+
+        // Clase anidada "Registro" marcada como sealed para evitar que sea heredada
+        public sealed class datosRegistro { 
+            public DateTime Fecha;
+            public datosRegistro() {
+                Fecha = DateTime.Now;
+            }
         }
     }
+
 }

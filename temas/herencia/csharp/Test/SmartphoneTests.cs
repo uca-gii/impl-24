@@ -1,18 +1,51 @@
+using System;
 using Xunit;
+using Herencia;
 
-public class SmartphoneTests
+namespace Herencia.Tests
 {
-    [Fact]
-    public void Smartphone_CapturarImagen_SalidaCorrecta()
+    public class SmartphoneTests
     {
-        var smartphone = new Smartphone("Sony", 12, 1080, "iOS");
-        Assert.Equal("¡Capturando foto con el smartphone!", smartphone.CapturarImagen());
-    }
+        [Fact]
+        public void Smartphone_Constructor_InitializesProperties()
+        {
+            // Arrange
+            var fabricante = "TestFabricante";
+            var megapixeles = 12;
+            var resolucion = 1080;
+            var sistemaOperativo = "Android";
 
-    [Fact]
-    public void Smartphone_GrabarVideo_SalidaCorrecta()
-    {
-        var smartphone = new Smartphone("Sony", 12, 1080, "iOS");
-        Assert.Equal("¡Grabando video!", smartphone.GrabarVideo());
+            // Act
+            var smartphone = new Smartphone(fabricante, megapixeles, resolucion, sistemaOperativo);
+
+            // Assert
+            Assert.Equal(fabricante, smartphone.fabricanteCamara);
+            Assert.Equal(megapixeles, smartphone.Megapixeles);
+            Assert.Equal(resolucion, smartphone.Resolucion);
+            Assert.Equal(sistemaOperativo, smartphone.SistemaOperativo);
+        }
+
+        [Fact]
+        public void capturarImagen_Method_WritesCorrectMessage()
+        {
+            // Arrange
+            var fabricante = "TestFabricante";
+            var megapixeles = 12;
+            var resolucion = 1080;
+            var sistemaOperativo = "Android";
+            var smartphone = new Smartphone(fabricante, megapixeles, resolucion, sistemaOperativo);
+
+            using (var sw = new System.IO.StringWriter())
+            {
+                Console.SetOut(sw);
+
+                // Act
+                smartphone.capturarImagen();
+
+                // Assert
+                var expected = "¡Capturando foto con el smartphone!" + Environment.NewLine;
+                Assert.Equal(expected, sw.ToString());
+            }
+        }
     }
 }

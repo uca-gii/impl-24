@@ -1,6 +1,8 @@
-﻿namespace Code;
+﻿using Herencia;
 
-class Program {
+namespace Herencia
+{
+    public class Program {
     static void Main(string[] args) {
         var smartphone = new Smartphone("Sony", 12, 1080, "iOS");
 
@@ -15,4 +17,6 @@ class Program {
         // La salida no estará actualizada porque el método no estaba marcado como virtual
         smartphone.GrabarVideo(); 
     }
+    }
+
 }

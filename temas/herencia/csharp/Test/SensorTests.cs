@@ -1,19 +1,47 @@
 using System;
 using Xunit;
+using Herencia;
 
-public class SensorTests
+namespace Herencia.Tests
 {
-    [Fact]
-    public void Sensor_Id_estaAsignado()
+    public class SensorTests
     {
-        var sensor = new Sensor();
-        Assert.NotEqual(0, sensor.Id);
-    }
+        [Fact]
+        public void Sensor_Constructor_AssignsId()
+        {
+            // Arrange
+            var sensor = new Sensor();
 
-    [Fact]
-    public void Sensor_DatosRegistro_fechaAsignada()
-    {
-        var registro = new Sensor.datosRegistro();
-        Assert.Equal(DateTime.Today, registro.Fecha.Date);
+            // Act
+            var id = sensor.GetType().GetProperty("Id", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance).GetValue(sensor);
+
+            // Assert
+            Assert.InRange((int)id, 1, 1000);
+        }
+
+        [Fact]
+        public void Sensor_Constructor_InitializesMegapixelesAndResolucion()
+        {
+            // Arrange
+            var sensor = new Sensor();
+
+            // Act & Assert
+            Assert.Equal(0, sensor.Megapixeles);
+            Assert.Equal(0, sensor.Resolucion);
+        }
+
+        [Fact]
+        public void datosRegistro_Constructor_SetsFechaToNow()
+        {
+            // Arrange
+            var registro = new Sensor.datosRegistro();
+
+            // Act
+            var now = DateTime.Now;
+            var registroFecha = registro.Fecha;
+
+            // Assert
+            Assert.Equal(now.Date, registroFecha.Date);
+        }
     }
 }
