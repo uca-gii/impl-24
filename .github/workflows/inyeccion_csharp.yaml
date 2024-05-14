@@ -25,8 +25,3 @@ jobs:
         dotnet add package NUnit3TestAdapter
         dotnet add package Microsoft.NET.Test.Sdk
         dotnet test 
-        if [ $? -ne 0 ]; then
-          echo "Test failed, creating issue..."
-          curl -XPOST -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" -d '{"title":"Test Failed","body":"One or more tests failed. Please check the logs.","labels":["bug"]}' "https://api.github.com/repos/${{ github.repository }}/issues"
-          exit 1
-        fi
