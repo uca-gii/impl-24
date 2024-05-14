@@ -18,7 +18,7 @@ jobs:
     
     defaults:
       run:
-        working-directory: temas/anotaciones/Csharp/Code
+        working-directory: temas/anotaciones/csharp/Code
 
     steps:
     - uses: actions/checkout@v4
