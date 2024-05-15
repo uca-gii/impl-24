@@ -1,9 +1,6 @@
 name: Kotlin CI Test
 
 on:
-  push:
-    branches:
-      - feature-errores
   workflow_dispatch:
 
 jobs:
