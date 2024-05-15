@@ -16,7 +16,7 @@ jobs:
 
     - name: Build and Run Tests
       run: |
-        cd temas/inyeccion/csharp/Tests_Inyeccion
+        cd temas/inyeccion/csharp-01/Tests_Inyeccion
         dotnet add package NUnit
         dotnet add package Moq
         dotnet add package NUnit3TestAdapter
