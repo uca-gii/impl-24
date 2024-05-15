@@ -20,30 +20,30 @@ interface Carrera {
 function simularCarreraFormula1(): Observable<Carrera> {
     return new Observable<Carrera>(subscriber => {
         // Simulamos la emisión de eventos de carreras
-        subscriber.next({ posicion: 1, piloto: "Lewis Hamilton", equipo: "Mercedes", circuito: "Monza", mejorTiempo: "1:20:123" });
-        subscriber.next({ posicion: 2, piloto: "Max Verstappen", equipo: "Red Bull Racing", circuito: "Silverstone", mejorTiempo: "1:21:456" });
-        subscriber.next({ posicion: 3, piloto: "Fernando Alonso", equipo: "Alpine", circuito: "Paul Ricard", mejorTiempo: "1:22:789" });
-        subscriber.next({ posicion: 4, piloto: "Charles Leclerc", equipo: "Ferrari", circuito: "Spa-Francorchamps", mejorTiempo: "1:23:987" });
+        subscriber.next({ posicion: 3, piloto: "Lewis Hamilton", equipo: "Mercedes", circuito: "Monza", mejorTiempo: "1:20.123"});
+        subscriber.next({ posicion: 1, piloto: "Max Verstappen", equipo: "Red Bull Racing", circuito: "Silverstone", mejorTiempo: "1:21.456"});
+        subscriber.next({ posicion: 2, piloto: "Fernando Alonso", equipo: "Aston Martin", circuito: "Mónaco", mejorTiempo: "1:11.449"});
+        subscriber.next({ posicion: 4, piloto: "Charles Leclerc", equipo: "Ferrari", circuito: "Spa-Francorchamps", mejorTiempo: "1:23.987"});
         subscriber.complete();
     });
 }
 
 // Ppredicado para filtrar eventos por el nombre del piloto
-const esConductor = (driverName: string):
+export const esConductor = (driverName: string):
     Predicate<Carrera> => (event: Carrera) => event.piloto === driverName;
 
 // Lambda para transformar los circuitos a mayúsculas
-const circuitoToUpperCase = (stream: Observable<Carrera>):
+export const circuitoToUpperCase = (stream: Observable<Carrera>):
     Observable<Carrera> =>
     stream.pipe(
         map(event => ({
             ...event,
-            circuit: event.circuito.toUpperCase()
+            circuito: event.circuito.toUpperCase()
         }))
     );
 
 // Lambda para determinar si el piloto hizo podio o es ganador
-const podioMensaje = (posicion: number) => {
+export const podioMensaje = (posicion: number) => {
     if (posicion === 1) {
         return "Hizo Podio y es Ganador!!!";
     } else if (posicion <= 3) {
@@ -54,7 +54,7 @@ const podioMensaje = (posicion: number) => {
 };
 
 // Lambda para calcular los puntos según la posición
-const calcularPuntos = (position: number): number => {
+export const calcularPuntos = (position: number): number => {
     switch (position) {
         case 1:
             return 25;
@@ -82,7 +82,7 @@ const calcularPuntos = (position: number): number => {
 };
 
 // Función asincrónica para obtener los resultados como un string
-async function getResultadosCarrera(piloto: string): Promise<string> {
+export async function getResultadosCarrera(piloto: string): Promise<string> {
     let resultadosCarrera = '';
 
     // Simulamos el flujo de datos de carreras de Fórmula 1
@@ -100,7 +100,7 @@ async function getResultadosCarrera(piloto: string): Promise<string> {
                 const podio = podioMensaje(val.posicion);
                 const puntos = calcularPuntos(val.posicion);
                 
-                resultadosCarrera = `¡${val.piloto} terminó en la posición ${val.posicion} ${podio}, en el circuito ${val.circuito} siendo su mejor vuelta ${val.mejorTiempo}! Ganó ${puntos} puntos.\n`;
+                resultadosCarrera = `¡${val.piloto}, de ${val.equipo}, terminó en la posición ${val.posicion} ${podio}, en el circuito ${val.circuito} siendo su mejor vuelta ${val.mejorTiempo}! Ganó ${puntos} puntos.\n`;
             },
             complete() {
                 resolve();
