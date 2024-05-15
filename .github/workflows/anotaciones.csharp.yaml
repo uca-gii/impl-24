@@ -1,9 +1,6 @@
 name: Run C# Tests
 
 on:
-  push:
-    branches:
-      - feature-anotaciones
   workflow_dispatch:
 
 jobs:
@@ -19,7 +16,7 @@ jobs:
 
     - name: Build and Run Tests
       run: |
-        cd temas/anotaciones/csharp/Tests_Anotaciones
+        cd temas/anotaciones/csharp-01/Tests_Anotaciones
         dotnet add package NUnit
         dotnet add package System.Text.Json
         dotnet test 
