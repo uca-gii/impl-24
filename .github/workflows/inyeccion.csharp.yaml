@@ -1,9 +1,6 @@
 name: Run C# Tests
 
 on:
-  push:
-    branches:
-      - feature-inyeccion
   workflow_dispatch:
 
 jobs:
