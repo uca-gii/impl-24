@@ -48,30 +48,3 @@ jobs:
       run: |
         cd temas/lambdas/typescript
         npm run test
-
-  deploy:
-    needs: test
-    runs-on: ubuntu-latest
-
-    steps:
-    - uses: actions/checkout@v2
-
-    - name: Set up Node.js
-      uses: actions/setup-node@v2
-      with:
-        node-version: '14'
-
-    - name: Instalar dependencias
-      run: |
-        cd temas/lambdas/typescript
-        npm install
-
-    - name: Build
-      run: |
-        cd temas/lambdas/typescript
-        npm run build
-
-    - name: Deploy
-      run: |
-        cd temas/lambdas/typescript
-        npm run start
