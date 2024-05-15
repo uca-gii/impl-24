@@ -28,6 +28,6 @@ jobs:
 
     - name: Build and Test with Gradle
       run: |
-        cd temas/errores/Kotlin
+        cd temas/errores/kotlin
         gradle build
         gradle test

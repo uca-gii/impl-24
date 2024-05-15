@@ -1,0 +1,15 @@
+/home/joseagus/Escritorio/impl-24/temas/anotaciones/Csharp_Anotaciones/bin/Debug/net8.0/Csharp_Anotaciones
+/home/joseagus/Escritorio/impl-24/temas/anotaciones/Csharp_Anotaciones/bin/Debug/net8.0/Csharp_Anotaciones.deps.json
+/home/joseagus/Escritorio/impl-24/temas/anotaciones/Csharp_Anotaciones/bin/Debug/net8.0/Csharp_Anotaciones.runtimeconfig.json
+/home/joseagus/Escritorio/impl-24/temas/anotaciones/Csharp_Anotaciones/bin/Debug/net8.0/Csharp_Anotaciones.dll
+/home/joseagus/Escritorio/impl-24/temas/anotaciones/Csharp_Anotaciones/bin/Debug/net8.0/Csharp_Anotaciones.pdb
+/home/joseagus/Escritorio/impl-24/temas/anotaciones/Csharp_Anotaciones/obj/Debug/net8.0/Csharp_Anotaciones.GeneratedMSBuildEditorConfig.editorconfig
+/home/joseagus/Escritorio/impl-24/temas/anotaciones/Csharp_Anotaciones/obj/Debug/net8.0/Csharp_Anotaciones.AssemblyInfoInputs.cache
+/home/joseagus/Escritorio/impl-24/temas/anotaciones/Csharp_Anotaciones/obj/Debug/net8.0/Csharp_Anotaciones.AssemblyInfo.cs
+/home/joseagus/Escritorio/impl-24/temas/anotaciones/Csharp_Anotaciones/obj/Debug/net8.0/Csharp_Anotaciones.csproj.CoreCompileInputs.cache
+/home/joseagus/Escritorio/impl-24/temas/anotaciones/Csharp_Anotaciones/obj/Debug/net8.0/Csharp_Anotaciones.sourcelink.json
+/home/joseagus/Escritorio/impl-24/temas/anotaciones/Csharp_Anotaciones/obj/Debug/net8.0/Csharp_Anotaciones.dll
+/home/joseagus/Escritorio/impl-24/temas/anotaciones/Csharp_Anotaciones/obj/Debug/net8.0/refint/Csharp_Anotaciones.dll
+/home/joseagus/Escritorio/impl-24/temas/anotaciones/Csharp_Anotaciones/obj/Debug/net8.0/Csharp_Anotaciones.pdb
+/home/joseagus/Escritorio/impl-24/temas/anotaciones/Csharp_Anotaciones/obj/Debug/net8.0/Csharp_Anotaciones.genruntimeconfig.cache
+/home/joseagus/Escritorio/impl-24/temas/anotaciones/Csharp_Anotaciones/obj/Debug/net8.0/ref/Csharp_Anotaciones.dll
