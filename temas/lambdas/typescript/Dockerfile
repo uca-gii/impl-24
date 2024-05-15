@@ -17,7 +17,7 @@ COPY . .
 RUN npm run build
 
 # Expose port 3000 for the Node.js server
-EXPOSE 3333
+#EXPOSE 3333
 
 # Start the Node.js server when the container is started
 CMD ["npm", "start"]
