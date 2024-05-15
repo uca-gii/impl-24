@@ -18,9 +18,7 @@ jobs:
     
     defaults:
       run:
-
         working-directory: temas/abstraccion/csharp/Code
-
 
     steps:
     - uses: actions/checkout@v4
