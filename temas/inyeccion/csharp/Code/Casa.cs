@@ -1,4 +1,3 @@
-﻿
 using System;
 
 public class Casa
@@ -41,4 +40,5 @@ public class Casa
         }
         Console.WriteLine("----------------------------------------------------");
     }   
+
 }
