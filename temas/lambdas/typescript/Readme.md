@@ -140,7 +140,7 @@ Este código crea un servidor web usando Express, que está escuchando en el pue
 
 ## Explicación de [index.html](./web/index.html)
 Web diseñada para mostrar los resultados del ejemplo.
-```
+``` javascript
 async function fetchResultados() {
             let resultados = document.getElementById('Resultados');
             const response = await fetch('http://localhost:3333/getResultadosCarrera', {
