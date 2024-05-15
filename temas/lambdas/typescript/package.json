@@ -5,7 +5,7 @@
   "scripts": {
     "test": "jest",
     "build": "tsc",
-    "start": "node dist/pedidoController.js"
+    "start": "node dist/controller.js"
   },
   "author": "Mauro Clavo",
   "license": "ISC",
