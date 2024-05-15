@@ -31,6 +31,6 @@ jobs:
 
     - name: Build and Test with Gradle
       run: |
-        cd temas/errores
+        cd temas/errores/Kotlin
         gradle build
         gradle test
