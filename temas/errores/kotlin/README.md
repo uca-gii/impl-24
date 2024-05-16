@@ -330,7 +330,7 @@ git clone https://github.com/sistemas-sw/impl-24.git
 ### 5. Cambiar al Directorio del Repositorio
 #### Una vez clonado el repositorio, navega al directorio donde se encuentra el código:
 ```bash
-cd impl-24/temas/errores/
+cd impl-24/temas/errores/kotlin/
 ```
 ### 6.Compilacion del Proyecto con Gradle
 Una vez en el directorio del proyecto, puedes compilar el proyecto usando Gradle:
