@@ -17,11 +17,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Using Include="Xunit" />
+    <Using Include="Xunit"/>
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Code\Abstraccion.csproj" />
+    <ProjectReference Include="..\Code\Errores.csproj" />
   </ItemGroup>
 
 </Project>

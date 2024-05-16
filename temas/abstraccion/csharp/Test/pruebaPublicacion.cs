@@ -43,4 +43,3 @@ public class PruebasPublicacion
         Assert.Contains("Edición número: 100", output.ToString());
     }
 }
-

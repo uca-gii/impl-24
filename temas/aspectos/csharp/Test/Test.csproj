@@ -21,7 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Code\Abstraccion.csproj" />
+    <ProjectReference Include="..\Code\Code.csproj" />
   </ItemGroup>
 
 </Project>
