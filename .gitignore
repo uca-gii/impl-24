@@ -40,3 +40,6 @@
 .DS_Store
 .vscode/settings.json
 .project
+
+# Ignore Visual Studio Solution File
+impl-24.sln
