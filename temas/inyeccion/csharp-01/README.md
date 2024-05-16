@@ -396,7 +396,7 @@ Esta configuración asegura que tu proyecto de pruebas pueda acceder a las clase
 ### 4.Compilacion Proyecto
 Una vez clonado el repositorio y ver que tenemos el `.csproj` correctamente configurado, navega al directorio donde se encuentra el codigo:
 ```bash
-cd impl-24/temas/inyeccion/Csharp_Inyeccion/
+cd impl-24/temas/inyeccion/csharp-01/Csharp_Inyeccion/
 ```
 Compila tu proyecto para verificar que todo está configurado correctamente y que no hay errores de compilación.
 ```bash
@@ -414,7 +414,7 @@ Este comando iniciará la ejecución del proyecto principal, lo cual debería re
 ### 6.Ejecucion de Pruebas Unitarias
 Finalmente, ejecuta las pruebas unitarias para asegurarte de que todo funciona según lo esperado, pero antes debes irte al directorio donde se encuentra los test, para ello usa:
 ```bash
-cd impl-24/temas/inyeccion/Tests_Inyeccion/
+cd impl-24/temas/inyeccion/csharp-01/Tests_Inyeccion/
 ```
 Una vez en el directorio correcto ejecuta:
 ```bash
