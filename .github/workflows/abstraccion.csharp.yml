@@ -1,14 +1,14 @@
 name: .NET Core Build
 
-#on:
+on:
 #  push:
 #    branches: [ "*" ]
 #  pull_request:
 #    branches: [ "main" ]
     
-workflow_dispatch:
-  branch:
-    - main
+   workflow_dispatch:
+     branch:
+       - main
 jobs:
   build:
     runs-on: ubuntu-latest
