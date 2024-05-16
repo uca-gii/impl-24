@@ -1,4 +1,3 @@
-
 using PostSharp.Aspects;
 using PostSharp.Serialization;
 
@@ -7,27 +6,47 @@ public class RegistroAspecto: OnMethodBoundaryAspect{
     public override void OnExit(MethodExecutionArgs args)
     {
         if(args.Method.Name == "mostrarDetalles"){
-
-            Console.WriteLine("ASPECTO");
-            RegistradorAcciones.registrarAccion("Se han consultado los detalles de un archivo");
+            var archivo = args.Instance as ArchivoPolicial; 
+            if (archivo != null)
+            {
+                Console.WriteLine("ASPECTO");
+                RegistradorAcciones.registrarAccion($"El policia con placa {args.Arguments[0]} ha consultado los detalles del archivo {archivo.getId()}");
+            }
         }
         else if(args.Method.Name == "solicitarRevision"){
-            Console.WriteLine("ASPECTO");
-            RegistradorAcciones.registrarAccion("Se ha solicitado una revisión");
+            var archivo = args.Instance as ArchivoPolicial;
+            if (archivo != null)
+            {
+                Console.WriteLine("ASPECTO");
+                RegistradorAcciones.registrarAccion($"El policia con placa {args.Arguments[0]} ha solicitado una revisión del archivo {archivo.getId()}");
+            }
         }
     }
+
     public override void OnEntry(MethodExecutionArgs args)
     {
         if(args.Method.Name == "solicitarRevision"){
-            Console.WriteLine("ASPECTO");
-            RegistradorAcciones.registrarAccion("¡Una revisión está a punto de ser solicitada!");
+            var archivo = args.Instance as ArchivoPolicial;
+            if (archivo != null)
+            {
+                Console.WriteLine("ASPECTO");
+                RegistradorAcciones.registrarAccion($"El policia con placa {args.Arguments[0]} esta solicitando una revisión del archivo {archivo.getId()}");
+            }
         }
     }
+
     public override void OnException(MethodExecutionArgs args)
     {
-        if(args.Method.Name == "setFecha"){
-            Console.WriteLine("ASPECTO");
-            RegistradorAcciones.registrarAccion("Alguien que no conoce la clave ha intentado cambiar una fecha");
+        var archivo = args.Instance as ArchivoPolicial;
+        if (archivo != null)
+        {
+            if(args.Method.Name == "setFecha"){
+                Console.WriteLine("ASPECTO");
+                RegistradorAcciones.registrarAccion($"El policia con placa {args.Arguments[0]} ha producido un error al intentar cambiar la fecha del archivo {archivo.getId()}");
+            } else {
+                Console.WriteLine("ASPECTO");
+                RegistradorAcciones.registrarAccion($"El policia con placa {args.Arguments[0]} ha intentado cambiar una fecha del juicio {archivo.getId()} sin conocer la clave");
+            }
         }
     }
 }

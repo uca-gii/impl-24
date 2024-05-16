@@ -5,7 +5,8 @@ public class Juicio : ArchivoPolicial{
     int idJuez;
     DateTime fechaJuicio;
 
-    public Juicio(Investigacion c, int j, DateTime f){
+    public Juicio(int d, Investigacion c, int j, DateTime f){
+        idArchivo = d;
         InvestigacionJuzgado = c;
         idJuez = j;
         fechaJuicio = f;
@@ -21,7 +22,7 @@ public class Juicio : ArchivoPolicial{
     }
 
     [RegistroAspecto]
-    public void mostrarDetalles(){
+    public override void mostrarDetalles(int placa){
         Console.WriteLine("+--------------------------------------+");
         Console.WriteLine("|          Detalles del Juicio         |");
         Console.WriteLine("+--------------------------------------+");
@@ -32,7 +33,7 @@ public class Juicio : ArchivoPolicial{
     }
 
     [RegistroAspecto]
-    public void solicitarRevision(){
+    public override void solicitarRevision(int placa){
         Console.WriteLine("+-------------------------------------------------+");
         Console.WriteLine("|                     Revisión                    |");
         Console.WriteLine("+-------------------------------------------------+");

@@ -1,26 +1,22 @@
 public class Investigacion: ArchivoPolicial{
-    int identificador;
     int idPolicia;
     int idSospechoso;
     DateTime fechaDelito;
 
     public Investigacion(int id, int p, int s, DateTime f){
-        identificador = id;
+        idArchivo= id;
         idPolicia = p;
         idSospechoso = s;
         fechaDelito = f;
     }
-    public int getId(){
-        return identificador;
-    }
 
    [RegistroAspecto]
-public void mostrarDetalles()
+public override void mostrarDetalles(int numPlaca)
 {
     Console.WriteLine("+--------------------------------------+");
     Console.WriteLine("|             Detalles de la Investigacion         |");
     Console.WriteLine("+--------------------------------------+");
-    Console.WriteLine("| Id del Investigacion: " + identificador);
+    Console.WriteLine("| Id de la Investigacion: " + idArchivo);
     Console.WriteLine("| Policia encargado: " + idPolicia);
     Console.WriteLine("| Sospechoso: " + idSospechoso);
     Console.WriteLine("| Fecha del delito: " + fechaDelito.ToShortDateString());
@@ -29,7 +25,7 @@ public void mostrarDetalles()
 
 
     [RegistroAspecto]
-    public void solicitarRevision(){
+    public override void solicitarRevision(int numPlaca){
         Console.WriteLine("+-------------------------------------------------+");
         Console.WriteLine("|                     Revisión                    |");
         Console.WriteLine("+-------------------------------------------------+");
