@@ -1,4 +1,4 @@
-name: Lambdas TypeScript
+name: Errores TypeScript
 
 on:
   workflow_dispatch:
