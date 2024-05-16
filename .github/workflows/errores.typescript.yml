@@ -19,12 +19,12 @@ jobs:
 
     - name: Instalar dependencias
       run: |
-        cd temas/errpres/typescript
+        cd temas/errores/typescript
         npm install
 
     - name: Build
       run: |
-        cd temas/errpres/typescript
+        cd temas/errores/typescript
         npm run build
 
   test:
@@ -41,10 +41,10 @@ jobs:
 
     - name: Instalar dependencias
       run: |
-        cd temas/errpres/typescript
+        cd temas/errores/typescript
         npm install
 
     - name: Test
       run: |
-        cd temas/errpres/typescript
+        cd temas/errores/typescript
         npm run test
