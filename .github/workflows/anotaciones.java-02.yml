@@ -2,8 +2,8 @@ name: Anotaciones Java-02
 
 on:
   workflow_dispatch:
-  branches:
-    - main  
+    branches:
+      - main  
 
 jobs:
   build:
