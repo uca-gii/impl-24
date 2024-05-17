@@ -169,12 +169,16 @@ mvn test
 ```
 
 ## Construir y desplegar
-### Crear la imagen de docker
+### Crear el paquete jar
+``` shell
+mvn package
 ```
+### Crear la imagen de docker
+```shell
 docker build -t logger_app . 
 ```
 ### Desplegar el contenedor con la aplicación
-```
+```shell
 terraform init
 terraform apply
 ```
@@ -182,6 +186,6 @@ Una vez se haya iniciado correctamente, la web estará dispoible en:
 `localhost:6060`
 
 ### Detener el contenedor
-```
+```shell
 terraform destroy
 ```
