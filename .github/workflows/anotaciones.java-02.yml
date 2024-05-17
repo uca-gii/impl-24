@@ -22,7 +22,7 @@ jobs:
 
     - name: Build with Maven
       run: |
-        cd temas/anotaciones/java-02
+        cd temas/anotaciones/java-02/logger
         mvn clean compile
 
   test:
@@ -41,10 +41,10 @@ jobs:
 
     - name: Build with Maven
       run: |
-        cd temas/anotaciones/java-02
+        cd temas/anotaciones/java-02/logger
         mvn clean compile
 
     - name: Run tests
       run: |
-        cd temas/anotaciones/java-02
+        cd temas/anotaciones/java-02/logger
         mvn test
