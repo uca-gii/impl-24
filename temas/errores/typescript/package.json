@@ -1,0 +1,12 @@
+{
+    "name": "errores-example",
+    "version": "1.0.0",
+    "description": "Example of stream processing with managing of errors in TypeScript",
+    "main": "main.js",
+    "scripts": {
+      "start": "node main.js"
+    },
+    "dependencies": {
+      "typescript": "^4.5.5"
+    }
+  }
