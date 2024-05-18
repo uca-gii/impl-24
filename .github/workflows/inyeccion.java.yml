@@ -1,4 +1,4 @@
-name: Anotaciones Java
+name: Inyeccion Java
 
 on:
   workflow_dispatch:
