@@ -1,3 +1,5 @@
+package example.dependencyinjection;
+
 import java.lang.annotation.*;
 
 @Retention(RetentionPolicy.RUNTIME)

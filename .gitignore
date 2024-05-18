@@ -32,7 +32,6 @@
 *.app
 
 # Java
-*.class
 .classpath
 .factorypath
 
