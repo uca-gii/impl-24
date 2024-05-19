@@ -45,8 +45,9 @@
 .vscode/settings.json
 .project
 
-
 # Sentinel runtime directory
-
 .sentinel
+
+# Dart
+.dart_tool/
 
