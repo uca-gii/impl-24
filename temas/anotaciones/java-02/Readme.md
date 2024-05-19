@@ -29,7 +29,7 @@ El logger devuelve el rol y los atributos del objeto pasado, con `LoggerService`
 
 ## Explicación de [LoggerSerice.java](./logger/src/main/java/uca/example/LoggerService.java)
 
-``` typescript
+``` Java
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.FIELD)
 @interface JefeAttribute {}
@@ -41,14 +41,13 @@ El logger devuelve el rol y los atributos del objeto pasado, con `LoggerService`
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.FIELD)
 @interface UsuarioAttribute {}
-``` java
+```
 - `@Retention(RetentionPolicy.RUNTIME)`: Especifica que las anotaciones estarán disponibles en tiempo de ejecución.
 - `@Target(ElementType.FIELD)`: Especifica que las anotaciones solo pueden aplicarse a campos.
 - Se definen tres anotaciones según el rol: 
   - `JefeAttribute`
   - `AdministradorAttribute`
   - `UsuarioAttribute`
-
 
 
 ``` java
