@@ -27,7 +27,7 @@ Interfaz Logger e impementación de cada uno de los logs según el rol (Para est
 
 El logger devuelve el rol y los atributos del objeto pasado, con `LoggerService` según el rol del logger.
 
-## Explicación de [LoggerSerice.java](./logger/src/main/java/uca/example/LoggerService.java)
+## Explicación de [LoggerService.java](./logger/src/main/java/uca/example/LoggerService.java)
 
 ``` Java
 @Retention(RetentionPolicy.RUNTIME)
