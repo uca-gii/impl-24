@@ -102,6 +102,14 @@ packages/
 ## Ignorar archivos de configuración que contienen credenciales
 appsettings.json
 
+# Gradle
+
+## Ignore Gradle project-specific cache directory
+.gradle
+
+## Ignore Gradle build output directory
+build/
+
 # Sentinel runtime directory
 .sentinel
 
