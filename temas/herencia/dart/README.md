@@ -116,9 +116,10 @@ class Persona with Hablador {
   Persona(this.nombre, this.edad);
 
   @override
-  String hablar() {
-    return "Hola, mi nombre es $nombre y tengo $edad años";
+  void hablar() {
+    print("Hola, mi nombre es $nombre y tengo $edad años.");
   }
+}
 }
 ```
 
