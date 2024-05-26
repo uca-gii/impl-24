@@ -1,0 +1,42 @@
+name: Errores RUBY (Marta Y Sergio)
+
+on:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Install Ruby
+      uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: 3.0.0
+
+    - name: Install dependencies
+      run: gem install test-unit && gem install optional
+
+
+    - name: Run Ruby tests
+      run: ruby ./temas/errores/ruby/testCalculator.rb
+
+  deploy:
+    runs-on: ubuntu-latest
+
+    needs: test
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Install Ruby
+      uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: 3.0.0
+    - name: Install dependencies
+      run: gem install test-unit && gem install optional && gem install rx
+    - name: Run Ruby script
+      run: ruby ./temas/errores/ruby/calculator.rb
