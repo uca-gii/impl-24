@@ -115,3 +115,8 @@ build/
 
 # Dart
 .dart_tool/
+
+#scala
+*.scala-build
+*.metals
+*.bsp
