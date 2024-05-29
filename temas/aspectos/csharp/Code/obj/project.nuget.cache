@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "UbVNRJHjOQf6hAdS4RLTqHgD5s9w2u+p2YiFbi5/3/zAWOHV2t/VXoT1Ecbup9cqfqmXllJpauF6thheRupypA==",
+  "success": true,
+  "projectFilePath": "/media/elena/Data/Elena/Documents/Cours/ENIB/S9/IISS/impl-24/temas/aspectos/csharp/Code/Code.csproj",
+  "expectedPackageFiles": [
+    "/home/elena/.nuget/packages/postsharp/2024.0.8/postsharp.2024.0.8.nupkg.sha512",
+    "/home/elena/.nuget/packages/postsharp.redist/2024.0.8/postsharp.redist.2024.0.8.nupkg.sha512"
+  ],
+  "logs": []
+}

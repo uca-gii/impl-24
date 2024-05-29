@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "lRCnrW+tikxm83KPgDnkb6SVx/KWOXx0TYi1uIjtv0FgyWN017jMKW672458VOUjKwWZ39Z19gJ47tdKg4FPuA==",
+  "success": true,
+  "projectFilePath": "/media/elena/Data/Elena/Documents/Cours/ENIB/S9/IISS/impl-24/temas/inyeccion/csharp-01/Csharp_Inyeccion/Csharp_Inyeccion.csproj",
+  "expectedPackageFiles": [
+    "/home/elena/.nuget/packages/microsoft.extensions.dependencyinjection/8.0.0/microsoft.extensions.dependencyinjection.8.0.0.nupkg.sha512",
+    "/home/elena/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/8.0.0/microsoft.extensions.dependencyinjection.abstractions.8.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
