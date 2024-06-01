@@ -1,58 +1,49 @@
-package ejemplo
+package example
 
-class Trabajador(val nombre: String) {
+interface Trabajador {
+    val nombre: String
+
     fun preparar() {
         println("$nombre está preparándose para trabajar.")
     }
 
-    fun trabajar() {
-        println("$nombre está realizando tareas generales.")
+    fun trabajar() {}
+}
+
+class Programador(override val nombre: String): Trabajador {
+    override fun trabajar() {
+        println("${nombre} está escribiendo código.")
     }
 }
 
-class Programador(nombre: String) {
-    private val trabajador = Trabajador(nombre)
-
-    fun trabajar() {
-        trabajador.preparar()
-        println("${trabajador.nombre} está escribiendo código.")
+class Escritor(override val nombre: String): Trabajador {
+    override fun trabajar() {
+        println("${nombre} está escribiendo un informe.")
     }
 }
 
-class Escritor(nombre: String) {
-    private val trabajador = Trabajador(nombre)
-
-    fun trabajar() {
-        trabajador.preparar()
-        println("${trabajador.nombre} está escribiendo un informe.")
+class AtencionAlCliente(override val nombre: String): Trabajador {
+    override fun trabajar() {
+        println("${nombre} está atendiendo a un cliente.")
     }
 }
 
-class AtencionAlCliente(nombre: String) {
-    private val trabajador = Trabajador(nombre)
-
-    fun trabajar() {
-        trabajador.preparar()
-        println("${trabajador.nombre} está atendiendo a un cliente.")
-    }
-}
-
-class Gerente(nombre: String) {
+class Gerente(override val nombre: String): Trabajador {
     private val escritor = Escritor(nombre)
     private val atencion = AtencionAlCliente(nombre)
 
-    fun trabajar() {
+    override fun trabajar() {
         escritor.trabajar()
         atencion.trabajar()
     }
 }
 
-class DesarrolladorCompleto(nombre: String) {
+class DesarrolladorCompleto(override val nombre: String): Trabajador {
     private val programador = Programador(nombre)
     private val escritor = Escritor(nombre)
     private val atencion = AtencionAlCliente(nombre)
 
-    fun trabajar() {
+    override fun trabajar() {
         programador.trabajar()
         escritor.trabajar()
         atencion.trabajar()
@@ -60,19 +51,22 @@ class DesarrolladorCompleto(nombre: String) {
 }
 
 class Jefe {
-    fun manejarTrabajadores(trabajadores: List<Any>) {
+    fun prepararTrabajadores(trabajadores: List<Trabajador>) {
+        println("El jefe está preparando a los trabajadores.")
+        println("--------------------------------------------")
+        trabajadores.forEach {
+            it.preparar()
+        }
+        println("--------------------------------------------")
+        println("Todos los trabajadores están preparados.")
+        println("============================================")
+    }
+
+    fun manejarTrabajadores(trabajadores: List<Trabajador>) {
         println("El jefe da la señal para que los trabajadores hagan sus tareas.")
         println("---------------------------------------------------------------------")
         trabajadores.forEach{
-            when (it) {
-                is Programador -> it.trabajar()
-                is Escritor -> it.trabajar()
-                is AtencionAlCliente -> it.trabajar()
-                is Gerente -> it.trabajar()
-                is DesarrolladorCompleto -> it.trabajar()
-                is Trabajador -> it.trabajar()
-                else -> println("Tipo de trabajador desconocido.")
-            }
+            it.trabajar()
         }
         println("---------------------------------------------------------------------")
         println("¡Todos los trabajadores han completado sus tareas!")
