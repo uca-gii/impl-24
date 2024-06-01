@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:html';
 import 'package:dart/robot_inteligente.dart';
 import 'package:dart/robot_malvado.dart';
@@ -124,8 +125,33 @@ void main() {
   // Manejador de evento para Persona
   personaHablarButton.onClick.listen((event) {
     personaOutput.children.clear();
-    var hablarTexto = persona.hablar();
-    addContent(personaOutput, hablarTexto);
+
+    // Capturar la salida de print usando un StringBuffer
+    var buffer = StringBuffer();
+    capturePrint(() {
+      persona.hablar();
+    }, buffer);
+
+    // Agregar contenido capturado al output
+    addContent(personaOutput, buffer.toString());
   });
+}
+
+void addContent(Element parent, String content) {
+  parent.appendText(content);
+}
+
+void capturePrint(Function action, StringBuffer buffer) {
+  // Guardar la referencia original de print
+  var originalPrint = Zone.current[#print];
+
+  // Redefinir print en la zona actual
+  runZoned(() {
+    action();
+  }, zoneSpecification: ZoneSpecification(
+    print: (self, parent, zone, line) {
+      buffer.writeln(line);
+    },
+  ));
 }
 
