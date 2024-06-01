@@ -28,13 +28,11 @@ class AtencionAlCliente(override val nombre: String): Trabajador {
     }
 }
 
-class Gerente(override val nombre: String): Trabajador {
-    private val escritor = Escritor(nombre)
-    private val atencion = AtencionAlCliente(nombre)
+class Gerente(override val nombre: String): Trabajador by Escritor(nombre), Trabajador by AtencionAlCliente(nombre) {
 
     override fun trabajar() {
-        escritor.trabajar()
-        atencion.trabajar()
+        super<Escritor>.trabajar()
+        super<AtencionAlCliente>.trabajar()
     }
 }
 
