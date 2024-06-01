@@ -1,6 +1,10 @@
 package ejemplo
 
 class Trabajador(val nombre: String) {
+    fun preparar() {
+        println("$nombre está preparándose para trabajar.")
+    }
+
     fun trabajar() {
         println("$nombre está realizando tareas generales.")
     }
