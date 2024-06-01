@@ -1,13 +1,11 @@
 package ejemplo
 
-// Clase base para trabajadores
 class Trabajador(val nombre: String) {
     fun trabajar() {
         println("$nombre está realizando tareas generales.")
     }
 }
 
-// Clase que representa a un programador
 class Programador(nombre: String) {
     private val trabajador = Trabajador(nombre)
 
@@ -17,7 +15,6 @@ class Programador(nombre: String) {
     }
 }
 
-// Clase que representa a un escritor de informes
 class Escritor(nombre: String) {
     private val trabajador = Trabajador(nombre)
 
