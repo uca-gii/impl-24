@@ -23,7 +23,7 @@ function App() {
   const theme = useTheme();
   const [inputs, setInputs] = useState([{ name: "", role: "" }]);
   const [output, setOutput] = useState("");
-  const roles = ["Programador", "Escritor", "AtencionAlCliente", "Gerente", "DesarrolladorCompleto"];
+  const roles = ["Programador", "Escritor", "EscritorPreparado", "AtencionAlCliente", "Gerente", "DesarrolladorCompleto"];
 
   const handleInputChange = (index, field, value) => {
     const newInputs = [...inputs];

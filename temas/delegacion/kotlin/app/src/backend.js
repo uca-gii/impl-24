@@ -25,6 +25,9 @@ app.post('/api/execute', (req, res) => {
             case "Escritor":
                 kotlinCode += `trabajadores.add(Escritor("${p.name}"))\n`;
                 break;
+            case "EscritorPreparado":
+                kotlinCode += `trabajadores.add(EscritorPreparado("${p.name}"))\n`;
+                break;
             case "AtencionAlCliente":
                 kotlinCode += `trabajadores.add(AtencionAlCliente("${p.name}"))\n`;
                 break;
