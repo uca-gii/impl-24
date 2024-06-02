@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Assertions.assertTrue
 import java.io.ByteArrayOutputStream
 import java.io.PrintStream
 
-class TrabajadorTests {
+class ProgrammingCompanyTests {
     private fun captureOutput(work: () -> Unit): String {
         val outputStream = ByteArrayOutputStream()
         System.setOut(PrintStream(outputStream))
