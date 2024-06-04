@@ -386,7 +386,7 @@ Este .xml contiene la configuración necesaria para los logs durante la ejecuci�
 2. Ejecutamos los tests con Maven:
 
     ```bash
-    mvn test 
+    mvn clean test 
     ```
 
 Tras seguir los pasos anteriores, podrás visualizar en la terminal los resultados de los tests.
