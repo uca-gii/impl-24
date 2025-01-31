@@ -41,10 +41,10 @@ target/
 !**/src/test/**/target/
 
 # Terraform 
-/terraform.tfstate/
-/terraform.tfstate.*/
-/.terraform
+**/.terraform/
 *.terraform.lock.hcl
+**/terraform.tfstate/
+**/terraform.tfstate.*/
 
 # Other
 .DS_Store
