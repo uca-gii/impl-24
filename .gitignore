@@ -41,6 +41,8 @@ target/
 !**/src/test/**/target/
 
 # Terraform 
+/terraform.tfstate/
+/terraform.tfstate.*/
 /.terraform/
 *.terraform.lock.hcl
 
