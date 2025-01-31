@@ -43,7 +43,7 @@ target/
 # Terraform 
 /terraform.tfstate/
 /terraform.tfstate.*/
-/.terraform/
+/.terraform
 *.terraform.lock.hcl
 
 # Other
